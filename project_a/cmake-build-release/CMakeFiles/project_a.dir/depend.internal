@@ -28,6 +28,28 @@ CMakeFiles/project_a.dir/src/application/HallowApp.cpp.obj
  C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.h
  C:/lib/GLFW/glfw-3.3.3.bin.WIN64/include/GLFW/glfw3.h
  src/helpers/RootDir.h
+CMakeFiles/project_a.dir/src/engine/device/HallowEngineDevice.cpp.obj
+ ../src/engine/window/HallowWindow.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vk_platform.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_android.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_beta.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_core.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_directfb.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_fuchsia.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_ggp.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_ios.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_macos.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_metal.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_vi.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_wayland.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_win32.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_xcb.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_xlib.h
+ C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan_xlib_xrandr.h
+ C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowEngineDevice.cpp
+ C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowEngineDevice.h
+ C:/lib/GLFW/glfw-3.3.3.bin.WIN64/include/GLFW/glfw3.h
 CMakeFiles/project_a.dir/src/engine/pipeline/HallowPipeline.cpp.obj
  C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp
  C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.h

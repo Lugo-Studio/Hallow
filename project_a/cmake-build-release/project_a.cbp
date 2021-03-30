@@ -102,6 +102,12 @@
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.h">
 			<Option target="project_a"/>
 		</Unit>
+		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowEngineDevice.cpp">
+			<Option target="project_a"/>
+		</Unit>
+		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowEngineDevice.h">
+			<Option target="project_a"/>
+		</Unit>
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp">
 			<Option target="project_a"/>
 		</Unit>

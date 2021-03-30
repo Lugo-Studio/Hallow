@@ -28,6 +28,28 @@ CMakeFiles\project_a.dir\src\application\HallowApp.cpp.obj: ..\src\application\H
 CMakeFiles\project_a.dir\src\application\HallowApp.cpp.obj: C:\lib\GLFW\glfw-3.3.3.bin.WIN64\include\GLFW\glfw3.h
 CMakeFiles\project_a.dir\src\application\HallowApp.cpp.obj: src\helpers\RootDir.h
 
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: ..\src\engine\window\HallowWindow.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vk_platform.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_android.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_beta.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_core.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_directfb.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_fuchsia.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_ggp.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_ios.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_macos.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_metal.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_vi.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_wayland.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_win32.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_xcb.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_xlib.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_xlib_xrandr.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: ..\src\engine\device\HallowEngineDevice.cpp
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: ..\src\engine\device\HallowEngineDevice.h
+CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: C:\lib\GLFW\glfw-3.3.3.bin.WIN64\include\GLFW\glfw3.h
+
 CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.obj: ..\src\engine\pipeline\HallowPipeline.cpp
 CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.obj: ..\src\engine\pipeline\HallowPipeline.h
 

@@ -1,0 +1,25 @@
+C:\Users\galex\AppData\Local\JetBrains\CLion2020.3\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/usr/bin/g++.exe -G "CodeBlocks - Unix Makefiles" /cygdrive/c/dev/vulkan/Hallow/project_a
+-- The C compiler identification is GNU 9.3.0
+-- The CXX compiler identification is GNU 9.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/g++.exe
+-- Check for working CXX compiler: /usr/bin/g++.exe - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at /cygdrive/c/Users/galex/AppData/Local/JetBrains/CLion2020.3/cygwin_cmake/share/cmake-3.17.5/Modules/FindPackageHandleStandardArgs.cmake:164 (message):
+  Could NOT find Vulkan (missing: Vulkan_LIBRARY)
+Call Stack (most recent call first):
+  /cygdrive/c/Users/galex/AppData/Local/JetBrains/CLion2020.3/cygwin_cmake/share/cmake-3.17.5/Modules/FindPackageHandleStandardArgs.cmake:445 (_FPHSA_FAILURE_MESSAGE)
+  /cygdrive/c/Users/galex/AppData/Local/JetBrains/CLion2020.3/cygwin_cmake/share/cmake-3.17.5/Modules/FindVulkan.cmake:71 (find_package_handle_standard_args)
+  CMakeLists.txt:29 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/cygdrive/c/dev/vulkan/Hallow/project_a/cmake-build-release-cygwin/CMakeFiles/CMakeOutput.log".

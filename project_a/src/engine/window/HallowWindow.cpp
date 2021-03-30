@@ -26,4 +26,10 @@ namespace Hallow {
 
         m_glfw_window = glfwCreateWindow(m_width, m_height, m_name.c_str(), nullptr, nullptr);
     }
+
+    void HallowWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR* surface) {
+        if (glfwCreateWindowSurface(instance, m_glfw_window, nullptr, surface) != VK_SUCCESS) {
+            throw std::runtime_error("GLFW Error: Failed to create window surface!");
+        }
+    }
 }

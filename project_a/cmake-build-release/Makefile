@@ -154,6 +154,33 @@ src\application\HallowApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\application\HallowApp.cpp.s
 .PHONY : src\application\HallowApp.cpp.s
 
+src\engine\device\HallowEngineDevice.obj: src\engine\device\HallowEngineDevice.cpp.obj
+
+.PHONY : src\engine\device\HallowEngineDevice.obj
+
+# target to build an object file
+src\engine\device\HallowEngineDevice.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj
+.PHONY : src\engine\device\HallowEngineDevice.cpp.obj
+
+src\engine\device\HallowEngineDevice.i: src\engine\device\HallowEngineDevice.cpp.i
+
+.PHONY : src\engine\device\HallowEngineDevice.i
+
+# target to preprocess a source file
+src\engine\device\HallowEngineDevice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.i
+.PHONY : src\engine\device\HallowEngineDevice.cpp.i
+
+src\engine\device\HallowEngineDevice.s: src\engine\device\HallowEngineDevice.cpp.s
+
+.PHONY : src\engine\device\HallowEngineDevice.s
+
+# target to generate assembly for a file
+src\engine\device\HallowEngineDevice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.s
+.PHONY : src\engine\device\HallowEngineDevice.cpp.s
+
 src\engine\pipeline\HallowPipeline.obj: src\engine\pipeline\HallowPipeline.cpp.obj
 
 .PHONY : src\engine\pipeline\HallowPipeline.obj
@@ -274,6 +301,9 @@ help:
 	@echo ... src/application/HallowApp.obj
 	@echo ... src/application/HallowApp.i
 	@echo ... src/application/HallowApp.s
+	@echo ... src/engine/device/HallowEngineDevice.obj
+	@echo ... src/engine/device/HallowEngineDevice.i
+	@echo ... src/engine/device/HallowEngineDevice.s
 	@echo ... src/engine/pipeline/HallowPipeline.obj
 	@echo ... src/engine/pipeline/HallowPipeline.i
 	@echo ... src/engine/pipeline/HallowPipeline.s

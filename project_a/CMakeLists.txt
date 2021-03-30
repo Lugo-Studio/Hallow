@@ -53,6 +53,10 @@ if (DEBUG_LEVEL)
     add_definitions(-DDEBUG_LEVEL=${DEBUG_LEVEL})
 endif()
 
+if (${CMAKE_BUILD_TYPE} STREQUAL Release)
+    target_link_options(${PROJECT_NAME} PRIVATE -mwindows)
+endif()
+
 
 #[[# Symlink to res folder # http://qrikko.blogspot.com/2016/05/cmake-and-how-to-copy-resources-during.html
 set(source "${CMAKE_SOURCE_DIR}/res")

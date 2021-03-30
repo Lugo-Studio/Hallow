@@ -6,8 +6,8 @@
 #define PROJECT_A_HALLOWWINDOW_H
 
 
-#define GLFW_INCLUDE_VULKAN
-
+//#define GLFW_INCLUDE_VULKAN
+#include <vulkan/vulkan.h>
 #include <GLFW/glfw3.h>
 
 #include <string>
@@ -21,6 +21,8 @@ namespace Hallow {
         ~HallowWindow();
 
         bool shouldClose() {  return glfwWindowShouldClose(m_glfw_window); }
+
+        void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 
         // no copying allowed
         HallowWindow(const HallowWindow&) = delete;
