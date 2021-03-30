@@ -6,5 +6,5 @@ CXX_FLAGS = /DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd   -std:c++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -IC:\dev\vulkan\project_a\cmake-build-debug\src -IC:\dev\vulkan\project_a\src -IC:\dev\vulkan\project_a\include -IC:\lib\GLFW\glfw-3.3.3.bin.WIN64\include -IC:\VulkanSDK\1.2.170.0\Include -IC:\lib\GLM\glm 
+CXX_INCLUDES = -IC:\dev\vulkan\Hallow\project_a\cmake-build-debug\src -IC:\dev\vulkan\Hallow\project_a\src -IC:\dev\vulkan\Hallow\project_a\include -IC:\lib\GLFW\glfw-3.3.3.bin.WIN64\include -IC:\VulkanSDK\1.2.170.0\Include -IC:\lib\GLM\glm 
 

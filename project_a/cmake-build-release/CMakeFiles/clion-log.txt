@@ -1,8 +1,25 @@
-C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - NMake Makefiles" C:\dev\vulkan\project_a
+C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - NMake Makefiles" C:\dev\vulkan\Hallow\project_a
+-- The C compiler identification is MSVC 19.25.28614.0
+-- The CXX compiler identification is MSVC 19.25.28614.0
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/bin/Hostx64/x64/cl.exe
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/bin/Hostx64/x64/cl.exe - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/bin/Hostx64/x64/cl.exe
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.25.28610/bin/Hostx64/x64/cl.exe - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Vulkan: C:/VulkanSDK/1.2.170.0/Lib/vulkan-1.lib  
 -- C:/VulkanSDK/1.2.170.0/Lib/vulkan-1.lib included at C:/VulkanSDK/1.2.170.0/Include
+-- Found GLM: C:/lib/GLM/glm  
 -- GLM_INCLUDE_DIR = C:/lib/GLM/glm
 -- GLM included at C:/lib/GLM/glm
+-- Found GLFW3: C:/lib/GLFW/glfw-3.3.3.bin.WIN64/lib/glfw3.lib  
 -- Found C:/lib/GLFW/glfw-3.3.3.bin.WIN64/lib/glfw3.lib in C:/lib/GLFW/glfw-3.3.3.bin.WIN64/include
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/dev/vulkan/project_a/cmake-build-release
+-- Build files have been written to: C:/dev/vulkan/Hallow/project_a/cmake-build-release
