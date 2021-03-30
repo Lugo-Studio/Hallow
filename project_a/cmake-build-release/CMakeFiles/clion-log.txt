@@ -1,0 +1,8 @@
+C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - NMake Makefiles" C:\dev\vulkan\project_a
+-- C:/VulkanSDK/1.2.170.0/Lib/vulkan-1.lib included at C:/VulkanSDK/1.2.170.0/Include
+-- GLM_INCLUDE_DIR = C:/lib/GLM/glm
+-- GLM included at C:/lib/GLM/glm
+-- Found C:/lib/GLFW/glfw-3.3.3.bin.WIN64/lib/glfw3.lib in C:/lib/GLFW/glfw-3.3.3.bin.WIN64/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/dev/vulkan/project_a/cmake-build-release

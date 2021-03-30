@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="ODU Linux Server (d1ce6a33-c3d9-4821-9238-8dac1841035e)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.geCXF2NcMs" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-odu-linux-server" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-odu-linux-server" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="WSL (bb0b2c57-63e2-4d82-9b3d-f69a0eb91463)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="WSL (d025f014-ce6f-4a9f-888c-4064d4b1f193)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
