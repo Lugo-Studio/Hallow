@@ -16,8 +16,8 @@ file(GLOB_RECURSE HEADER_FILES
 link_directories(${CMAKE_SOURCE_DIR}/lib)
 
 # Configure assets header file
-configure_file(src/helpers/RootDir.h.in src/helpers/RootDir.h.in)
-include_directories(${CMAKE_BINARY_DIR}/src)
+configure_file(src/helpers/RootDir.h.in src/helpers/RootDir.h)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/src)
 
 # Define the executable
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
@@ -52,6 +52,17 @@ target_link_libraries(${PROJECT_NAME} ${LIBS})
 if (DEBUG_LEVEL)
     add_definitions(-DDEBUG_LEVEL=${DEBUG_LEVEL})
 endif()
+
+
+#[[# Symlink to res folder # http://qrikko.blogspot.com/2016/05/cmake-and-how-to-copy-resources-during.html
+set(source "${CMAKE_SOURCE_DIR}/res")
+set(dest "${CMAKE_CURRENT_BINARY_DIR}/res")
+add_custom_command(
+        TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E create_symlink ${source} ${dest}
+        DEPENDS ${dest}
+        COMMENT "symbolic link resources folder from ${source} => ${dest}"
+)]]
 
 #[[
 # Copy dlls

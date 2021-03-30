@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../src/engine/pipeline/HallowPipeline.h
+string
+-
+vector
+-
+
 ../src/engine/time/Stopwatch.h
 chrono
 -
@@ -141,59 +147,31 @@ iostream
 -
 
 C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.h
-engine/window/HallowWindow.h
--
 engine/time/Time.h
 -
+engine/window/HallowWindow.h
+-
+engine/pipeline/HallowPipeline.h
+-
+helpers/RootDir.h
+C:/dev/vulkan/Hallow/project_a/src/application/helpers/RootDir.h
 string
 -
 
-C:/dev/vulkan/Hallow/project_a/src/engine/time/Stopwatch.h
-chrono
--
-string
--
-sstream
+C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp
+HallowPipeline.h
+C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.h
+fstream
 -
 iostream
 -
-iomanip
--
-
-C:/dev/vulkan/Hallow/project_a/src/engine/time/Time.cpp
-Time.h
-C:/dev/vulkan/Hallow/project_a/src/engine/time/Time.h
-ctime
--
-
-C:/dev/vulkan/Hallow/project_a/src/engine/time/Time.h
-TimePoint.h
-C:/dev/vulkan/Hallow/project_a/src/engine/time/TimePoint.h
-Stopwatch.h
-C:/dev/vulkan/Hallow/project_a/src/engine/time/Stopwatch.h
-GLFW/glfw3.h
--
-chrono
--
-
-C:/dev/vulkan/Hallow/project_a/src/engine/time/TimePoint.h
-chrono
--
-
-C:/dev/vulkan/Hallow/project_a/src/engine/window/HallowWindow.cpp
-HallowWindow.h
-C:/dev/vulkan/Hallow/project_a/src/engine/window/HallowWindow.h
 stdexcept
 -
 
-C:/dev/vulkan/Hallow/project_a/src/engine/window/HallowWindow.h
-GLFW/glfw3.h
--
+C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.h
 string
 -
-utility
--
-memory
+vector
 -
 
 C:/dev/vulkan/Hallow/project_a/src/main.cpp
@@ -249,4 +227,6 @@ GL/gl.h
 -
 GL/glext.h
 -
+
+src/helpers/RootDir.h
 

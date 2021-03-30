@@ -5,9 +5,10 @@
 #ifndef PROJECT_A_HALLOWAPP_H
 #define PROJECT_A_HALLOWAPP_H
 
-
-#include <engine/window/HallowWindow.h>
 #include <engine/time/Time.h>
+#include <engine/window/HallowWindow.h>
+#include <engine/pipeline/HallowPipeline.h>
+#include "helpers/RootDir.h"
 
 #include <string>
 
@@ -17,18 +18,28 @@ namespace Hallow {
         static constexpr int WIDTH = 1024;
         static constexpr int HEIGHT = 576;
 
-        HallowApp() : m_hallow_window{WIDTH, HEIGHT, m_name}, m_time() {}
-
         void run();
     private:
-        std::string m_name = "Hallow App";
+        std::string m_name = "Hallow Engine";
 
-        HallowWindow m_hallow_window;
-        Time m_time;
+        Time m_time{};
+        HallowWindow m_hallow_window{WIDTH, HEIGHT, m_name};
+        HallowPipeline m_hallow_pipeline{
+            ROOT_DIR"res/shaders/simple_shader.vert.spv",
+            ROOT_DIR"res/shaders/simple_shader.frag.spv"
+        };
 
+        void startPre();
         void start();
+        void startPost();
+
+        void updatePre();
         void update();
-        void fixedUpdate();
+        void updatePost();
+
+        void endPre();
+        void end();
+        void endPost();
     };
 }
 

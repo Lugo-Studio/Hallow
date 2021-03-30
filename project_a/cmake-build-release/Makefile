@@ -154,6 +154,33 @@ src\application\HallowApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\application\HallowApp.cpp.s
 .PHONY : src\application\HallowApp.cpp.s
 
+src\engine\pipeline\HallowPipeline.obj: src\engine\pipeline\HallowPipeline.cpp.obj
+
+.PHONY : src\engine\pipeline\HallowPipeline.obj
+
+# target to build an object file
+src\engine\pipeline\HallowPipeline.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.obj
+.PHONY : src\engine\pipeline\HallowPipeline.cpp.obj
+
+src\engine\pipeline\HallowPipeline.i: src\engine\pipeline\HallowPipeline.cpp.i
+
+.PHONY : src\engine\pipeline\HallowPipeline.i
+
+# target to preprocess a source file
+src\engine\pipeline\HallowPipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.i
+.PHONY : src\engine\pipeline\HallowPipeline.cpp.i
+
+src\engine\pipeline\HallowPipeline.s: src\engine\pipeline\HallowPipeline.cpp.s
+
+.PHONY : src\engine\pipeline\HallowPipeline.s
+
+# target to generate assembly for a file
+src\engine\pipeline\HallowPipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.s
+.PHONY : src\engine\pipeline\HallowPipeline.cpp.s
+
 src\engine\time\Time.obj: src\engine\time\Time.cpp.obj
 
 .PHONY : src\engine\time\Time.obj
@@ -247,6 +274,9 @@ help:
 	@echo ... src/application/HallowApp.obj
 	@echo ... src/application/HallowApp.i
 	@echo ... src/application/HallowApp.s
+	@echo ... src/engine/pipeline/HallowPipeline.obj
+	@echo ... src/engine/pipeline/HallowPipeline.i
+	@echo ... src/engine/pipeline/HallowPipeline.s
 	@echo ... src/engine/time/Time.obj
 	@echo ... src/engine/time/Time.i
 	@echo ... src/engine/time/Time.s

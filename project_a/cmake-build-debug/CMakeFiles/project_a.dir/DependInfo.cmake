@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/application/HallowApp.cpp.obj"
+  "C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/pipeline/HallowPipeline.cpp.obj"
   "C:/dev/vulkan/Hallow/project_a/src/engine/time/Time.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/time/Time.cpp.obj"
   "C:/dev/vulkan/Hallow/project_a/src/engine/window/HallowWindow.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/window/HallowWindow.cpp.obj"
   "C:/dev/vulkan/Hallow/project_a/src/main.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/main.cpp.obj"

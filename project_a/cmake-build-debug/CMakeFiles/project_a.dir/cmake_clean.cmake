@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/project_a.dir/src/application/HallowApp.cpp.obj"
+  "CMakeFiles/project_a.dir/src/engine/pipeline/HallowPipeline.cpp.obj"
   "CMakeFiles/project_a.dir/src/engine/time/Time.cpp.obj"
   "CMakeFiles/project_a.dir/src/engine/window/HallowWindow.cpp.obj"
   "CMakeFiles/project_a.dir/src/main.cpp.obj"
