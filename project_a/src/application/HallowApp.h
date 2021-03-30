@@ -22,7 +22,6 @@ namespace Hallow {
         void run();
     private:
         std::string m_name = "Hallow App";
-        const int m_FIXED_TIME_STEP = 100;
 
         HallowWindow m_hallow_window;
         Time m_time;
