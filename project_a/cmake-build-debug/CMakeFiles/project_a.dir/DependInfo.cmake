@@ -6,8 +6,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/dev/vulkan/Hallow/project_a/src/WinMain.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/WinMain.cpp.obj"
   "C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/application/HallowApp.cpp.obj"
-  "C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowEngineDevice.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/device/HallowEngineDevice.cpp.obj"
+  "C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowDevice.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/device/HallowDevice.cpp.obj"
   "C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/pipeline/HallowPipeline.cpp.obj"
+  "C:/dev/vulkan/Hallow/project_a/src/engine/swap_chain/HallowSwapChain.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/swap_chain/HallowSwapChain.cpp.obj"
   "C:/dev/vulkan/Hallow/project_a/src/engine/time/Time.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/time/Time.cpp.obj"
   "C:/dev/vulkan/Hallow/project_a/src/engine/window/HallowWindow.cpp" "C:/dev/vulkan/Hallow/project_a/cmake-build-debug/CMakeFiles/project_a.dir/src/engine/window/HallowWindow.cpp.obj"
   )

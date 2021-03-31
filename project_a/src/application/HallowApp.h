@@ -7,10 +7,14 @@
 
 #include "engine/time/Time.h"
 #include "engine/window/HallowWindow.h"
+#include "engine/device/HallowDevice.h"
+#include "engine/swap_chain/HallowSwapChain.h"
 #include "engine/pipeline/HallowPipeline.h"
 #include "helpers/RootDir.h"
 
 #include <string>
+#include <memory>
+#include <vector>
 
 namespace Hallow {
     class HallowApp {
@@ -18,17 +22,36 @@ namespace Hallow {
         static constexpr int WIDTH = 1024;
         static constexpr int HEIGHT = 576;
 
+        HallowApp();
+        ~HallowApp();
+
         void run();
+
+        HallowApp(const HallowApp&) = delete;
+        HallowApp& operator=(const HallowApp&) = delete;
     private:
-        std::string m_name = "Hallow Engine";
+        const std::string m_name{"Hallow Engine"};
 
         Time m_time{};
         HallowWindow m_hallow_window{WIDTH, HEIGHT, m_name};
-        HallowPipeline m_hallow_pipeline{
-            ROOT_DIR"res/shaders/simple_shader.vert.spv",
-            ROOT_DIR"res/shaders/simple_shader.frag.spv"
-        };
+        HallowDevice m_hallow_device{m_hallow_window};
+        HallowSwapChain m_hallow_swap_chain{m_hallow_device, m_hallow_window.extent()};
+        std::unique_ptr<HallowPipeline> m_hallow_pipeline;
+        VkPipelineLayout m_pipeline_layout;
+        std::vector<VkCommandBuffer> m_command_buffers;
 
+        void createPipelineLayout();
+        void createPipeline();
+        void createCommandBuffers();
+        void drawFrame();
+
+        /*HallowPipeline m_hallow_pipeline{
+            m_hallow_device,
+            HallowPipeline::defaultPipelineConfig(WIDTH, HEIGHT),
+            "res/shaders/simple_shader"
+        };*/
+
+        // TODO: Move to lifetime events class
         void startPre();
         void start();
         void startPost();

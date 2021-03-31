@@ -50,48 +50,48 @@ The CXX compiler identification is MSVC, found in "C:/dev/vulkan/Hallow/project_
 Determining if the C compiler works passed with the following output:
 Change Dir: C:/dev/vulkan/Hallow/project_a/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_055d7\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_055d7.dir\build.make /nologo -L                  CMakeFiles\cmTC_055d7.dir\build
-Building C object CMakeFiles/cmTC_055d7.dir/testCCompiler.c.obj
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @C:\Users\galex\AppData\Local\Temp\nmA93D.tmp
+Run Build Command(s):nmake /nologo cmTC_aac5b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_aac5b.dir\build.make /nologo -L                  CMakeFiles\cmTC_aac5b.dir\build
+Building C object CMakeFiles/cmTC_aac5b.dir/testCCompiler.c.obj
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @C:\Users\galex\AppData\Local\Temp\nm9C95.tmp
 testCCompiler.c
-Linking C executable cmTC_055d7.exe
-	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_055d7.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_055d7.dir\objects1.rsp @C:\Users\galex\AppData\Local\Temp\nmA98B.tmp
+Linking C executable cmTC_aac5b.exe
+	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_aac5b.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_aac5b.dir\objects1.rsp @C:\Users\galex\AppData\Local\Temp\nm9CD4.tmp
 
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/dev/vulkan/Hallow/project_a/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_f33bc\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_f33bc.dir\build.make /nologo -L                  CMakeFiles\cmTC_f33bc.dir\build
-Building C object CMakeFiles/cmTC_f33bc.dir/CMakeCCompilerABI.c.obj
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @C:\Users\galex\AppData\Local\Temp\nmAAF1.tmp
+Run Build Command(s):nmake /nologo cmTC_b5b0f\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_b5b0f.dir\build.make /nologo -L                  CMakeFiles\cmTC_b5b0f.dir\build
+Building C object CMakeFiles/cmTC_b5b0f.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @C:\Users\galex\AppData\Local\Temp\nm9E4A.tmp
 CMakeCCompilerABI.c
-Linking C executable cmTC_f33bc.exe
-	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_f33bc.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_f33bc.dir\objects1.rsp @C:\Users\galex\AppData\Local\Temp\nmAB50.tmp
+Linking C executable cmTC_b5b0f.exe
+	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_b5b0f.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_b5b0f.dir\objects1.rsp @C:\Users\galex\AppData\Local\Temp\nm9E99.tmp
 
 
 
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/dev/vulkan/Hallow/project_a/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_bf6c5\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_bf6c5.dir\build.make /nologo -L                  CMakeFiles\cmTC_bf6c5.dir\build
-Building CXX object CMakeFiles/cmTC_bf6c5.dir/testCXXCompiler.cxx.obj
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @C:\Users\galex\AppData\Local\Temp\nmACC7.tmp
+Run Build Command(s):nmake /nologo cmTC_06052\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_06052.dir\build.make /nologo -L                  CMakeFiles\cmTC_06052.dir\build
+Building CXX object CMakeFiles/cmTC_06052.dir/testCXXCompiler.cxx.obj
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @C:\Users\galex\AppData\Local\Temp\nmA00F.tmp
 testCXXCompiler.cxx
-Linking CXX executable cmTC_bf6c5.exe
-	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_bf6c5.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_bf6c5.dir\objects1.rsp @C:\Users\galex\AppData\Local\Temp\nmAD16.tmp
+Linking CXX executable cmTC_06052.exe
+	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_06052.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_06052.dir\objects1.rsp @C:\Users\galex\AppData\Local\Temp\nmA06E.tmp
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/dev/vulkan/Hallow/project_a/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_9c25e\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_9c25e.dir\build.make /nologo -L                  CMakeFiles\cmTC_9c25e.dir\build
-Building CXX object CMakeFiles/cmTC_9c25e.dir/CMakeCXXCompilerABI.cpp.obj
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @C:\Users\galex\AppData\Local\Temp\nmAE6D.tmp
+Run Build Command(s):nmake /nologo cmTC_0b9eb\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX64\x64\nmake.exe"  -f CMakeFiles\cmTC_0b9eb.dir\build.make /nologo -L                  CMakeFiles\cmTC_0b9eb.dir\build
+Building CXX object CMakeFiles/cmTC_0b9eb.dir/CMakeCXXCompilerABI.cpp.obj
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @C:\Users\galex\AppData\Local\Temp\nmA203.tmp
 CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_9c25e.exe
-	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_9c25e.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_9c25e.dir\objects1.rsp @C:\Users\galex\AppData\Local\Temp\nmAECC.tmp
+Linking CXX executable cmTC_0b9eb.exe
+	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_0b9eb.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_0b9eb.dir\objects1.rsp @C:\Users\galex\AppData\Local\Temp\nmA262.tmp
 
 
 

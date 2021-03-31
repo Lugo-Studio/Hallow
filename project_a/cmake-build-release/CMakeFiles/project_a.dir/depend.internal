@@ -102,6 +102,7 @@ CMakeFiles/project_a.dir/src/engine/pipeline/HallowPipeline.cpp.obj
  C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp
  C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.h
  C:/lib/GLFW/glfw-3.3.3.bin.WIN64/include/GLFW/glfw3.h
+ src/helpers/RootDir.h
 CMakeFiles/project_a.dir/src/engine/time/Time.cpp.obj
  C:/VulkanSDK/1.2.170.0/Include/vulkan/vk_platform.h
  C:/VulkanSDK/1.2.170.0/Include/vulkan/vulkan.h

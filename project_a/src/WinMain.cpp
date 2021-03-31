@@ -35,6 +35,7 @@ int CALLBACK WinMain(
     return run();
 }
 #endif
+
 #ifdef MODE_DEBUG
 int main() {
     return run();

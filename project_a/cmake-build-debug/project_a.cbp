@@ -107,16 +107,22 @@
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowEngineDevice.cpp">
+		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowDevice.cpp">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowEngineDevice.h">
+		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowDevice.h">
 			<Option target="project_a"/>
 		</Unit>
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp">
 			<Option target="project_a"/>
 		</Unit>
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.h">
+			<Option target="project_a"/>
+		</Unit>
+		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/swap_chain/HallowSwapChain.cpp">
+			<Option target="project_a"/>
+		</Unit>
+		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/swap_chain/HallowSwapChain.h">
 			<Option target="project_a"/>
 		</Unit>
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/time/Stopwatch.h">

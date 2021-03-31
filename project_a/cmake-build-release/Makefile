@@ -181,32 +181,32 @@ src\application\HallowApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\application\HallowApp.cpp.s
 .PHONY : src\application\HallowApp.cpp.s
 
-src\engine\device\HallowEngineDevice.obj: src\engine\device\HallowEngineDevice.cpp.obj
+src\engine\device\HallowDevice.obj: src\engine\device\HallowDevice.cpp.obj
 
-.PHONY : src\engine\device\HallowEngineDevice.obj
+.PHONY : src\engine\device\HallowDevice.obj
 
 # target to build an object file
-src\engine\device\HallowEngineDevice.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj
-.PHONY : src\engine\device\HallowEngineDevice.cpp.obj
+src\engine\device\HallowDevice.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowDevice.cpp.obj
+.PHONY : src\engine\device\HallowDevice.cpp.obj
 
-src\engine\device\HallowEngineDevice.i: src\engine\device\HallowEngineDevice.cpp.i
+src\engine\device\HallowDevice.i: src\engine\device\HallowDevice.cpp.i
 
-.PHONY : src\engine\device\HallowEngineDevice.i
+.PHONY : src\engine\device\HallowDevice.i
 
 # target to preprocess a source file
-src\engine\device\HallowEngineDevice.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.i
-.PHONY : src\engine\device\HallowEngineDevice.cpp.i
+src\engine\device\HallowDevice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowDevice.cpp.i
+.PHONY : src\engine\device\HallowDevice.cpp.i
 
-src\engine\device\HallowEngineDevice.s: src\engine\device\HallowEngineDevice.cpp.s
+src\engine\device\HallowDevice.s: src\engine\device\HallowDevice.cpp.s
 
-.PHONY : src\engine\device\HallowEngineDevice.s
+.PHONY : src\engine\device\HallowDevice.s
 
 # target to generate assembly for a file
-src\engine\device\HallowEngineDevice.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.s
-.PHONY : src\engine\device\HallowEngineDevice.cpp.s
+src\engine\device\HallowDevice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\device\HallowDevice.cpp.s
+.PHONY : src\engine\device\HallowDevice.cpp.s
 
 src\engine\pipeline\HallowPipeline.obj: src\engine\pipeline\HallowPipeline.cpp.obj
 
@@ -234,6 +234,33 @@ src\engine\pipeline\HallowPipeline.s: src\engine\pipeline\HallowPipeline.cpp.s
 src\engine\pipeline\HallowPipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.s
 .PHONY : src\engine\pipeline\HallowPipeline.cpp.s
+
+src\engine\swap_chain\HallowSwapChain.obj: src\engine\swap_chain\HallowSwapChain.cpp.obj
+
+.PHONY : src\engine\swap_chain\HallowSwapChain.obj
+
+# target to build an object file
+src\engine\swap_chain\HallowSwapChain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj
+.PHONY : src\engine\swap_chain\HallowSwapChain.cpp.obj
+
+src\engine\swap_chain\HallowSwapChain.i: src\engine\swap_chain\HallowSwapChain.cpp.i
+
+.PHONY : src\engine\swap_chain\HallowSwapChain.i
+
+# target to preprocess a source file
+src\engine\swap_chain\HallowSwapChain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\swap_chain\HallowSwapChain.cpp.i
+.PHONY : src\engine\swap_chain\HallowSwapChain.cpp.i
+
+src\engine\swap_chain\HallowSwapChain.s: src\engine\swap_chain\HallowSwapChain.cpp.s
+
+.PHONY : src\engine\swap_chain\HallowSwapChain.s
+
+# target to generate assembly for a file
+src\engine\swap_chain\HallowSwapChain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\swap_chain\HallowSwapChain.cpp.s
+.PHONY : src\engine\swap_chain\HallowSwapChain.cpp.s
 
 src\engine\time\Time.obj: src\engine\time\Time.cpp.obj
 
@@ -304,12 +331,15 @@ help:
 	@echo ... src/application/HallowApp.obj
 	@echo ... src/application/HallowApp.i
 	@echo ... src/application/HallowApp.s
-	@echo ... src/engine/device/HallowEngineDevice.obj
-	@echo ... src/engine/device/HallowEngineDevice.i
-	@echo ... src/engine/device/HallowEngineDevice.s
+	@echo ... src/engine/device/HallowDevice.obj
+	@echo ... src/engine/device/HallowDevice.i
+	@echo ... src/engine/device/HallowDevice.s
 	@echo ... src/engine/pipeline/HallowPipeline.obj
 	@echo ... src/engine/pipeline/HallowPipeline.i
 	@echo ... src/engine/pipeline/HallowPipeline.s
+	@echo ... src/engine/swap_chain/HallowSwapChain.obj
+	@echo ... src/engine/swap_chain/HallowSwapChain.i
+	@echo ... src/engine/swap_chain/HallowSwapChain.s
 	@echo ... src/engine/time/Time.obj
 	@echo ... src/engine/time/Time.i
 	@echo ... src/engine/time/Time.s
