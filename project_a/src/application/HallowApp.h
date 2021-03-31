@@ -5,9 +5,9 @@
 #ifndef PROJECT_A_HALLOWAPP_H
 #define PROJECT_A_HALLOWAPP_H
 
-#include <engine/time/Time.h>
-#include <engine/window/HallowWindow.h>
-#include <engine/pipeline/HallowPipeline.h>
+#include "engine/time/Time.h"
+#include "engine/window/HallowWindow.h"
+#include "engine/pipeline/HallowPipeline.h"
 #include "helpers/RootDir.h"
 
 #include <string>

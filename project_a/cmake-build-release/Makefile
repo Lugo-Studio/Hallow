@@ -127,6 +127,33 @@ project_a\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\build
 .PHONY : project_a\fast
 
+src\WinMain.obj: src\WinMain.cpp.obj
+
+.PHONY : src\WinMain.obj
+
+# target to build an object file
+src\WinMain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\WinMain.cpp.obj
+.PHONY : src\WinMain.cpp.obj
+
+src\WinMain.i: src\WinMain.cpp.i
+
+.PHONY : src\WinMain.i
+
+# target to preprocess a source file
+src\WinMain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\WinMain.cpp.i
+.PHONY : src\WinMain.cpp.i
+
+src\WinMain.s: src\WinMain.cpp.s
+
+.PHONY : src\WinMain.s
+
+# target to generate assembly for a file
+src\WinMain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\WinMain.cpp.s
+.PHONY : src\WinMain.cpp.s
+
 src\application\HallowApp.obj: src\application\HallowApp.cpp.obj
 
 .PHONY : src\application\HallowApp.obj
@@ -262,33 +289,6 @@ src\engine\window\HallowWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.s
 .PHONY : src\engine\window\HallowWindow.cpp.s
 
-src\main.obj: src\main.cpp.obj
-
-.PHONY : src\main.obj
-
-# target to build an object file
-src\main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\main.cpp.obj
-.PHONY : src\main.cpp.obj
-
-src\main.i: src\main.cpp.i
-
-.PHONY : src\main.i
-
-# target to preprocess a source file
-src\main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\main.cpp.i
-.PHONY : src\main.cpp.i
-
-src\main.s: src\main.cpp.s
-
-.PHONY : src\main.s
-
-# target to generate assembly for a file
-src\main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_a.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\project_a.dir\src\main.cpp.s
-.PHONY : src\main.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -298,6 +298,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... project_a
+	@echo ... src/WinMain.obj
+	@echo ... src/WinMain.i
+	@echo ... src/WinMain.s
 	@echo ... src/application/HallowApp.obj
 	@echo ... src/application/HallowApp.i
 	@echo ... src/application/HallowApp.s
@@ -313,9 +316,6 @@ help:
 	@echo ... src/engine/window/HallowWindow.obj
 	@echo ... src/engine/window/HallowWindow.i
 	@echo ... src/engine/window/HallowWindow.s
-	@echo ... src/main.obj
-	@echo ... src/main.i
-	@echo ... src/main.s
 .PHONY : help
 
 

@@ -5,6 +5,8 @@
 #ifndef PROJECT_A_HALLOWPIPELINE_H
 #define PROJECT_A_HALLOWPIPELINE_H
 
+#include "engine/device/HallowEngineDevice.h"
+
 #include <string>
 #include <vector>
 

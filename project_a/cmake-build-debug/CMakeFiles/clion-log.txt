@@ -1,4 +1,5 @@
 C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\dev\vulkan\Hallow\project_a
+-- Cmake build type: Debug
 -- C:/VulkanSDK/1.2.170.0/Lib/vulkan-1.lib included at C:/VulkanSDK/1.2.170.0/Include
 -- GLM_INCLUDE_DIR = C:/lib/GLM/glm
 -- GLM included at C:/lib/GLM/glm

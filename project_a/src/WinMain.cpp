@@ -4,11 +4,15 @@
 
 #include "application/HallowApp.h"
 
+#ifdef MODE_RELEASE
+#include <windows.h>
+#endif
+
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
 
-int main() {
+int run() {
     Hallow::HallowApp app{};
 
     try {
@@ -20,3 +24,19 @@ int main() {
 
     return EXIT_SUCCESS;
 }
+
+#ifdef MODE_RELEASE
+int CALLBACK WinMain(
+        HINSTANCE hInstance,
+        HINSTANCE hPrevInstance,
+        LPSTR     lpCmdLine,
+        int       nCmdShow
+        ) {
+    return run();
+}
+#endif
+#ifdef MODE_DEBUG
+int main() {
+    return run();
+}
+#endif

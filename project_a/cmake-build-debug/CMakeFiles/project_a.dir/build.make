@@ -61,9 +61,28 @@ include CMakeFiles\project_a.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\project_a.dir\flags.make
 
+CMakeFiles\project_a.dir\src\WinMain.cpp.obj: CMakeFiles\project_a.dir\flags.make
+CMakeFiles\project_a.dir\src\WinMain.cpp.obj: ..\src\WinMain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project_a.dir/src/WinMain.cpp.obj"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\project_a.dir\src\WinMain.cpp.obj /FdCMakeFiles\project_a.dir\ /FS -c C:\dev\vulkan\Hallow\project_a\src\WinMain.cpp
+<<
+
+CMakeFiles\project_a.dir\src\WinMain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_a.dir/src/WinMain.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe > CMakeFiles\project_a.dir\src\WinMain.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\vulkan\Hallow\project_a\src\WinMain.cpp
+<<
+
+CMakeFiles\project_a.dir\src\WinMain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_a.dir/src/WinMain.cpp.s"
+	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\project_a.dir\src\WinMain.cpp.s /c C:\dev\vulkan\Hallow\project_a\src\WinMain.cpp
+<<
+
 CMakeFiles\project_a.dir\src\application\HallowApp.cpp.obj: CMakeFiles\project_a.dir\flags.make
 CMakeFiles\project_a.dir\src\application\HallowApp.cpp.obj: ..\src\application\HallowApp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project_a.dir/src/application/HallowApp.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project_a.dir/src/application/HallowApp.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\project_a.dir\src\application\HallowApp.cpp.obj /FdCMakeFiles\project_a.dir\ /FS -c C:\dev\vulkan\Hallow\project_a\src\application\HallowApp.cpp
 <<
@@ -82,7 +101,7 @@ CMakeFiles\project_a.dir\src\application\HallowApp.cpp.s: cmake_force
 
 CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: CMakeFiles\project_a.dir\flags.make
 CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj: ..\src\engine\device\HallowEngineDevice.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project_a.dir/src/engine/device/HallowEngineDevice.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project_a.dir/src/engine/device/HallowEngineDevice.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj /FdCMakeFiles\project_a.dir\ /FS -c C:\dev\vulkan\Hallow\project_a\src\engine\device\HallowEngineDevice.cpp
 <<
@@ -101,7 +120,7 @@ CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.s: cmake_force
 
 CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.obj: CMakeFiles\project_a.dir\flags.make
 CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.obj: ..\src\engine\pipeline\HallowPipeline.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project_a.dir/src/engine/pipeline/HallowPipeline.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project_a.dir/src/engine/pipeline/HallowPipeline.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.obj /FdCMakeFiles\project_a.dir\ /FS -c C:\dev\vulkan\Hallow\project_a\src\engine\pipeline\HallowPipeline.cpp
 <<
@@ -120,7 +139,7 @@ CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.s: cmake_force
 
 CMakeFiles\project_a.dir\src\engine\time\Time.cpp.obj: CMakeFiles\project_a.dir\flags.make
 CMakeFiles\project_a.dir\src\engine\time\Time.cpp.obj: ..\src\engine\time\Time.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project_a.dir/src/engine/time/Time.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project_a.dir/src/engine/time/Time.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\project_a.dir\src\engine\time\Time.cpp.obj /FdCMakeFiles\project_a.dir\ /FS -c C:\dev\vulkan\Hallow\project_a\src\engine\time\Time.cpp
 <<
@@ -139,7 +158,7 @@ CMakeFiles\project_a.dir\src\engine\time\Time.cpp.s: cmake_force
 
 CMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.obj: CMakeFiles\project_a.dir\flags.make
 CMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.obj: ..\src\engine\window\HallowWindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project_a.dir/src/engine/window/HallowWindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project_a.dir/src/engine/window/HallowWindow.cpp.obj"
 	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.obj /FdCMakeFiles\project_a.dir\ /FS -c C:\dev\vulkan\Hallow\project_a\src\engine\window\HallowWindow.cpp
 <<
@@ -156,43 +175,24 @@ CMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.s /c C:\dev\vulkan\Hallow\project_a\src\engine\window\HallowWindow.cpp
 <<
 
-CMakeFiles\project_a.dir\src\main.cpp.obj: CMakeFiles\project_a.dir\flags.make
-CMakeFiles\project_a.dir\src\main.cpp.obj: ..\src\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\vulkan\Hallow\project_a\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project_a.dir/src/main.cpp.obj"
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\project_a.dir\src\main.cpp.obj /FdCMakeFiles\project_a.dir\ /FS -c C:\dev\vulkan\Hallow\project_a\src\main.cpp
-<<
-
-CMakeFiles\project_a.dir\src\main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_a.dir/src/main.cpp.i"
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe > CMakeFiles\project_a.dir\src\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\vulkan\Hallow\project_a\src\main.cpp
-<<
-
-CMakeFiles\project_a.dir\src\main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_a.dir/src/main.cpp.s"
-	C:\PROGRA~2\MICROS~4\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\project_a.dir\src\main.cpp.s /c C:\dev\vulkan\Hallow\project_a\src\main.cpp
-<<
-
 # Object files for target project_a
 project_a_OBJECTS = \
+"CMakeFiles\project_a.dir\src\WinMain.cpp.obj" \
 "CMakeFiles\project_a.dir\src\application\HallowApp.cpp.obj" \
 "CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj" \
 "CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.obj" \
 "CMakeFiles\project_a.dir\src\engine\time\Time.cpp.obj" \
-"CMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.obj" \
-"CMakeFiles\project_a.dir\src\main.cpp.obj"
+"CMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.obj"
 
 # External object files for target project_a
 project_a_EXTERNAL_OBJECTS =
 
+project_a.exe: CMakeFiles\project_a.dir\src\WinMain.cpp.obj
 project_a.exe: CMakeFiles\project_a.dir\src\application\HallowApp.cpp.obj
 project_a.exe: CMakeFiles\project_a.dir\src\engine\device\HallowEngineDevice.cpp.obj
 project_a.exe: CMakeFiles\project_a.dir\src\engine\pipeline\HallowPipeline.cpp.obj
 project_a.exe: CMakeFiles\project_a.dir\src\engine\time\Time.cpp.obj
 project_a.exe: CMakeFiles\project_a.dir\src\engine\window\HallowWindow.cpp.obj
-project_a.exe: CMakeFiles\project_a.dir\src\main.cpp.obj
 project_a.exe: CMakeFiles\project_a.dir\build.make
 project_a.exe: C:\lib\GLFW\glfw-3.3.3.bin.WIN64\lib\glfw3.lib
 project_a.exe: C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib

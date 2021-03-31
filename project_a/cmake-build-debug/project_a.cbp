@@ -24,6 +24,7 @@
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
+					<Add option="-DMODE_DEBUG"/>
 					<Add directory="C:/dev/vulkan/Hallow/project_a/cmake-build-debug/src"/>
 					<Add directory="C:/dev/vulkan/Hallow/project_a/src"/>
 					<Add directory="C:/dev/vulkan/Hallow/project_a/include"/>
@@ -53,6 +54,7 @@
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
+					<Add option="-DMODE_DEBUG"/>
 					<Add directory="C:/dev/vulkan/Hallow/project_a/cmake-build-debug/src"/>
 					<Add directory="C:/dev/vulkan/Hallow/project_a/src"/>
 					<Add directory="C:/dev/vulkan/Hallow/project_a/include"/>
@@ -96,6 +98,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/WinMain.cpp">
+			<Option target="project_a"/>
+		</Unit>
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.cpp">
 			<Option target="project_a"/>
 		</Unit>
@@ -130,9 +135,6 @@
 			<Option target="project_a"/>
 		</Unit>
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/window/HallowWindow.h">
-			<Option target="project_a"/>
-		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/main.cpp">
 			<Option target="project_a"/>
 		</Unit>
 		<Unit filename="C:/dev/vulkan/Hallow/project_a/CMakeLists.txt">

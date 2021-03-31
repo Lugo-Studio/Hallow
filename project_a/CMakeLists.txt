@@ -19,8 +19,16 @@ link_directories(${CMAKE_SOURCE_DIR}/lib)
 configure_file(src/helpers/RootDir.h.in src/helpers/RootDir.h)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/src)
 
+# Hide console on release &
 # Define the executable
-add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
+message(STATUS "Cmake build type: ${CMAKE_BUILD_TYPE}")
+if (${CMAKE_BUILD_TYPE} STREQUAL Release)
+    add_compile_definitions(MODE_RELEASE)
+    add_executable(${PROJECT_NAME} WIN32 ${HEADER_FILES} ${SOURCE_FILES})
+else()
+    add_compile_definitions(MODE_DEBUG)
+    add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
+endif()
 
 # We need a CMAKE_DIR with some code to find external dependencies
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
@@ -48,14 +56,6 @@ include_directories(${INCLUDES})
 # Define the link libraries
 #link_directories(${LIBS})
 target_link_libraries(${PROJECT_NAME} ${LIBS})
-
-if (DEBUG_LEVEL)
-    add_definitions(-DDEBUG_LEVEL=${DEBUG_LEVEL})
-endif()
-
-if (${CMAKE_BUILD_TYPE} STREQUAL Release)
-    target_link_options(${PROJECT_NAME} PRIVATE -mwindows)
-endif()
 
 
 #[[# Symlink to res folder # http://qrikko.blogspot.com/2016/05/cmake-and-how-to-copy-resources-during.html
