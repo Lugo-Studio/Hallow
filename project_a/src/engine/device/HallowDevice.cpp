@@ -50,7 +50,7 @@ namespace Hallow {
 
 // class member functions
   HallowDevice::HallowDevice(HallowWindow& window)
-          : window{window} {
+          : m_hallow_window{window} {
     createInstance();
     setupDebugMessenger();
     createSurface();
@@ -60,19 +60,19 @@ namespace Hallow {
   }
 
   HallowDevice::~HallowDevice() {
-    vkDestroyCommandPool(device_, commandPool, nullptr);
-    vkDestroyDevice(device_, nullptr);
+    vkDestroyCommandPool(m_device, m_command_pool, nullptr);
+    vkDestroyDevice(m_device, nullptr);
 
-    if (enableValidationLayers) {
-      DestroyDebugUtilsMessengerEXT(instance, debugMessenger, nullptr);
+    if (ENABLE_VALIDATION_LAYERS) {
+      DestroyDebugUtilsMessengerEXT(m_instance, m_debug_messenger, nullptr);
     }
 
-    vkDestroySurfaceKHR(instance, surface_, nullptr);
-    vkDestroyInstance(instance, nullptr);
+    vkDestroySurfaceKHR(m_instance, m_surface, nullptr);
+    vkDestroyInstance(m_instance, nullptr);
   }
 
   void HallowDevice::createInstance() {
-    if (enableValidationLayers && !checkValidationLayerSupport()) {
+    if (ENABLE_VALIDATION_LAYERS && !checkValidationLayerSupport()) {
       throw std::runtime_error(
               "validation layers requested, but not available!");
     }
@@ -89,14 +89,14 @@ namespace Hallow {
     createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     createInfo.pApplicationInfo = &appInfo;
 
-    auto extensions = getRequiredExtensions();
+    auto extensions = requiredExtensions();
     createInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
     createInfo.ppEnabledExtensionNames = extensions.data();
 
     VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo;
-    if (enableValidationLayers) {
-      createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
-      createInfo.ppEnabledLayerNames = validationLayers.data();
+    if (ENABLE_VALIDATION_LAYERS) {
+      createInfo.enabledLayerCount = static_cast<uint32_t>(VALIDATION_LAYERS.size());
+      createInfo.ppEnabledLayerNames = VALIDATION_LAYERS.data();
 
       populateDebugMessengerCreateInfo(debugCreateInfo);
       createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*) &debugCreateInfo;
@@ -105,8 +105,8 @@ namespace Hallow {
       createInfo.pNext = nullptr;
     }
 
-    if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
-      throw std::runtime_error("failed to create instance!");
+    if (vkCreateInstance(&createInfo, nullptr, &m_instance) != VK_SUCCESS) {
+      throw std::runtime_error("failed to create m_instance!");
     }
 
     hasGflwRequiredInstanceExtensions();
@@ -114,36 +114,36 @@ namespace Hallow {
 
   void HallowDevice::pickPhysicalDevice() {
     uint32_t deviceCount = 0;
-    vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
+    vkEnumeratePhysicalDevices(m_instance, &deviceCount, nullptr);
     if (deviceCount == 0) {
       throw std::runtime_error(
               "failed to find GPUs with Vulkan support!");
     }
     std::cout << "Device count: " << deviceCount << std::endl;
     std::vector<VkPhysicalDevice> devices(deviceCount);
-    vkEnumeratePhysicalDevices(instance, &deviceCount, devices.data());
+    vkEnumeratePhysicalDevices(m_instance, &deviceCount, devices.data());
 
     for (const auto& device : devices) {
       if (isDeviceSuitable(device)) {
-        physicalDevice = device;
+        m_physical_device = device;
         break;
       }
     }
 
-    if (physicalDevice == VK_NULL_HANDLE) {
+    if (m_physical_device == VK_NULL_HANDLE) {
       throw std::runtime_error("failed to find a suitable GPU!");
     }
 
-    vkGetPhysicalDeviceProperties(physicalDevice, &properties);
-    std::cout << "physical device: " << properties.deviceName << std::endl;
+    vkGetPhysicalDeviceProperties(m_physical_device, &properties);
+    std::cout << "physical m_hallow_device: " << properties.deviceName << std::endl;
   }
 
   void HallowDevice::createLogicalDevice() {
-    QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
+    QueueFamilyIndices indices = findQueueFamilies(m_physical_device);
 
     std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
-    std::set<uint32_t> uniqueQueueFamilies = {indices.graphicsFamily,
-                                              indices.presentFamily};
+    std::set<uint32_t> uniqueQueueFamilies = {indices.graphics_family,
+                                              indices.present_family};
 
     float queuePriority = 1.0f;
     for (uint32_t queueFamily : uniqueQueueFamilies) {
@@ -165,25 +165,25 @@ namespace Hallow {
     createInfo.pQueueCreateInfos = queueCreateInfos.data();
 
     createInfo.pEnabledFeatures = &deviceFeatures;
-    createInfo.enabledExtensionCount = static_cast<uint32_t>(deviceExtensions.size());
-    createInfo.ppEnabledExtensionNames = deviceExtensions.data();
+    createInfo.enabledExtensionCount = static_cast<uint32_t>(DEVICE_EXTENSIONS.size());
+    createInfo.ppEnabledExtensionNames = DEVICE_EXTENSIONS.data();
 
-    // might not really be necessary anymore because device specific validation layers
+    // might not really be necessary anymore because m_hallow_device specific validation layers
     // have been deprecated
-    if (enableValidationLayers) {
-      createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
-      createInfo.ppEnabledLayerNames = validationLayers.data();
+    if (ENABLE_VALIDATION_LAYERS) {
+      createInfo.enabledLayerCount = static_cast<uint32_t>(VALIDATION_LAYERS.size());
+      createInfo.ppEnabledLayerNames = VALIDATION_LAYERS.data();
     } else {
       createInfo.enabledLayerCount = 0;
     }
 
-    if (vkCreateDevice(physicalDevice, &createInfo, nullptr, &device_) !=
+    if (vkCreateDevice(m_physical_device, &createInfo, nullptr, &m_device) !=
         VK_SUCCESS) {
-      throw std::runtime_error("failed to create logical device!");
+      throw std::runtime_error("failed to create logical m_hallow_device!");
     }
 
-    vkGetDeviceQueue(device_, indices.graphicsFamily, 0, &graphicsQueue_);
-    vkGetDeviceQueue(device_, indices.presentFamily, 0, &presentQueue_);
+    vkGetDeviceQueue(m_device, indices.graphics_family, 0, &m_graphics_queue);
+    vkGetDeviceQueue(m_device, indices.present_family, 0, &m_present_queue);
   }
 
   void HallowDevice::createCommandPool() {
@@ -191,19 +191,19 @@ namespace Hallow {
 
     VkCommandPoolCreateInfo poolInfo = {};
     poolInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
-    poolInfo.queueFamilyIndex = queueFamilyIndices.graphicsFamily;
+    poolInfo.queueFamilyIndex = queueFamilyIndices.graphics_family;
     poolInfo.flags =
             VK_COMMAND_POOL_CREATE_TRANSIENT_BIT |
             VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT;
 
-    if (vkCreateCommandPool(device_, &poolInfo, nullptr, &commandPool) !=
+    if (vkCreateCommandPool(m_device, &poolInfo, nullptr, &m_command_pool) !=
         VK_SUCCESS) {
       throw std::runtime_error("failed to create command pool!");
     }
   }
 
   void HallowDevice::createSurface() {
-    window.createWindowSurface(instance, &surface_);
+    m_hallow_window.createWindowSurface(m_instance, &m_surface);
   }
 
   bool HallowDevice::isDeviceSuitable(VkPhysicalDevice device) {
@@ -216,7 +216,7 @@ namespace Hallow {
       SwapChainSupportDetails swapChainSupport = querySwapChainSupport(
               device);
       swapChainAdequate = !swapChainSupport.formats.empty() &&
-                          !swapChainSupport.presentModes.empty();
+                          !swapChainSupport.present_modes.empty();
     }
 
     VkPhysicalDeviceFeatures supportedFeatures;
@@ -242,11 +242,11 @@ namespace Hallow {
   }
 
   void HallowDevice::setupDebugMessenger() {
-    if (!enableValidationLayers) return;
+    if (!ENABLE_VALIDATION_LAYERS) return;
     VkDebugUtilsMessengerCreateInfoEXT createInfo;
     populateDebugMessengerCreateInfo(createInfo);
-    if (CreateDebugUtilsMessengerEXT(instance, &createInfo, nullptr,
-                                     &debugMessenger) != VK_SUCCESS) {
+    if (CreateDebugUtilsMessengerEXT(m_instance, &createInfo, nullptr,
+                                     &m_debug_messenger) != VK_SUCCESS) {
       throw std::runtime_error("failed to set up debug messenger!");
     }
   }
@@ -258,7 +258,7 @@ namespace Hallow {
     std::vector<VkLayerProperties> availableLayers(layerCount);
     vkEnumerateInstanceLayerProperties(&layerCount, availableLayers.data());
 
-    for (const char* layerName : validationLayers) {
+    for (const char* layerName : VALIDATION_LAYERS) {
       bool layerFound = false;
 
       for (const auto& layerProperties : availableLayers) {
@@ -276,7 +276,7 @@ namespace Hallow {
     return true;
   }
 
-  std::vector<const char*> HallowDevice::getRequiredExtensions() {
+  std::vector<const char*> HallowDevice::requiredExtensions() {
     uint32_t glfwExtensionCount = 0;
     const char** glfwExtensions;
     glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
@@ -284,7 +284,7 @@ namespace Hallow {
     std::vector<const char*> extensions(glfwExtensions, glfwExtensions +
                                                         glfwExtensionCount);
 
-    if (enableValidationLayers) {
+    if (ENABLE_VALIDATION_LAYERS) {
       extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
     }
 
@@ -307,7 +307,7 @@ namespace Hallow {
     }
 
     std::cout << "required extensions:" << std::endl;
-    auto requiredExtensions = getRequiredExtensions();
+    auto requiredExtensions = requiredExtensions();
     for (const auto& required : requiredExtensions) {
       std::cout << "\t" << required << std::endl;
       if (available.find(required) == available.end()) {
@@ -328,8 +328,8 @@ namespace Hallow {
             &extensionCount,
             availableExtensions.data());
 
-    std::set<std::string> requiredExtensions(deviceExtensions.begin(),
-                                             deviceExtensions.end());
+    std::set<std::string> requiredExtensions(DEVICE_EXTENSIONS.begin(),
+                                             DEVICE_EXTENSIONS.end());
 
     for (const auto& extension : availableExtensions) {
       requiredExtensions.erase(extension.extensionName);
@@ -354,15 +354,15 @@ namespace Hallow {
     for (const auto& queueFamily : queueFamilies) {
       if (queueFamily.queueCount > 0 &&
           queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT) {
-        indices.graphicsFamily = i;
-        indices.graphicsFamilyHasValue = true;
+        indices.graphics_family = i;
+        indices.graphics_family_has_value = true;
       }
       VkBool32 presentSupport = false;
-      vkGetPhysicalDeviceSurfaceSupportKHR(device, i, surface_,
+      vkGetPhysicalDeviceSurfaceSupportKHR(device, i, m_surface,
                                            &presentSupport);
       if (queueFamily.queueCount > 0 && presentSupport) {
-        indices.presentFamily = i;
-        indices.presentFamilyHasValue = true;
+        indices.present_family = i;
+        indices.present_family_has_value = true;
       }
       if (indices.isComplete()) {
         break;
@@ -377,30 +377,30 @@ namespace Hallow {
   SwapChainSupportDetails
   HallowDevice::querySwapChainSupport(VkPhysicalDevice device) {
     SwapChainSupportDetails details;
-    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device, surface_,
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device, m_surface,
                                               &details.capabilities);
 
     uint32_t formatCount;
-    vkGetPhysicalDeviceSurfaceFormatsKHR(device, surface_, &formatCount,
+    vkGetPhysicalDeviceSurfaceFormatsKHR(device, m_surface, &formatCount,
                                          nullptr);
 
     if (formatCount != 0) {
       details.formats.resize(formatCount);
-      vkGetPhysicalDeviceSurfaceFormatsKHR(device, surface_, &formatCount,
+      vkGetPhysicalDeviceSurfaceFormatsKHR(device, m_surface, &formatCount,
                                            details.formats.data());
     }
 
     uint32_t presentModeCount;
-    vkGetPhysicalDeviceSurfacePresentModesKHR(device, surface_,
+    vkGetPhysicalDeviceSurfacePresentModesKHR(device, m_surface,
                                               &presentModeCount, nullptr);
 
     if (presentModeCount != 0) {
-      details.presentModes.resize(presentModeCount);
+      details.present_modes.resize(presentModeCount);
       vkGetPhysicalDeviceSurfacePresentModesKHR(
               device,
-              surface_,
+              m_surface,
               &presentModeCount,
-              details.presentModes.data());
+              details.present_modes.data());
     }
     return details;
   }
@@ -410,7 +410,7 @@ namespace Hallow {
           VkFormatFeatureFlags features) {
     for (VkFormat format : candidates) {
       VkFormatProperties props;
-      vkGetPhysicalDeviceFormatProperties(physicalDevice, format, &props);
+      vkGetPhysicalDeviceFormatProperties(m_physical_device, format, &props);
 
       if (tiling == VK_IMAGE_TILING_LINEAR &&
           (props.linearTilingFeatures & features) == features) {
@@ -427,7 +427,7 @@ namespace Hallow {
   uint32_t HallowDevice::findMemoryType(uint32_t typeFilter,
                                         VkMemoryPropertyFlags properties) {
     VkPhysicalDeviceMemoryProperties memProperties;
-    vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memProperties);
+    vkGetPhysicalDeviceMemoryProperties(m_physical_device, &memProperties);
     for (uint32_t i = 0; i < memProperties.memoryTypeCount; i++) {
       if ((typeFilter & (1 << i)) &&
           (memProperties.memoryTypes[i].propertyFlags & properties) ==
@@ -451,13 +451,13 @@ namespace Hallow {
     bufferInfo.usage = usage;
     bufferInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
 
-    if (vkCreateBuffer(device_, &bufferInfo, nullptr, &buffer) !=
+    if (vkCreateBuffer(m_device, &bufferInfo, nullptr, &buffer) !=
         VK_SUCCESS) {
       throw std::runtime_error("failed to create vertex buffer!");
     }
 
     VkMemoryRequirements memRequirements;
-    vkGetBufferMemoryRequirements(device_, buffer, &memRequirements);
+    vkGetBufferMemoryRequirements(m_device, buffer, &memRequirements);
 
     VkMemoryAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
@@ -465,24 +465,24 @@ namespace Hallow {
     allocInfo.memoryTypeIndex = findMemoryType(
             memRequirements.memoryTypeBits, properties);
 
-    if (vkAllocateMemory(device_, &allocInfo, nullptr, &bufferMemory) !=
+    if (vkAllocateMemory(m_device, &allocInfo, nullptr, &bufferMemory) !=
         VK_SUCCESS) {
       throw std::runtime_error(
               "failed to allocate vertex buffer memory!");
     }
 
-    vkBindBufferMemory(device_, buffer, bufferMemory, 0);
+    vkBindBufferMemory(m_device, buffer, bufferMemory, 0);
   }
 
   VkCommandBuffer HallowDevice::beginSingleTimeCommands() {
     VkCommandBufferAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
     allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-    allocInfo.commandPool = commandPool;
+    allocInfo.commandPool = m_command_pool;
     allocInfo.commandBufferCount = 1;
 
     VkCommandBuffer commandBuffer;
-    vkAllocateCommandBuffers(device_, &allocInfo, &commandBuffer);
+    vkAllocateCommandBuffers(m_device, &allocInfo, &commandBuffer);
 
     VkCommandBufferBeginInfo beginInfo{};
     beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
@@ -500,10 +500,10 @@ namespace Hallow {
     submitInfo.commandBufferCount = 1;
     submitInfo.pCommandBuffers = &commandBuffer;
 
-    vkQueueSubmit(graphicsQueue_, 1, &submitInfo, VK_NULL_HANDLE);
-    vkQueueWaitIdle(graphicsQueue_);
+    vkQueueSubmit(m_graphics_queue, 1, &submitInfo, VK_NULL_HANDLE);
+    vkQueueWaitIdle(m_graphics_queue);
 
-    vkFreeCommandBuffers(device_, commandPool, 1, &commandBuffer);
+    vkFreeCommandBuffers(m_device, m_command_pool, 1, &commandBuffer);
   }
 
   void HallowDevice::copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer,
@@ -552,12 +552,12 @@ namespace Hallow {
           VkMemoryPropertyFlags properties,
           VkImage& image,
           VkDeviceMemory& imageMemory) {
-    if (vkCreateImage(device_, &imageInfo, nullptr, &image) != VK_SUCCESS) {
+    if (vkCreateImage(m_device, &imageInfo, nullptr, &image) != VK_SUCCESS) {
       throw std::runtime_error("failed to create image!");
     }
 
     VkMemoryRequirements memRequirements;
-    vkGetImageMemoryRequirements(device_, image, &memRequirements);
+    vkGetImageMemoryRequirements(m_device, image, &memRequirements);
 
     VkMemoryAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
@@ -565,12 +565,12 @@ namespace Hallow {
     allocInfo.memoryTypeIndex = findMemoryType(
             memRequirements.memoryTypeBits, properties);
 
-    if (vkAllocateMemory(device_, &allocInfo, nullptr, &imageMemory) !=
+    if (vkAllocateMemory(m_device, &allocInfo, nullptr, &imageMemory) !=
         VK_SUCCESS) {
       throw std::runtime_error("failed to allocate image memory!");
     }
 
-    if (vkBindImageMemory(device_, image, imageMemory, 0) != VK_SUCCESS) {
+    if (vkBindImageMemory(m_device, image, imageMemory, 0) != VK_SUCCESS) {
       throw std::runtime_error("failed to bind image memory!");
     }
   }

@@ -14,21 +14,21 @@
 
 namespace Hallow {
   struct PipelineConfigInfo {
-    PipelineConfigInfo(const PipelineConfigInfo&) = delete;
-    PipelineConfigInfo& operator=(const PipelineConfigInfo&) = delete;
-
     VkViewport viewport;
     VkRect2D scissor;
-    VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
-    VkPipelineViewportStateCreateInfo viewportInfo;
-    VkPipelineRasterizationStateCreateInfo rasterizationInfo;
-    VkPipelineMultisampleStateCreateInfo multisampleInfo;
-    VkPipelineColorBlendAttachmentState colorBlendAttachment;
-    VkPipelineColorBlendStateCreateInfo colorBlendInfo;
-    VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
-    VkPipelineLayout pipelineLayout = (VkPipelineLayout) nullptr;
-    VkRenderPass renderPass = (VkRenderPass) nullptr;
+    VkPipelineInputAssemblyStateCreateInfo input_assembly_info;
+    VkPipelineViewportStateCreateInfo viewport_info;
+    VkPipelineRasterizationStateCreateInfo rasterization_info;
+    VkPipelineMultisampleStateCreateInfo multisample_info;
+    VkPipelineColorBlendAttachmentState color_blend_attachment_state;
+    VkPipelineColorBlendStateCreateInfo color_blend_info;
+    VkPipelineDepthStencilStateCreateInfo depth_stencil_info;
+    VkPipelineLayout pipeline_layout = (VkPipelineLayout) nullptr;
+    VkRenderPass render_pass = (VkRenderPass) nullptr;
     uint32_t subpass = 0;
+
+    PipelineConfigInfo(const PipelineConfigInfo&) = delete;
+    PipelineConfigInfo& operator=(const PipelineConfigInfo&) = delete;
   };
 
   class HallowPipeline {
@@ -39,26 +39,20 @@ namespace Hallow {
             : m_device{device} {
       init(device,
            pipelineConfigInfo,
-              /*ROOT_DIR + */shaderFilePath + ".vert.spv",
-              /*ROOT_DIR + */shaderFilePath + ".frag.spv");
+           shaderFilePath + ".vert.spv",
+           shaderFilePath + ".frag.spv");
     }
-
     HallowPipeline(HallowDevice& device,
                    const PipelineConfigInfo& pipelineConfigInfo,
                    const std::string& vertFilePath,
                    const std::string& fragFilePath)
             : m_device{device} {
-      init(device,
-           pipelineConfigInfo,
-              /*ROOT_DIR + */vertFilePath,
-              /*ROOT_DIR + */fragFilePath);
+      init(device, pipelineConfigInfo, vertFilePath, fragFilePath);
     }
-
     ~HallowPipeline();
 
-    static void
-    defaultPipelineConfig(PipelineConfigInfo& pipelineConfigInfo,
-                          uint32_t width, uint32_t height);
+    static void defaultPipelineConfig(PipelineConfigInfo& pipelineConfigInfo,
+                                      uint32_t width, uint32_t height);
     void bind(VkCommandBuffer commandBuffer);
 
     HallowPipeline(const HallowPipeline&) = delete;
@@ -77,10 +71,9 @@ namespace Hallow {
 
     static std::vector<char> readFile(const std::string& filePath);
 
-    void
-    createGraphicsPipeline(const PipelineConfigInfo& pipelineConfigInfo,
-                           const std::string& vertFilePath,
-                           const std::string& fragFilePath);
+    void createGraphicsPipeline(const PipelineConfigInfo& pipelineConfigInfo,
+                                const std::string& vertFilePath,
+                                const std::string& fragFilePath);
 
     void createShaderModule(const std::vector<char>& shaderCode,
                             VkShaderModule* shaderModule);

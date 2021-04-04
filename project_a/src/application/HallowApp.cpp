@@ -19,7 +19,8 @@ namespace Hallow {
   }
 
   HallowApp::~HallowApp() {
-    vkDestroyPipelineLayout(m_hallow_device.device(), m_pipeline_layout,
+    vkDestroyPipelineLayout(m_hallow_device.device(),
+                            m_pipeline_layout,
                             nullptr);
 
   }
@@ -76,8 +77,8 @@ namespace Hallow {
             m_hallow_swap_chain.height());
 
     // render pass describes the structure and format of frame buffer objects and their attachments
-    pipelineConfig.renderPass = m_hallow_swap_chain.getRenderPass();
-    pipelineConfig.pipelineLayout = m_pipeline_layout;
+    pipelineConfig.render_pass = m_hallow_swap_chain.renderPass();
+    pipelineConfig.pipeline_layout = m_pipeline_layout;
 
     m_hallow_pipeline = std::make_unique<HallowPipeline>(m_hallow_device,
                                                          pipelineConfig,
@@ -90,7 +91,7 @@ namespace Hallow {
     VkCommandBufferAllocateInfo allocateInfo{};
     allocateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
     allocateInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-    allocateInfo.commandPool = m_hallow_device.getCommandPool();
+    allocateInfo.commandPool = m_hallow_device.m_command_pool();
     allocateInfo.commandBufferCount = static_cast<uint32_t>(m_command_buffers.size());
 
     if (vkAllocateCommandBuffers(m_hallow_device.device(), &allocateInfo,
@@ -111,11 +112,11 @@ namespace Hallow {
 
       VkRenderPassBeginInfo renderPassInfo{};
       renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-      renderPassInfo.renderPass = m_hallow_swap_chain.getRenderPass();
-      renderPassInfo.framebuffer = m_hallow_swap_chain.getFrameBuffer(i);
+      renderPassInfo.renderPass = m_hallow_swap_chain.renderPass();
+      renderPassInfo.framebuffer = m_hallow_swap_chain.frameBuffer(i);
 
       renderPassInfo.renderArea.offset = {0, 0};
-      renderPassInfo.renderArea.extent = m_hallow_swap_chain.getSwapChainExtent();
+      renderPassInfo.renderArea.extent = m_hallow_swap_chain.swapChainExtent();
 
       Color backgroundColor{0x2E3440FF};
       std::array<VkClearValue, 2> clearValues{};

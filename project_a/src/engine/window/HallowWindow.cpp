@@ -10,8 +10,7 @@
 namespace Hallow {
 
   HallowWindow::HallowWindow(int width, int height, std::string name)
-          : m_width(width), m_height(height), m_name(std::move(name)),
-            m_glfw_window(nullptr) {
+          : m_width(width), m_height(height), m_name(std::move(name)), m_glfw_window(nullptr) {
     initWindow();
   }
 
@@ -36,7 +35,7 @@ namespace Hallow {
     if (glfwCreateWindowSurface(instance, m_glfw_window, nullptr,
                                 surface) != VK_SUCCESS) {
       throw std::runtime_error(
-              "GLFW Error: Failed to create window surface!");
+              "GLFW Error: Failed to create m_hallow_window surface!");
     }
   }
 }
