@@ -11,10 +11,10 @@
 #include <iostream>
 #include <iomanip>
 
+
 namespace Hallow {
 
-    class Stopwatch
-    {
+    class Stopwatch {
     public:
         using Clock = std::chrono::steady_clock;
         // duration TYPES
@@ -25,7 +25,8 @@ namespace Hallow {
         using Minutes = std::chrono::duration<double, std::ratio<60>>;
         using Hours = std::chrono::duration<double, std::ratio<3600>>;
 
-        Stopwatch() : m_start(Clock::now()) { }
+        Stopwatch()
+                : m_start(Clock::now()) {}
 
         void reset() {
             m_start = Clock::now();
@@ -33,19 +34,26 @@ namespace Hallow {
 
         template<typename T>
         double timeElapsed() const {
-            return std::chrono::duration_cast<T>(Clock::now() - m_start).count();
+            return std::chrono::duration_cast<T>(
+                    Clock::now() - m_start).count();
         }
 
         double hours() const { return timeElapsed<Hours>(); }
+
         double minutes() const { return timeElapsed<Minutes>(); }
+
         double seconds() const { return timeElapsed<Seconds>(); }
+
         double milliseconds() const { return timeElapsed<Milliseconds>(); }
+
         double microseconds() const { return timeElapsed<Microseconds>(); }
+
         double nanoseconds() const { return timeElapsed<Nanoseconds>(); }
 
         // Friends
-        friend std::ostream& operator<<(std::ostream& output, const Stopwatch& interval) {
-             interval.display(output);
+        friend std::ostream&
+        operator<<(std::ostream& output, const Stopwatch& interval) {
+            interval.display(output);
             return output;
         }
 

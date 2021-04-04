@@ -10,6 +10,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Users/galex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/bin/cmake/win/share/cmake-3.17/Modules/CMakeCInformation.cmake"
   "C:/Users/galex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/bin/cmake/win/share/cmake-3.17/Modules/CMakeCXXInformation.cmake"
   "C:/Users/galex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/bin/cmake/win/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake"
+  "C:/Users/galex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/bin/cmake/win/share/cmake-3.17/Modules/CMakeDependentOption.cmake"
   "C:/Users/galex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/bin/cmake/win/share/cmake-3.17/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "C:/Users/galex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/bin/cmake/win/share/cmake-3.17/Modules/CMakeFindCodeBlocks.cmake"
   "C:/Users/galex/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/bin/cmake/win/share/cmake-3.17/Modules/CMakeGenericSystem.cmake"
@@ -35,9 +36,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.17.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.5/CMakeRCCompiler.cmake"
   "CMakeFiles/3.17.5/CMakeSystem.cmake"
-  "../cmake/FindGLFW3.cmake"
-  "../cmake/FindGLM.cmake"
   "../src/helpers/RootDir.h.in"
+  "C:/dev/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake"
+  "C:/dev/vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake"
+  "C:/dev/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake"
+  "C:/dev/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake"
+  "C:/dev/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake"
+  "C:/dev/vcpkg/installed/x64-windows/share/glm/glm-config.cmake"
+  "C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake"
   )
 
 # The corresponding makefile is:

@@ -24,11 +24,13 @@ namespace Hallow {
 
         void operator=(const HallowSwapChain&) = delete;
 
-        VkFramebuffer getFrameBuffer(int index) { return swapChainFramebuffers[index]; }
+        VkFramebuffer
+        getFrameBuffer(int index) { return swapChainFramebuffers[index]; }
 
         VkRenderPass getRenderPass() { return renderPass; }
 
-        VkImageView getImageView(int index) { return swapChainImageViews[index]; }
+        VkImageView
+        getImageView(int index) { return swapChainImageViews[index]; }
 
         size_t imageCount() { return swapChainImages.size(); }
 
@@ -41,14 +43,16 @@ namespace Hallow {
         uint32_t height() { return swapChainExtent.height; }
 
         float extentAspectRatio() {
-            return static_cast<float>(swapChainExtent.width) / static_cast<float>(swapChainExtent.height);
+            return static_cast<float>(swapChainExtent.width) /
+                   static_cast<float>(swapChainExtent.height);
         }
 
         VkFormat findDepthFormat();
 
         VkResult acquireNextImage(uint32_t* imageIndex);
 
-        VkResult submitCommandBuffers(const VkCommandBuffer* buffers, uint32_t* imageIndex);
+        VkResult submitCommandBuffers(const VkCommandBuffer* buffers,
+                                      uint32_t* imageIndex);
 
     private:
         void createSwapChain();
@@ -69,9 +73,10 @@ namespace Hallow {
 
         VkPresentModeKHR chooseSwapPresentMode(
                 const std::vector<VkPresentModeKHR>& availablePresentModes,
-                VkPresentModeKHR preferredMode = VK_PRESENT_MODE_IMMEDIATE_KHR);
+                VkPresentModeKHR preferredMode);
 
-        VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
+        VkExtent2D
+        chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
 
         VkFormat swapChainImageFormat;
         VkExtent2D swapChainExtent;
@@ -90,7 +95,8 @@ namespace Hallow {
 
         VkSwapchainKHR swapChain;
 
-        VkPresentModeKHR m_present_mode{VK_PRESENT_MODE_IMMEDIATE_KHR};
+        VkPresentModeKHR m_preferred_present_mode{
+                VK_PRESENT_MODE_IMMEDIATE_KHR};
 
         std::vector<VkSemaphore> imageAvailableSemaphores;
         std::vector<VkSemaphore> renderFinishedSemaphores;

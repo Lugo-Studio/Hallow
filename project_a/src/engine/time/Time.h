@@ -11,6 +11,7 @@
 #include <GLFW/glfw3.h>
 #include <chrono>
 
+
 namespace Hallow {
     class Time {
         // duration TYPES
@@ -28,7 +29,9 @@ namespace Hallow {
         void tick();
 
         TimePoint game() const { return m_game_current; }
+
         TimePoint delta() const { return m_delta; }
+
         TimePoint frame() const { return m_frame; }
 
         void printOnInterval(double seconds) {
@@ -38,10 +41,12 @@ namespace Hallow {
             }
         }
 
-        friend std::ostream& operator<<(std::ostream& output, const Time& time) {
+        friend std::ostream&
+        operator<<(std::ostream& output, const Time& time) {
             time.display(output);
             return output;
         }
+
     private:
         TimePoint m_game_last{};
         TimePoint m_game_current{glfwGetTime()};
@@ -52,7 +57,7 @@ namespace Hallow {
         Stopwatch m_print_interval{};
 
         void display(std::ostream& output) const {
-            output << "FPS: " << (int)(1.0 / m_frame.seconds()) << "\n"
+            output << "FPS: " << (int) (1.0 / m_frame.seconds()) << "\n"
                    << "Frametime: " << m_frame.seconds() << " s\n"
                    << "Deltatime: " << m_delta.seconds() << " s\n"
                    << "Lasttime: " << m_game_last.seconds() << " s\n"

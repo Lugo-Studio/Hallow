@@ -5,32 +5,32 @@
 		<Option title="project_a"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="msvc8"/>
-		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\helpers\;CMake Files\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\vcpkg\;CMake Files\..\..\..\..\vcpkg\scripts\;CMake Files\..\..\..\..\vcpkg\scripts\buildsystems\;CMake Files\..\..\..\..\vcpkg\installed\;CMake Files\..\..\..\..\vcpkg\installed\x64-windows\;CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\;CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\glm\;CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\glfw3\;CMake Files\src\;CMake Files\src\helpers\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/dev/vulkan/Hallow/project_a/cmake-build-debug"/>
+				<Option working_dir="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project_a">
-				<Option output="C:/dev/vulkan/Hallow/project_a/cmake-build-debug/project_a.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/dev/vulkan/Hallow/project_a/cmake-build-debug"/>
+				<Option output="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug/project_a.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add option="-DMODE_DEBUG"/>
-					<Add directory="C:/dev/vulkan/Hallow/project_a/cmake-build-debug/src"/>
-					<Add directory="C:/dev/vulkan/Hallow/project_a/src"/>
-					<Add directory="C:/dev/vulkan/Hallow/project_a/include"/>
-					<Add directory="C:/lib/GLFW/glfw-3.3.3.bin.WIN64/include"/>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug/src"/>
+					<Add directory="C:/dev/projects/vulkan/Hallow/project_a/src"/>
+					<Add directory="C:/dev/projects/vulkan/Hallow/project_a/include"/>
 					<Add directory="C:/VulkanSDK/1.2.170.0/Include"/>
-					<Add directory="C:/lib/GLM/glm"/>
+					<Add directory="C:/dev/vcpkg/installed/x64-windows/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
@@ -41,26 +41,26 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 project_a"/>
-					<CompileFile command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 project_a"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project_a/fast">
-				<Option output="C:/dev/vulkan/Hallow/project_a/cmake-build-debug/project_a.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/dev/vulkan/Hallow/project_a/cmake-build-debug"/>
+				<Option output="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug/project_a.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add option="-DMODE_DEBUG"/>
-					<Add directory="C:/dev/vulkan/Hallow/project_a/cmake-build-debug/src"/>
-					<Add directory="C:/dev/vulkan/Hallow/project_a/src"/>
-					<Add directory="C:/dev/vulkan/Hallow/project_a/include"/>
-					<Add directory="C:/lib/GLFW/glfw-3.3.3.bin.WIN64/include"/>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug/src"/>
+					<Add directory="C:/dev/projects/vulkan/Hallow/project_a/src"/>
+					<Add directory="C:/dev/projects/vulkan/Hallow/project_a/include"/>
 					<Add directory="C:/VulkanSDK/1.2.170.0/Include"/>
-					<Add directory="C:/lib/GLM/glm"/>
+					<Add directory="C:/dev/vcpkg/installed/x64-windows/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
@@ -71,89 +71,107 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 project_a/fast"/>
-					<CompileFile command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 project_a/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/dev/vulkan/Hallow/project_a/cmake-build-debug"/>
+				<Option working_dir="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/dev/vulkan/Hallow/project_a/cmake-build-debug"/>
+				<Option working_dir="C:/dev/projects/vulkan/Hallow/project_a/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\dev\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\dev\projects\vulkan\Hallow\project_a\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/WinMain.cpp">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/WinMain.cpp">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.cpp">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/application/HallowApp.cpp">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/application/HallowApp.h">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/application/HallowApp.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowDevice.cpp">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/color/HallowColor.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/device/HallowDevice.h">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/device/HallowDevice.cpp">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/device/HallowDevice.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.h">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.cpp">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/swap_chain/HallowSwapChain.cpp">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/pipeline/HallowPipeline.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/swap_chain/HallowSwapChain.h">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/swap_chain/HallowSwapChain.cpp">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/time/Stopwatch.h">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/swap_chain/HallowSwapChain.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/time/Time.cpp">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/time/Stopwatch.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/time/Time.h">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/time/Time.cpp">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/time/TimePoint.h">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/time/Time.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/window/HallowWindow.cpp">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/time/TimePoint.h">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/engine/window/HallowWindow.h">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/window/HallowWindow.cpp">
 			<Option target="project_a"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/CMakeLists.txt">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/engine/window/HallowWindow.h">
+			<Option target="project_a"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/src/helpers/RootDir.h.in">
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/../../../../vcpkg/scripts/buildsystems/vcpkg.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\vcpkg\scripts\buildsystems\"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/../../../../vcpkg/installed/x64-windows/share/glm/glm-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\glm\"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/../../../../vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/../../../../vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/../../../../vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/../../../../vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/../../../../vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/vulkan/Hallow/project_a/src/helpers/RootDir.h.in">
 			<Option virtualFolder="CMake Files\src\helpers\"/>
-		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/cmake/FindGLFW3.cmake">
-			<Option virtualFolder="CMake Files\cmake\"/>
-		</Unit>
-		<Unit filename="C:/dev/vulkan/Hallow/project_a/cmake/FindGLM.cmake">
-			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

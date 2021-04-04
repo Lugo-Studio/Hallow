@@ -1,7 +1,6 @@
 #version 450
-
-layout (location = 0) out vec4 out_Color;
+layout(location = 0) out vec4 diffuseColor;
 
 void main() {
-    out_Color = vec4(1.0, 0.2, 0.9, 1.0);
+    diffuseColor = vec4(1.0, 0.2, 0.9, 1.0);
 }

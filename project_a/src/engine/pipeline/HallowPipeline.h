@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 
+
 namespace Hallow {
     struct PipelineConfigInfo {
         PipelineConfigInfo(const PipelineConfigInfo&) = delete;
@@ -25,8 +26,8 @@ namespace Hallow {
         VkPipelineColorBlendAttachmentState colorBlendAttachment;
         VkPipelineColorBlendStateCreateInfo colorBlendInfo;
         VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
-        VkPipelineLayout pipelineLayout = nullptr;
-        VkRenderPass renderPass = nullptr;
+        VkPipelineLayout pipelineLayout = (VkPipelineLayout) nullptr;
+        VkRenderPass renderPass = (VkRenderPass) nullptr;
         uint32_t subpass = 0;
     };
 
@@ -38,8 +39,8 @@ namespace Hallow {
                 : m_device{device} {
             init(device,
                  pipelineConfigInfo,
-                 ROOT_DIR + shaderFilePath + ".vert.spv",
-                 ROOT_DIR + shaderFilePath + ".frag.spv");
+                    /*ROOT_DIR + */shaderFilePath + ".vert.spv",
+                    /*ROOT_DIR + */shaderFilePath + ".frag.spv");
         }
 
         HallowPipeline(HallowDevice& device,
@@ -49,13 +50,16 @@ namespace Hallow {
                 : m_device{device} {
             init(device,
                  pipelineConfigInfo,
-                 ROOT_DIR + vertFilePath,
-                 ROOT_DIR + fragFilePath);
+                    /*ROOT_DIR + */vertFilePath,
+                    /*ROOT_DIR + */fragFilePath);
         }
 
         ~HallowPipeline();
 
-        static void defaultPipelineConfig(PipelineConfigInfo &pipelineConfigInfo, uint32_t width, uint32_t height);
+        static void
+        defaultPipelineConfig(PipelineConfigInfo& pipelineConfigInfo,
+                              uint32_t width, uint32_t height);
+        void bind(VkCommandBuffer commandBuffer);
 
         HallowPipeline(const HallowPipeline&) = delete;
         HallowPipeline& operator=(const HallowPipeline&) = delete;
@@ -73,11 +77,13 @@ namespace Hallow {
 
         static std::vector<char> readFile(const std::string& filePath);
 
-        void createGraphicsPipeline(const PipelineConfigInfo& pipelineConfigInfo,
-                                    const std::string& vertFilePath,
-                                    const std::string& fragFilePath);
+        void
+        createGraphicsPipeline(const PipelineConfigInfo& pipelineConfigInfo,
+                               const std::string& vertFilePath,
+                               const std::string& fragFilePath);
 
-        void createShaderModule(const std::vector<char>& shaderCode, VkShaderModule* shaderModule);
+        void createShaderModule(const std::vector<char>& shaderCode,
+                                VkShaderModule* shaderModule);
     };
 }
 

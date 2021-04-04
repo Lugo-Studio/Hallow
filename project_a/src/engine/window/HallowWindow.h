@@ -5,8 +5,8 @@
 #ifndef PROJECT_A_HALLOWWINDOW_H
 #define PROJECT_A_HALLOWWINDOW_H
 
+#define GLFW_INCLUDE_VULKAN
 
-//#define GLFW_INCLUDE_VULKAN
 #include <vulkan/vulkan.h>
 #include <GLFW/glfw3.h>
 
@@ -14,14 +14,19 @@
 #include <utility>
 #include <memory>
 
+
 namespace Hallow {
     class HallowWindow {
     public:
         HallowWindow(int width, int height, std::string name);
         ~HallowWindow();
 
-        bool shouldClose() {  return glfwWindowShouldClose(m_glfw_window); }
-        VkExtent2D extent() { return {static_cast<uint32_t>(m_width), static_cast<uint32_t>(m_height)}; }
+        bool shouldClose() { return glfwWindowShouldClose(m_glfw_window); }
+
+        VkExtent2D extent() {
+            return {static_cast<uint32_t>(m_width),
+                    static_cast<uint32_t>(m_height)};
+        }
 
         void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 

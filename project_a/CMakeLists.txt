@@ -1,34 +1,61 @@
 cmake_minimum_required(VERSION 3.17)
 set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_CXX_COMPILER x86_64-w64-mingw32)
+#set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+
 project(project_a)
+
+# Directories
+set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
+set(LIB_DIR "${CMAKE_SOURCE_DIR}/lib")
+set(INCL_DIR "${CMAKE_SOURCE_DIR}/include")
+set(RES_DIR "${CMAKE_SOURCE_DIR}/res")
 
 # Add source files
 file(GLOB_RECURSE SOURCE_FILES
-        ${CMAKE_SOURCE_DIR}/src/*.c
-        ${CMAKE_SOURCE_DIR}/src/*.cpp)
+        ${SRC_DIR}/*.c
+        ${SRC_DIR}/*.cpp)
 
 # Add header files
 file(GLOB_RECURSE HEADER_FILES
-        ${CMAKE_SOURCE_DIR}/src/*.h
-        ${CMAKE_SOURCE_DIR}/src/*.hpp)
+        ${SRC_DIR}/*.h
+        ${SRC_DIR}/*.hpp)
 
-# Add .lib files
-link_directories(${CMAKE_SOURCE_DIR}/lib)
+# Add shader files
+file(GLOB_RECURSE VERT_SHADER_FILES RELATIVE ${CMAKE_SOURCE_DIR}
+        ${RES_DIR}/*.vert)
+message("Vert shaders found: ${VERT_SHADER_FILES}")
+file(GLOB_RECURSE FRAG_SHADER_FILES RELATIVE ${CMAKE_SOURCE_DIR}
+        ${RES_DIR}/*.frag)
+message("Frag shaders found: ${FRAG_SHADER_FILES}")
+
+# Compile Shaders
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/res/shaders)
+#set(COMPILED_SHADERS)
+function(add_shader src)
+    message(STATUS "Compiling shader: ${src}")
+    find_program(GLSLC glslc)
+    set(CURRENT_SHADER ${CMAKE_SOURCE_DIR}/${src})
+    set(CURRENT_SHADER_OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${src}.spv)
+    set(GLSLC_CMD ${GLSLC} ${CURRENT_SHADER} -o ${CURRENT_SHADER_OUTPUT})
+    execute_process(COMMAND ${GLSLC_CMD})
+endfunction()
+add_shader(${VERT_SHADER_FILES})
+add_shader(${FRAG_SHADER_FILES})
 
 # Configure assets header file
 configure_file(src/helpers/RootDir.h.in src/helpers/RootDir.h)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/src)
 
-# Hide console on release &
-# Define the executable
+# Hide console on release & define the executable
 message(STATUS "Cmake build type: ${CMAKE_BUILD_TYPE}")
 if (${CMAKE_BUILD_TYPE} STREQUAL Release)
     add_compile_definitions(MODE_RELEASE)
     add_executable(${PROJECT_NAME} WIN32 ${HEADER_FILES} ${SOURCE_FILES})
-else()
+else ()
     add_compile_definitions(MODE_DEBUG)
     add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
-endif()
+endif ()
 
 # We need a CMAKE_DIR with some code to find external dependencies
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
@@ -38,41 +65,22 @@ find_package(Vulkan REQUIRED)
 message(STATUS "${Vulkan_LIBRARY} included at ${Vulkan_INCLUDE_DIR}")
 
 # GLM
-find_package(GLM REQUIRED)
-message(STATUS "GLM included at ${GLM_INCLUDE_DIR}")
+find_package(glm CONFIG REQUIRED)
+set(GLM_LIBRARY glm::glm)
+message(STATUS "glm included!")
 
 # GLFW
-find_package(GLFW3 REQUIRED)
-message(STATUS "Found ${GLFW3_LIBRARY} in ${GLFW3_INCLUDE_DIR}")
-
-# Put all libraries into a variable
-set(LIBS ${GLFW3_LIBRARY} ${Vulkan_LIBRARY})
-set(INCLUDES ${GLFW3_INCLUDE_DIR} ${Vulkan_INCLUDE_DIR} ${GLM_INCLUDE_DIR})
+find_package(glfw3 CONFIG REQUIRED)
+set(GLFW_LIBRARY glfw)
+message(STATUS "glfw3 included!")
 
 # Define the include DIRs
-include_directories("${CMAKE_SOURCE_DIR}/src" "${CMAKE_SOURCE_DIR}/include")
-include_directories(${INCLUDES})
+set(LIB_INCL ${Vulkan_INCLUDE_DIR})
+include_directories("${SRC_DIR}" "${INCL_DIR}" "${LIB_INCL}")
 
 # Define the link libraries
-#link_directories(${LIBS})
+link_directories("${LIB_DIR}")
+
+# Put all libraries into a variable
+set(LIBS ${Vulkan_LIBRARY} ${GLM_LIBRARY} ${GLFW_LIBRARY})
 target_link_libraries(${PROJECT_NAME} ${LIBS})
-
-
-#[[# Symlink to res folder # http://qrikko.blogspot.com/2016/05/cmake-and-how-to-copy-resources-during.html
-set(source "${CMAKE_SOURCE_DIR}/res")
-set(dest "${CMAKE_CURRENT_BINARY_DIR}/res")
-add_custom_command(
-        TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E create_symlink ${source} ${dest}
-        DEPENDS ${dest}
-        COMMENT "symbolic link resources folder from ${source} => ${dest}"
-)]]
-
-#[[
-# Copy dlls
-if(WIN32)
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy_directory
-            "${PROJECT_SOURCE_DIR}/dlls"
-            $<TARGET_FILE_DIR:${PROJECT_NAME}>)
-endif()]]

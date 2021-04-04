@@ -52,10 +52,10 @@ RM = C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\203.7717.62\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\dev\vulkan\Hallow\project_a
+CMAKE_SOURCE_DIR = C:\dev\projects\vulkan\Hallow\project_a
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\dev\vulkan\Hallow\project_a\cmake-build-release
+CMAKE_BINARY_DIR = C:\dev\projects\vulkan\Hallow\project_a\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -84,9 +84,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\vulkan\Hallow\project_a\cmake-build-release\CMakeFiles C:\dev\vulkan\Hallow\project_a\cmake-build-release\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\projects\vulkan\Hallow\project_a\cmake-build-release\CMakeFiles C:\dev\projects\vulkan\Hallow\project_a\cmake-build-release\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\vulkan\Hallow\project_a\cmake-build-release\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\projects\vulkan\Hallow\project_a\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

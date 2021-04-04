@@ -4,6 +4,7 @@
 
 #include "application/HallowApp.h"
 
+
 #ifdef MODE_RELEASE
 #include <windows.h>
 #endif
@@ -12,12 +13,12 @@
 #include <iostream>
 #include <stdexcept>
 
-int run() {
-    Hallow::HallowApp app{};
 
+int run() {
     try {
+        Hallow::HallowApp app{};
         app.run();
-    } catch (const std::exception &e) {
+    } catch (const std::exception& e) {
         std::cerr << e.what() << "\n";
         return EXIT_FAILURE;
     }
@@ -37,7 +38,9 @@ int CALLBACK WinMain(
 #endif
 
 #ifdef MODE_DEBUG
+
 int main() {
     return run();
 }
+
 #endif

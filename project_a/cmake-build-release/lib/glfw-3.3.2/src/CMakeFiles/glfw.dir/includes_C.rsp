@@ -1,0 +1,1 @@
+-IC:/dev/vulkan/Hallow/project_a/cmake-build-release/src -IC:/dev/vulkan/Hallow/project_a/lib/glfw-3.3.2/include -IC:/dev/vulkan/Hallow/project_a/lib/glfw-3.3.2/src -IC:/dev/vulkan/Hallow/project_a/cmake-build-release/lib/glfw-3.3.2/src -IC:/dev/vulkan/Hallow/project_a/lib/glfw-3.3.2/deps/mingw 

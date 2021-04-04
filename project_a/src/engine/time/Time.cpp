@@ -6,6 +6,7 @@
 
 #include <ctime>
 
+
 namespace Hallow {
     void Time::tick() {
         m_game_current = glfwGetTime();
