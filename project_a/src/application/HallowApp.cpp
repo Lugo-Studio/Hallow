@@ -11,6 +11,7 @@
 
 
 namespace Hallow {
+
   HallowApp::HallowApp() {
     createPipelineLayout();
     createPipeline();
@@ -161,20 +162,14 @@ namespace Hallow {
 
   // lifetime class?
   void HallowApp::startPre() {}
-
   void HallowApp::start() {}
-
   void HallowApp::startPost() {}
 
   void HallowApp::updatePre() {}
-
   void HallowApp::update() {}
-
   void HallowApp::updatePost() {}
 
   void HallowApp::endPre() {}
-
   void HallowApp::end() {}
-
   void HallowApp::endPost() {}
 }

@@ -24,10 +24,8 @@ namespace Hallow {
     if (!glfwInit())
       throw std::runtime_error("GLFW Error: Failed to initialize!");
 
-    glfwWindowHint(GLFW_CLIENT_API,
-                   GLFW_NO_API); // Don't automagically create OpenGL context
-    glfwWindowHint(GLFW_RESIZABLE,
-                   false); // Window resizing will need special treatment, so disable normal resizing
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API); // Don't automagically create OpenGL context
+    glfwWindowHint(GLFW_RESIZABLE, false); // Window resizing will need special treatment, so disable normal resizing
 
     m_glfw_window = glfwCreateWindow(m_width, m_height, m_name.c_str(),
                                      nullptr, nullptr);

@@ -6,7 +6,10 @@
 
 
 #ifdef MODE_RELEASE
+
 #include <windows.h>
+
+
 #endif
 
 #include <cstdlib>
@@ -30,10 +33,10 @@ int run() {
 int CALLBACK WinMain(
         HINSTANCE hInstance,
         HINSTANCE hPrevInstance,
-        LPSTR     lpCmdLine,
-        int       nCmdShow
-        ) {
-    return run();
+        LPSTR lpCmdLine,
+        int nCmdShow
+                    ) {
+  return run();
 }
 #endif
 

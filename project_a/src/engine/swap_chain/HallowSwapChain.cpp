@@ -410,11 +410,9 @@ namespace Hallow {
             break;
           case VK_PRESENT_MODE_MAX_ENUM_KHR:std::cout << "MAX_ENUM\n";
             break;
-          case VK_PRESENT_MODE_SHARED_CONTINUOUS_REFRESH_KHR:
-            std::cout << "SHARED_CONTINUOUS_REFRESH\n";
+          case VK_PRESENT_MODE_SHARED_CONTINUOUS_REFRESH_KHR:std::cout << "SHARED_CONTINUOUS_REFRESH\n";
             break;
-          case VK_PRESENT_MODE_SHARED_DEMAND_REFRESH_KHR:
-            std::cout << "SHARED_DEMAND_REFRESH\n";
+          case VK_PRESENT_MODE_SHARED_DEMAND_REFRESH_KHR:std::cout << "SHARED_DEMAND_REFRESH\n";
             break;
         }
         return availablePresentMode;
