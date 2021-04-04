@@ -16,32 +16,32 @@
 
 
 namespace Hallow {
-    class HallowWindow {
-    public:
-        HallowWindow(int width, int height, std::string name);
-        ~HallowWindow();
+  class HallowWindow {
+  public:
+    HallowWindow(int width, int height, std::string name);
+    ~HallowWindow();
 
-        bool shouldClose() { return glfwWindowShouldClose(m_glfw_window); }
+    bool shouldClose() { return glfwWindowShouldClose(m_glfw_window); }
 
-        VkExtent2D extent() {
-            return {static_cast<uint32_t>(m_width),
-                    static_cast<uint32_t>(m_height)};
-        }
+    VkExtent2D extent() {
+      return {static_cast<uint32_t>(m_width),
+              static_cast<uint32_t>(m_height)};
+    }
 
-        void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
+    void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 
-        // no copying allowed
-        HallowWindow(const HallowWindow&) = delete;
-        HallowWindow& operator=(const HallowWindow&) = delete;
-    private:
-        const int m_width;
-        const int m_height;
-        std::string m_name;
+    // no copying allowed
+    HallowWindow(const HallowWindow&) = delete;
+    HallowWindow& operator=(const HallowWindow&) = delete;
+  private:
+    const int m_width;
+    const int m_height;
+    std::string m_name;
 
-        GLFWwindow* m_glfw_window;
+    GLFWwindow* m_glfw_window;
 
-        void initWindow();
-    };
+    void initWindow();
+  };
 }
 
 

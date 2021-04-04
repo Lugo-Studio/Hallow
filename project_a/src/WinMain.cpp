@@ -15,15 +15,15 @@
 
 
 int run() {
-    try {
-        Hallow::HallowApp app{};
-        app.run();
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << "\n";
-        return EXIT_FAILURE;
-    }
+  try {
+    Hallow::HallowApp app{};
+    app.run();
+  } catch (const std::exception& e) {
+    std::cerr << e.what() << "\n";
+    return EXIT_FAILURE;
+  }
 
-    return EXIT_SUCCESS;
+  return EXIT_SUCCESS;
 }
 
 #ifdef MODE_RELEASE
@@ -40,7 +40,7 @@ int CALLBACK WinMain(
 #ifdef MODE_DEBUG
 
 int main() {
-    return run();
+  return run();
 }
 
 #endif

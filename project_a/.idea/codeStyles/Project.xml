@@ -4,6 +4,11 @@
     <option name="RIGHT_MARGIN" value="80" />
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="true" />
     <Objective-C>
+      <option name="INDENT_NAMESPACE_MEMBERS" value="2" />
+      <option name="INDENT_C_STRUCT_MEMBERS" value="2" />
+      <option name="INDENT_CLASS_MEMBERS" value="2" />
+      <option name="INDENT_INSIDE_CODE_BLOCK" value="2" />
+      <option name="INDENT_DIRECTIVE_AS_CODE" value="true" />
       <option name="KEEP_CASE_EXPRESSIONS_IN_ONE_LINE" value="true" />
       <option name="FUNCTION_PARAMETERS_ALIGN_MULTILINE_PARS" value="true" />
       <option name="LAMBDA_CAPTURE_LIST_ALIGN_MULTILINE" value="true" />
@@ -60,6 +65,8 @@
       <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
       <option name="DOWHILE_BRACE_FORCE" value="3" />
       <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
         <option name="SMART_TABS" value="true" />
       </indentOptions>
     </codeStyleSettings>

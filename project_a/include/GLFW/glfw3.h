@@ -1652,24 +1652,24 @@ typedef void (* GLFWjoystickfun)(int, int);
  *  @ingroup monitor
  */
 typedef struct GLFWvidmode {
-    /*! The width, in screen coordinates, of the video mode.
-     */
-    int width;
-    /*! The height, in screen coordinates, of the video mode.
-     */
-    int height;
-    /*! The bit depth of the red channel of the video mode.
-     */
-    int redBits;
-    /*! The bit depth of the green channel of the video mode.
-     */
-    int greenBits;
-    /*! The bit depth of the blue channel of the video mode.
-     */
-    int blueBits;
-    /*! The refresh rate, in Hz, of the video mode.
-     */
-    int refreshRate;
+  /*! The width, in screen coordinates, of the video mode.
+   */
+  int width;
+  /*! The height, in screen coordinates, of the video mode.
+   */
+  int height;
+  /*! The bit depth of the red channel of the video mode.
+   */
+  int redBits;
+  /*! The bit depth of the green channel of the video mode.
+   */
+  int greenBits;
+  /*! The bit depth of the blue channel of the video mode.
+   */
+  int blueBits;
+  /*! The refresh rate, in Hz, of the video mode.
+   */
+  int refreshRate;
 } GLFWvidmode;
 
 /*! @brief Gamma ramp.
@@ -1685,18 +1685,18 @@ typedef struct GLFWvidmode {
  *  @ingroup monitor
  */
 typedef struct GLFWgammaramp {
-    /*! An array of value describing the response of the red channel.
-     */
-    unsigned short* red;
-    /*! An array of value describing the response of the green channel.
-     */
-    unsigned short* green;
-    /*! An array of value describing the response of the blue channel.
-     */
-    unsigned short* blue;
-    /*! The number of elements in each array.
-     */
-    unsigned int size;
+  /*! An array of value describing the response of the red channel.
+   */
+  unsigned short* red;
+  /*! An array of value describing the response of the green channel.
+   */
+  unsigned short* green;
+  /*! An array of value describing the response of the blue channel.
+   */
+  unsigned short* blue;
+  /*! The number of elements in each array.
+   */
+  unsigned int size;
 } GLFWgammaramp;
 
 /*! @brief Image data.
@@ -1713,15 +1713,15 @@ typedef struct GLFWgammaramp {
  *  @ingroup window
  */
 typedef struct GLFWimage {
-    /*! The width, in pixels, of this image.
-     */
-    int width;
-    /*! The height, in pixels, of this image.
-     */
-    int height;
-    /*! The pixel data of this image, arranged left-to-right, top-to-bottom.
-     */
-    unsigned char* pixels;
+  /*! The width, in pixels, of this image.
+   */
+  int width;
+  /*! The height, in pixels, of this image.
+   */
+  int height;
+  /*! The pixel data of this image, arranged left-to-right, top-to-bottom.
+   */
+  unsigned char* pixels;
 } GLFWimage;
 
 /*! @brief Gamepad input state
@@ -1736,14 +1736,14 @@ typedef struct GLFWimage {
  *  @ingroup input
  */
 typedef struct GLFWgamepadstate {
-    /*! The states of each [gamepad button](@ref gamepad_buttons), `GLFW_PRESS`
-     *  or `GLFW_RELEASE`.
-     */
-    unsigned char buttons[15];
-    /*! The states of each [gamepad axis](@ref gamepad_axes), in the range -1.0
-     *  to 1.0 inclusive.
-     */
-    float axes[6];
+  /*! The states of each [gamepad button](@ref gamepad_buttons), `GLFW_PRESS`
+   *  or `GLFW_RELEASE`.
+   */
+  unsigned char buttons[15];
+  /*! The states of each [gamepad axis](@ref gamepad_axes), in the range -1.0
+   *  to 1.0 inclusive.
+   */
+  float axes[6];
 } GLFWgamepadstate;
 
 
