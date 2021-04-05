@@ -54,17 +54,17 @@ namespace Hallow {
     };*/
 
     // TODO: Move to lifetime events class
-    void startPre();
-    void start();
-    void startPost();
+    void onPreStart();
+    void onStart();
+    void onPostStart();
 
-    void updatePre();
-    void update();
-    void updatePost();
+    void onPreUpdate();
+    void onUpdate();
+    void onPostUpdate();
 
-    void endPre();
-    void end();
-    void endPost();
+    void onPreEnd();
+    void onEnd();
+    void onPostEnd();
   };
 }
 

@@ -32,7 +32,7 @@ namespace Hallow {
 
   std::vector<char> HallowPipeline::readFile(const std::string& filePath) {
     std::ifstream file{filePath, std::ios::ate |
-                                 std::ios::binary}; // ate says to skip to end of file
+                                 std::ios::binary}; // ate says to skip to onEnd of file
     if (!file.is_open()) {
       throw std::runtime_error(
               "HallowPipeline: Failed to open file: " + filePath);

@@ -30,12 +30,10 @@ int run() {
 }
 
 #ifdef MODE_RELEASE
-int CALLBACK WinMain(
-        HINSTANCE hInstance,
-        HINSTANCE hPrevInstance,
-        LPSTR lpCmdLine,
-        int nCmdShow
-                    ) {
+int CALLBACK WinMain(HINSTANCE h_instance,
+                     HINSTANCE h_prev_instance,
+                     LPSTR lp_cmd_line,
+                     int n_cmd_show) {
   return run();
 }
 #endif

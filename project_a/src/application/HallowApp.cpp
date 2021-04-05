@@ -26,42 +26,41 @@ namespace Hallow {
   }
 
   void HallowApp::run() {
-    startPre();
-    start();
-    startPost();
+    onStart();
 
     while (!m_hallow_window.shouldClose()) {
-      m_time.tick(); // start with tick to get newest time
-      //m_time.printOnInterval(1);
-
-      glfwPollEvents(); // poll for user events and such
-
-      updatePre();
-      update();
-      updatePost();
-
-      drawFrame();
-
-      // TODO: late update?
+      onUpdate();
     }
 
-    endPre();
-    end();
-    endPost();
+    onEnd();
+  }
 
+  void HallowApp::onStart() {}
+
+  void HallowApp::onUpdate() {
+    m_time.tick(); // onStart with tick to get newest time
+    //m_time.printOnInterval(1);
+
+    glfwPollEvents(); // poll for user events and such
+
+
+    drawFrame();
+  }
+
+  void HallowApp::onEnd() {
     vkDeviceWaitIdle(m_hallow_device.device());
   }
 
   void HallowApp::createPipelineLayout() {
-    VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
-    pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-    pipelineLayoutInfo.setLayoutCount = 0;
-    pipelineLayoutInfo.pSetLayouts = nullptr;
-    pipelineLayoutInfo.pushConstantRangeCount = 0;
-    pipelineLayoutInfo.pPushConstantRanges = nullptr;
+    VkPipelineLayoutCreateInfo pipeline_layout_info{};
+    pipeline_layout_info.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+    pipeline_layout_info.setLayoutCount = 0;
+    pipeline_layout_info.pSetLayouts = nullptr;
+    pipeline_layout_info.pushConstantRangeCount = 0;
+    pipeline_layout_info.pPushConstantRanges = nullptr;
 
     if (vkCreatePipelineLayout(m_hallow_device.device(),
-                               &pipelineLayoutInfo, nullptr,
+                               &pipeline_layout_info, nullptr,
                                &m_pipeline_layout) != VK_SUCCESS) {
       throw std::runtime_error(
               "HallowApp: Failed to create pipeline layout!");
@@ -69,65 +68,65 @@ namespace Hallow {
   }
 
   void HallowApp::createPipeline() {
-    PipelineConfigInfo pipelineConfig{};
+    PipelineConfigInfo pipeline_config{};
 
     HallowPipeline::defaultPipelineConfig(
-            pipelineConfig,
+            pipeline_config,
             m_hallow_swap_chain.width(),
             m_hallow_swap_chain.height());
 
     // render pass describes the structure and format of frame buffer objects and their attachments
-    pipelineConfig.render_pass = m_hallow_swap_chain.renderPass();
-    pipelineConfig.pipeline_layout = m_pipeline_layout;
+    pipeline_config.render_pass = m_hallow_swap_chain.renderPass();
+    pipeline_config.pipeline_layout = m_pipeline_layout;
 
     m_hallow_pipeline = std::make_unique<HallowPipeline>(m_hallow_device,
-                                                         pipelineConfig,
+                                                         pipeline_config,
                                                          "res/shaders/simple_shader");
   }
 
   void HallowApp::createCommandBuffers() {
     m_command_buffers.resize(m_hallow_swap_chain.imageCount());
 
-    VkCommandBufferAllocateInfo allocateInfo{};
-    allocateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
-    allocateInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-    allocateInfo.commandPool = m_hallow_device.m_command_pool();
-    allocateInfo.commandBufferCount = static_cast<uint32_t>(m_command_buffers.size());
+    VkCommandBufferAllocateInfo alloc_info{};
+    alloc_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+    alloc_info.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+    alloc_info.commandPool = m_hallow_device.commandPool();
+    alloc_info.commandBufferCount = static_cast<uint32_t>(m_command_buffers.size());
 
-    if (vkAllocateCommandBuffers(m_hallow_device.device(), &allocateInfo,
+    if (vkAllocateCommandBuffers(m_hallow_device.device(), &alloc_info,
                                  m_command_buffers.data()) != VK_SUCCESS) {
       throw std::runtime_error(
               "HallowApp: Failed to allocate command buffers!");
     }
 
     for (int i = 0; i < m_command_buffers.size(); ++i) {
-      VkCommandBufferBeginInfo beginInfo{};
-      beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+      VkCommandBufferBeginInfo begin_info{};
+      begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
 
-      if (vkBeginCommandBuffer(m_command_buffers[i], &beginInfo) !=
+      if (vkBeginCommandBuffer(m_command_buffers[i], &begin_info) !=
           VK_SUCCESS) {
         throw std::runtime_error(
                 "HallowApp: Failed to begin recording command buffer!");
       }
 
-      VkRenderPassBeginInfo renderPassInfo{};
-      renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-      renderPassInfo.renderPass = m_hallow_swap_chain.renderPass();
-      renderPassInfo.framebuffer = m_hallow_swap_chain.frameBuffer(i);
+      VkRenderPassBeginInfo render_pass_info{};
+      render_pass_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+      render_pass_info.renderPass = m_hallow_swap_chain.renderPass();
+      render_pass_info.framebuffer = m_hallow_swap_chain.frameBuffer(i);
 
-      renderPassInfo.renderArea.offset = {0, 0};
-      renderPassInfo.renderArea.extent = m_hallow_swap_chain.swapChainExtent();
+      render_pass_info.renderArea.offset = {0, 0};
+      render_pass_info.renderArea.extent = m_hallow_swap_chain.swapChainExtent();
 
-      Color backgroundColor{0x2E3440FF};
-      std::array<VkClearValue, 2> clearValues{};
-      clearValues[0].color = {backgroundColor.r, backgroundColor.g,
-                              backgroundColor.b, backgroundColor.a};
-      clearValues[1].depthStencil = {1.0f, 0};
+      Color background_color{0x2E3440FF};
+      std::array<VkClearValue, 2> clear_values{};
+      clear_values[0].color = {background_color.r, background_color.g,
+                               background_color.b, background_color.a};
+      clear_values[1].depthStencil = {1.0f, 0};
 
-      renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
-      renderPassInfo.pClearValues = clearValues.data();
+      render_pass_info.clearValueCount = static_cast<uint32_t>(clear_values.size());
+      render_pass_info.pClearValues = clear_values.data();
 
-      vkCmdBeginRenderPass(m_command_buffers[i], &renderPassInfo,
+      vkCmdBeginRenderPass(m_command_buffers[i], &render_pass_info,
                            VK_SUBPASS_CONTENTS_INLINE);
 
       m_hallow_pipeline->bind(m_command_buffers[i]);
@@ -146,31 +145,18 @@ namespace Hallow {
   }
 
   void HallowApp::drawFrame() {
-    uint32_t imageIndex;
-    auto result = m_hallow_swap_chain.acquireNextImage(&imageIndex);
+    uint32_t image_index;
+    auto result = m_hallow_swap_chain.acquireNextImage(&image_index);
     if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
       throw std::runtime_error(
               "HallowApp: Failed to acquire next swap chain image!");
     }
 
     result = m_hallow_swap_chain.submitCommandBuffers(
-            &m_command_buffers[imageIndex], &imageIndex);
+            &m_command_buffers[image_index], &image_index);
     if (result != VK_SUCCESS) {
       throw std::runtime_error(
               "HallowApp: Failed to present swap chain image!");
     }
   }
-
-  // lifetime class?
-  void HallowApp::startPre() {}
-  void HallowApp::start() {}
-  void HallowApp::startPost() {}
-
-  void HallowApp::updatePre() {}
-  void HallowApp::update() {}
-  void HallowApp::updatePost() {}
-
-  void HallowApp::endPre() {}
-  void HallowApp::end() {}
-  void HallowApp::endPost() {}
 }

@@ -12,8 +12,8 @@
 
 namespace Hallow {
 
-  HallowSwapChain::HallowSwapChain(HallowDevice& deviceRef, VkExtent2D extent)
-          : m_hallow_device{deviceRef}, m_window_extent{extent} {
+  HallowSwapChain::HallowSwapChain(HallowDevice& device_ref, VkExtent2D extent)
+          : m_hallow_device{device_ref}, m_window_extent{extent} {
     createSwapChain();
     createImageViews();
     createRenderPass();
@@ -23,8 +23,8 @@ namespace Hallow {
   }
 
   HallowSwapChain::~HallowSwapChain() {
-    for (auto imageView : m_swap_chain_image_views) {
-      vkDestroyImageView(m_hallow_device.device(), imageView, nullptr);
+    for (auto image_view : m_swap_chain_image_views) {
+      vkDestroyImageView(m_hallow_device.device(), image_view, nullptr);
     }
     m_swap_chain_image_views.clear();
 
@@ -55,7 +55,7 @@ namespace Hallow {
     }
   }
 
-  VkResult HallowSwapChain::acquireNextImage(uint32_t* imageIndex) {
+  VkResult HallowSwapChain::acquireNextImage(uint32_t* image_index) {
     vkWaitForFences(
             m_hallow_device.device(),
             1,
@@ -69,56 +69,56 @@ namespace Hallow {
             std::numeric_limits<uint64_t>::max(),
             m_image_available_semaphores[m_current_frame],  // must be a not signaled semaphore
             VK_NULL_HANDLE,
-            imageIndex);
+            image_index);
 
     return result;
   }
 
   VkResult HallowSwapChain::submitCommandBuffers(
-          const VkCommandBuffer* buffers, uint32_t* imageIndex) {
-    if (m_images_in_flight[*imageIndex] != VK_NULL_HANDLE) {
-      vkWaitForFences(m_hallow_device.device(), 1, &m_images_in_flight[*imageIndex],
+          const VkCommandBuffer* buffers, uint32_t* image_index) {
+    if (m_images_in_flight[*image_index] != VK_NULL_HANDLE) {
+      vkWaitForFences(m_hallow_device.device(), 1, &m_images_in_flight[*image_index],
                       VK_TRUE, UINT64_MAX);
     }
-    m_images_in_flight[*imageIndex] = m_in_flight_fences[m_current_frame];
+    m_images_in_flight[*image_index] = m_in_flight_fences[m_current_frame];
 
-    VkSubmitInfo submitInfo{};
-    submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+    VkSubmitInfo submit_info{};
+    submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
 
-    VkSemaphore waitSemaphores[]{m_image_available_semaphores[m_current_frame]};
-    VkPipelineStageFlags waitStages[] = {
+    VkSemaphore wait_semaphores[]{m_image_available_semaphores[m_current_frame]};
+    VkPipelineStageFlags wait_stages[] = {
             VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
-    submitInfo.waitSemaphoreCount = 1;
-    submitInfo.pWaitSemaphores = waitSemaphores;
-    submitInfo.pWaitDstStageMask = waitStages;
+    submit_info.waitSemaphoreCount = 1;
+    submit_info.pWaitSemaphores = wait_semaphores;
+    submit_info.pWaitDstStageMask = wait_stages;
 
-    submitInfo.commandBufferCount = 1;
-    submitInfo.pCommandBuffers = buffers;
+    submit_info.commandBufferCount = 1;
+    submit_info.pCommandBuffers = buffers;
 
-    VkSemaphore signalSemaphores[]{m_render_finished_semaphores[m_current_frame]};
-    submitInfo.signalSemaphoreCount = 1;
-    submitInfo.pSignalSemaphores = signalSemaphores;
+    VkSemaphore signal_semaphores[]{m_render_finished_semaphores[m_current_frame]};
+    submit_info.signalSemaphoreCount = 1;
+    submit_info.pSignalSemaphores = signal_semaphores;
 
     vkResetFences(m_hallow_device.device(), 1, &m_in_flight_fences[m_current_frame]);
-    if (vkQueueSubmit(m_hallow_device.graphicsQueue(), 1, &submitInfo,
+    if (vkQueueSubmit(m_hallow_device.graphicsQueue(), 1, &submit_info,
                       m_in_flight_fences[m_current_frame]) !=
         VK_SUCCESS) {
       throw std::runtime_error("failed to submit draw command buffer!");
     }
 
-    VkPresentInfoKHR presentInfo{};
-    presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+    VkPresentInfoKHR present_info{};
+    present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 
-    presentInfo.waitSemaphoreCount = 1;
-    presentInfo.pWaitSemaphores = signalSemaphores;
+    present_info.waitSemaphoreCount = 1;
+    present_info.pWaitSemaphores = signal_semaphores;
 
-    VkSwapchainKHR swapChains[]{m_swap_chain};
-    presentInfo.swapchainCount = 1;
-    presentInfo.pSwapchains = swapChains;
+    VkSwapchainKHR swap_chains[]{m_swap_chain};
+    present_info.swapchainCount = 1;
+    present_info.pSwapchains = swap_chains;
 
-    presentInfo.pImageIndices = imageIndex;
+    present_info.pImageIndices = image_index;
 
-    auto result = vkQueuePresentKHR(m_hallow_device.presentQueue(), &presentInfo);
+    auto result = vkQueuePresentKHR(m_hallow_device.presentQueue(), &present_info);
 
     m_current_frame = (m_current_frame + 1) % MAX_FRAMES_IN_FLIGHT;
 
@@ -126,54 +126,54 @@ namespace Hallow {
   }
 
   void HallowSwapChain::createSwapChain() {
-    SwapChainSupportDetails swapChainSupport = m_hallow_device.swapChainSupport();
+    SwapChainSupportDetails swap_chain_support = m_hallow_device.swapChainSupport();
 
-    VkSurfaceFormatKHR surfaceFormat = chooseSwapSurfaceFormat(
-            swapChainSupport.formats);
+    VkSurfaceFormatKHR surface_format = chooseSwapSurfaceFormat(
+            swap_chain_support.formats);
     VkPresentModeKHR presentMode = chooseSwapPresentMode(
-            swapChainSupport.present_modes, m_preferred_present_mode);
-    VkExtent2D extent = chooseSwapExtent(swapChainSupport.capabilities);
+            swap_chain_support.present_modes, m_preferred_present_mode);
+    VkExtent2D extent = chooseSwapExtent(swap_chain_support.capabilities);
 
-    uint32_t imageCount = swapChainSupport.capabilities.minImageCount + 1;
-    if (swapChainSupport.capabilities.maxImageCount > 0 &&
-        imageCount > swapChainSupport.capabilities.maxImageCount) {
-      imageCount = swapChainSupport.capabilities.maxImageCount;
+    uint32_t image_count = swap_chain_support.capabilities.minImageCount + 1;
+    if (swap_chain_support.capabilities.maxImageCount > 0 &&
+        image_count > swap_chain_support.capabilities.maxImageCount) {
+      image_count = swap_chain_support.capabilities.maxImageCount;
     }
 
-    VkSwapchainCreateInfoKHR createInfo{};
-    createInfo.sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
-    createInfo.surface = m_hallow_device.surface();
+    VkSwapchainCreateInfoKHR create_info{};
+    create_info.sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
+    create_info.surface = m_hallow_device.surface();
 
-    createInfo.minImageCount = imageCount;
-    createInfo.imageFormat = surfaceFormat.format;
-    createInfo.imageColorSpace = surfaceFormat.colorSpace;
-    createInfo.imageExtent = extent;
-    createInfo.imageArrayLayers = 1;
-    createInfo.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+    create_info.minImageCount = image_count;
+    create_info.imageFormat = surface_format.format;
+    create_info.imageColorSpace = surface_format.colorSpace;
+    create_info.imageExtent = extent;
+    create_info.imageArrayLayers = 1;
+    create_info.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
 
     QueueFamilyIndices indices = m_hallow_device.findPhysicalQueueFamilies();
-    uint32_t queueFamilyIndices[] = {indices.graphics_family,
-                                     indices.present_family};
+    uint32_t queue_family_indices[] = {indices.graphics_family,
+                                       indices.present_family};
 
     if (indices.graphics_family != indices.present_family) {
-      createInfo.imageSharingMode = VK_SHARING_MODE_CONCURRENT;
-      createInfo.queueFamilyIndexCount = 2;
-      createInfo.pQueueFamilyIndices = queueFamilyIndices;
+      create_info.imageSharingMode = VK_SHARING_MODE_CONCURRENT;
+      create_info.queueFamilyIndexCount = 2;
+      create_info.pQueueFamilyIndices = queue_family_indices;
     } else {
-      createInfo.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
-      createInfo.queueFamilyIndexCount = 0;      // Optional
-      createInfo.pQueueFamilyIndices = nullptr;  // Optional
+      create_info.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
+      create_info.queueFamilyIndexCount = 0;      // Optional
+      create_info.pQueueFamilyIndices = nullptr;  // Optional
     }
 
-    createInfo.preTransform = swapChainSupport.capabilities.currentTransform;
-    createInfo.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
+    create_info.preTransform = swap_chain_support.capabilities.currentTransform;
+    create_info.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
 
-    createInfo.presentMode = presentMode;
-    createInfo.clipped = VK_TRUE;
+    create_info.presentMode = presentMode;
+    create_info.clipped = VK_TRUE;
 
-    createInfo.oldSwapchain = VK_NULL_HANDLE;
+    create_info.oldSwapchain = VK_NULL_HANDLE;
 
-    if (vkCreateSwapchainKHR(m_hallow_device.device(), &createInfo, nullptr,
+    if (vkCreateSwapchainKHR(m_hallow_device.device(), &create_info, nullptr,
                              &m_swap_chain) != VK_SUCCESS) {
       throw std::runtime_error("failed to create swap chain!");
     }
@@ -182,31 +182,31 @@ namespace Hallow {
     // allowed to create a swap chain with more. That's why we'll first query the final number of
     // images with vkGetSwapchainImagesKHR, then resize the container and finally call it again to
     // retrieve the handles.
-    vkGetSwapchainImagesKHR(m_hallow_device.device(), m_swap_chain, &imageCount,
+    vkGetSwapchainImagesKHR(m_hallow_device.device(), m_swap_chain, &image_count,
                             nullptr);
-    m_swap_chain_images.resize(imageCount);
-    vkGetSwapchainImagesKHR(m_hallow_device.device(), m_swap_chain, &imageCount,
+    m_swap_chain_images.resize(image_count);
+    vkGetSwapchainImagesKHR(m_hallow_device.device(), m_swap_chain, &image_count,
                             m_swap_chain_images.data());
 
-    m_swap_chain_image_format = surfaceFormat.format;
+    m_swap_chain_image_format = surface_format.format;
     m_swap_chain_extent = extent;
   }
 
   void HallowSwapChain::createImageViews() {
     m_swap_chain_image_views.resize(m_swap_chain_images.size());
     for (size_t i = 0; i < m_swap_chain_images.size(); i++) {
-      VkImageViewCreateInfo viewInfo{};
-      viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
-      viewInfo.image = m_swap_chain_images[i];
-      viewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
-      viewInfo.format = m_swap_chain_image_format;
-      viewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-      viewInfo.subresourceRange.baseMipLevel = 0;
-      viewInfo.subresourceRange.levelCount = 1;
-      viewInfo.subresourceRange.baseArrayLayer = 0;
-      viewInfo.subresourceRange.layerCount = 1;
+      VkImageViewCreateInfo view_info{};
+      view_info.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+      view_info.image = m_swap_chain_images[i];
+      view_info.viewType = VK_IMAGE_VIEW_TYPE_2D;
+      view_info.format = m_swap_chain_image_format;
+      view_info.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+      view_info.subresourceRange.baseMipLevel = 0;
+      view_info.subresourceRange.levelCount = 1;
+      view_info.subresourceRange.baseArrayLayer = 0;
+      view_info.subresourceRange.layerCount = 1;
 
-      if (vkCreateImageView(m_hallow_device.device(), &viewInfo, nullptr,
+      if (vkCreateImageView(m_hallow_device.device(), &view_info, nullptr,
                             &m_swap_chain_image_views[i]) !=
           VK_SUCCESS) {
         throw std::runtime_error(
@@ -216,39 +216,39 @@ namespace Hallow {
   }
 
   void HallowSwapChain::createRenderPass() {
-    VkAttachmentDescription depthAttachment{};
-    depthAttachment.format = findDepthFormat();
-    depthAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
-    depthAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
-    depthAttachment.storeOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-    depthAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
-    depthAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-    depthAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
-    depthAttachment.finalLayout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
+    VkAttachmentDescription depth_attachment{};
+    depth_attachment.format = findDepthFormat();
+    depth_attachment.samples = VK_SAMPLE_COUNT_1_BIT;
+    depth_attachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    depth_attachment.storeOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    depth_attachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    depth_attachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    depth_attachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    depth_attachment.finalLayout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
 
-    VkAttachmentReference depthAttachmentRef{};
-    depthAttachmentRef.attachment = 1;
-    depthAttachmentRef.layout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
+    VkAttachmentReference depth_attachment_ref{};
+    depth_attachment_ref.attachment = 1;
+    depth_attachment_ref.layout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
 
-    VkAttachmentDescription colorAttachment{};
-    colorAttachment.format = swapChainImageFormat();
-    colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
-    colorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
-    colorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
-    colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-    colorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
-    colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
-    colorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+    VkAttachmentDescription color_attachment{};
+    color_attachment.format = swapChainImageFormat();
+    color_attachment.samples = VK_SAMPLE_COUNT_1_BIT;
+    color_attachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    color_attachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
+    color_attachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    color_attachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    color_attachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    color_attachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
 
-    VkAttachmentReference colorAttachmentRef{};
-    colorAttachmentRef.attachment = 0;
-    colorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+    VkAttachmentReference color_attachment_ref{};
+    color_attachment_ref.attachment = 0;
+    color_attachment_ref.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
 
     VkSubpassDescription subpass{};
     subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
     subpass.colorAttachmentCount = 1;
-    subpass.pColorAttachments = &colorAttachmentRef;
-    subpass.pDepthStencilAttachment = &depthAttachmentRef;
+    subpass.pColorAttachments = &color_attachment_ref;
+    subpass.pDepthStencilAttachment = &depth_attachment_ref;
 
     VkSubpassDependency dependency{};
 
@@ -259,18 +259,18 @@ namespace Hallow {
     dependency.srcAccessMask = 0;
     dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
 
-    std::array<VkAttachmentDescription, 2> attachments{colorAttachment,
-                                                       depthAttachment};
-    VkRenderPassCreateInfo renderPassInfo{};
-    renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
-    renderPassInfo.attachmentCount = static_cast<uint32_t>(attachments.size());
-    renderPassInfo.pAttachments = attachments.data();
-    renderPassInfo.subpassCount = 1;
-    renderPassInfo.pSubpasses = &subpass;
-    renderPassInfo.dependencyCount = 1;
-    renderPassInfo.pDependencies = &dependency;
+    std::array<VkAttachmentDescription, 2> attachments{color_attachment,
+                                                       depth_attachment};
+    VkRenderPassCreateInfo render_pass_info{};
+    render_pass_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+    render_pass_info.attachmentCount = static_cast<uint32_t>(attachments.size());
+    render_pass_info.pAttachments = attachments.data();
+    render_pass_info.subpassCount = 1;
+    render_pass_info.pSubpasses = &subpass;
+    render_pass_info.dependencyCount = 1;
+    render_pass_info.pDependencies = &dependency;
 
-    if (vkCreateRenderPass(m_hallow_device.device(), &renderPassInfo, nullptr,
+    if (vkCreateRenderPass(m_hallow_device.device(), &render_pass_info, nullptr,
                            &m_render_pass) != VK_SUCCESS) {
       throw std::runtime_error("failed to create render pass!");
     }
@@ -282,19 +282,19 @@ namespace Hallow {
       std::array<VkImageView, 2> attachments = {m_swap_chain_image_views[i],
                                                 m_depth_image_views[i]};
 
-      VkExtent2D swapChainExtent = swapChainExtent();
-      VkFramebufferCreateInfo framebufferInfo{};
-      framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
-      framebufferInfo.renderPass = m_render_pass;
-      framebufferInfo.attachmentCount = static_cast<uint32_t>(attachments.size());
-      framebufferInfo.pAttachments = attachments.data();
-      framebufferInfo.width = swapChainExtent.width;
-      framebufferInfo.height = swapChainExtent.height;
-      framebufferInfo.layers = 1;
+      VkExtent2D swap_chain_extent = swapChainExtent();
+      VkFramebufferCreateInfo framebuffer_info{};
+      framebuffer_info.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
+      framebuffer_info.renderPass = m_render_pass;
+      framebuffer_info.attachmentCount = static_cast<uint32_t>(attachments.size());
+      framebuffer_info.pAttachments = attachments.data();
+      framebuffer_info.width = swap_chain_extent.width;
+      framebuffer_info.height = swap_chain_extent.height;
+      framebuffer_info.layers = 1;
 
       if (vkCreateFramebuffer(
               m_hallow_device.device(),
-              &framebufferInfo,
+              &framebuffer_info,
               nullptr,
               &m_swap_chain_framebuffers[i]) != VK_SUCCESS) {
         throw std::runtime_error("failed to create framebuffer!");
@@ -303,48 +303,48 @@ namespace Hallow {
   }
 
   void HallowSwapChain::createDepthResources() {
-    VkFormat depthFormat = findDepthFormat();
-    VkExtent2D swapChainExtent = swapChainExtent();
+    VkFormat depth_format = findDepthFormat();
+    VkExtent2D swap_chain_extent = swapChainExtent();
 
     m_depth_images.resize(imageCount());
     m_depth_image_memorys.resize(imageCount());
     m_depth_image_views.resize(imageCount());
 
     for (int i = 0; i < m_depth_images.size(); i++) {
-      VkImageCreateInfo imageInfo{};
-      imageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
-      imageInfo.imageType = VK_IMAGE_TYPE_2D;
-      imageInfo.extent.width = swapChainExtent.width;
-      imageInfo.extent.height = swapChainExtent.height;
-      imageInfo.extent.depth = 1;
-      imageInfo.mipLevels = 1;
-      imageInfo.arrayLayers = 1;
-      imageInfo.format = depthFormat;
-      imageInfo.tiling = VK_IMAGE_TILING_OPTIMAL;
-      imageInfo.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
-      imageInfo.usage = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT;
-      imageInfo.samples = VK_SAMPLE_COUNT_1_BIT;
-      imageInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
-      imageInfo.flags = 0;
+      VkImageCreateInfo image_info{};
+      image_info.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
+      image_info.imageType = VK_IMAGE_TYPE_2D;
+      image_info.extent.width = swap_chain_extent.width;
+      image_info.extent.height = swap_chain_extent.height;
+      image_info.extent.depth = 1;
+      image_info.mipLevels = 1;
+      image_info.arrayLayers = 1;
+      image_info.format = depth_format;
+      image_info.tiling = VK_IMAGE_TILING_OPTIMAL;
+      image_info.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+      image_info.usage = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT;
+      image_info.samples = VK_SAMPLE_COUNT_1_BIT;
+      image_info.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
+      image_info.flags = 0;
 
       m_hallow_device.createImageWithInfo(
-              imageInfo,
+              image_info,
               VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
               m_depth_images[i],
               m_depth_image_memorys[i]);
 
-      VkImageViewCreateInfo viewInfo{};
-      viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
-      viewInfo.image = m_depth_images[i];
-      viewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
-      viewInfo.format = depthFormat;
-      viewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT;
-      viewInfo.subresourceRange.baseMipLevel = 0;
-      viewInfo.subresourceRange.levelCount = 1;
-      viewInfo.subresourceRange.baseArrayLayer = 0;
-      viewInfo.subresourceRange.layerCount = 1;
+      VkImageViewCreateInfo view_info{};
+      view_info.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+      view_info.image = m_depth_images[i];
+      view_info.viewType = VK_IMAGE_VIEW_TYPE_2D;
+      view_info.format = depth_format;
+      view_info.subresourceRange.aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT;
+      view_info.subresourceRange.baseMipLevel = 0;
+      view_info.subresourceRange.levelCount = 1;
+      view_info.subresourceRange.baseArrayLayer = 0;
+      view_info.subresourceRange.layerCount = 1;
 
-      if (vkCreateImageView(m_hallow_device.device(), &viewInfo, nullptr,
+      if (vkCreateImageView(m_hallow_device.device(), &view_info, nullptr,
                             &m_depth_image_views[i]) != VK_SUCCESS) {
         throw std::runtime_error(
                 "failed to create texture image view!");
@@ -358,21 +358,21 @@ namespace Hallow {
     m_in_flight_fences.resize(MAX_FRAMES_IN_FLIGHT);
     m_images_in_flight.resize(imageCount(), VK_NULL_HANDLE);
 
-    VkSemaphoreCreateInfo semaphoreInfo{};
-    semaphoreInfo.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
+    VkSemaphoreCreateInfo semaphore_info{};
+    semaphore_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
 
-    VkFenceCreateInfo fenceInfo{};
-    fenceInfo.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
-    fenceInfo.flags = VK_FENCE_CREATE_SIGNALED_BIT;
+    VkFenceCreateInfo fence_info{};
+    fence_info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+    fence_info.flags = VK_FENCE_CREATE_SIGNALED_BIT;
 
     for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-      if (vkCreateSemaphore(m_hallow_device.device(), &semaphoreInfo, nullptr,
+      if (vkCreateSemaphore(m_hallow_device.device(), &semaphore_info, nullptr,
                             &m_image_available_semaphores[i]) !=
           VK_SUCCESS ||
-          vkCreateSemaphore(m_hallow_device.device(), &semaphoreInfo, nullptr,
+          vkCreateSemaphore(m_hallow_device.device(), &semaphore_info, nullptr,
                             &m_render_finished_semaphores[i]) !=
           VK_SUCCESS ||
-          vkCreateFence(m_hallow_device.device(), &fenceInfo, nullptr,
+          vkCreateFence(m_hallow_device.device(), &fence_info, nullptr,
                         &m_in_flight_fences[i]) != VK_SUCCESS) {
         throw std::runtime_error(
                 "failed to create synchronization objects for a frame!");
@@ -381,25 +381,25 @@ namespace Hallow {
   }
 
   VkSurfaceFormatKHR HallowSwapChain::chooseSwapSurfaceFormat(
-          const std::vector<VkSurfaceFormatKHR>& availableFormats) {
-    for (const auto& availableFormat : availableFormats) {
-      if (availableFormat.format == VK_FORMAT_B8G8R8A8_UNORM &&
-          availableFormat.colorSpace ==
+          const std::vector<VkSurfaceFormatKHR>& available_formats) {
+    for (const auto& available_format : available_formats) {
+      if (available_format.format == VK_FORMAT_B8G8R8A8_UNORM &&
+          available_format.colorSpace ==
           VK_COLOR_SPACE_SRGB_NONLINEAR_KHR) {
-        return availableFormat;
+        return available_format;
       }
     }
 
-    return availableFormats[0];
+    return available_formats[0];
   }
 
   VkPresentModeKHR HallowSwapChain::chooseSwapPresentMode(
-          const std::vector<VkPresentModeKHR>& availablePresentModes,
-          VkPresentModeKHR preferredMode) {
-    for (const auto& availablePresentMode : availablePresentModes) {
-      if (availablePresentMode == preferredMode) {
+          const std::vector<VkPresentModeKHR>& available_present_modes,
+          VkPresentModeKHR preferred_mode) {
+    for (const auto& present_mode : available_present_modes) {
+      if (present_mode == preferred_mode) {
         std::cout << "Present mode: ";
-        switch (availablePresentMode) {
+        switch (present_mode) {
           case VK_PRESENT_MODE_IMMEDIATE_KHR:std::cout << "IMMEDIATE\n";
             break;
           case VK_PRESENT_MODE_FIFO_KHR:std::cout << "FIFO (V-Sync)\n";
@@ -415,11 +415,11 @@ namespace Hallow {
           case VK_PRESENT_MODE_SHARED_DEMAND_REFRESH_KHR:std::cout << "SHARED_DEMAND_REFRESH\n";
             break;
         }
-        return availablePresentMode;
+        return present_mode;
       }
     }
 
-    // for (const auto &availablePresentMode : availablePresentModes) {
+    // for (const auto &availablePresentMode : available_present_modes) {
     //   if (availablePresentMode == VK_PRESENT_MODE_IMMEDIATE_KHR) {
     //     std::cout << "Present mode: Immediate" << std::endl;
     //     return availablePresentMode;
@@ -437,17 +437,17 @@ namespace Hallow {
         std::numeric_limits<uint32_t>::max()) {
       return capabilities.currentExtent;
     } else {
-      VkExtent2D actualExtent = m_window_extent;
-      actualExtent.width = std::max(
+      VkExtent2D actual_extent = m_window_extent;
+      actual_extent.width = std::max(
               capabilities.minImageExtent.width,
               std::min(capabilities.maxImageExtent.width,
-                       actualExtent.width));
-      actualExtent.height = std::max(
+                       actual_extent.width));
+      actual_extent.height = std::max(
               capabilities.minImageExtent.height,
               std::min(capabilities.maxImageExtent.height,
-                       actualExtent.height));
+                       actual_extent.height));
 
-      return actualExtent;
+      return actual_extent;
     }
   }
 

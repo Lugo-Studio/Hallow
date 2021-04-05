@@ -47,7 +47,7 @@ namespace Hallow {
     SwapChainSupportDetails swapChainSupport() {
       return querySwapChainSupport(m_physical_device);
     }
-    uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
+    uint32_t findMemoryType(uint32_t type_filter, VkMemoryPropertyFlags properties);
     QueueFamilyIndices findPhysicalQueueFamilies() {
       return findQueueFamilies(m_physical_device);
     }
@@ -58,21 +58,21 @@ namespace Hallow {
     // Buffer Helper Functions
     void createBuffer(VkDeviceSize size,
                       VkBufferUsageFlags usage,
-                      VkMemoryPropertyFlags properties,
+                      VkMemoryPropertyFlags mem_properties,
                       VkBuffer& buffer,
-                      VkDeviceMemory& bufferMemory);
+                      VkDeviceMemory& buffer_memory);
     VkCommandBuffer beginSingleTimeCommands();
-    void endSingleTimeCommands(VkCommandBuffer commandBuffer);
-    void copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size);
+    void endSingleTimeCommands(VkCommandBuffer command_buffer);
+    void copyBuffer(VkBuffer src_buffer, VkBuffer dst_buffer, VkDeviceSize size);
     void copyBufferToImage(VkBuffer buffer,
                            VkImage image,
                            uint32_t width,
                            uint32_t height,
-                           uint32_t layerCount);
-    void createImageWithInfo(const VkImageCreateInfo& imageInfo,
-                             VkMemoryPropertyFlags properties,
+                           uint32_t layer_count);
+    void createImageWithInfo(const VkImageCreateInfo& image_info,
+                             VkMemoryPropertyFlags mem_properties,
                              VkImage& image,
-                             VkDeviceMemory& imageMemory);
+                             VkDeviceMemory& image_memory);
 
     // Not copyable or movable
     HallowDevice(const HallowDevice&) = delete;
@@ -97,7 +97,7 @@ namespace Hallow {
     std::vector<const char*> requiredExtensions();
     bool checkValidationLayerSupport();
     QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
-    void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
+    void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& create_info);
     void hasGflwRequiredInstanceExtensions();
     bool checkDeviceExtensionSupport(VkPhysicalDevice device);
     SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);

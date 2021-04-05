@@ -16,7 +16,7 @@ namespace Hallow {
   public:
     static constexpr int MAX_FRAMES_IN_FLIGHT = 2;
 
-    HallowSwapChain(HallowDevice& deviceRef, VkExtent2D windowExtent);
+    HallowSwapChain(HallowDevice& device_ref, VkExtent2D windowExtent);
     ~HallowSwapChain();
 
     VkFramebuffer frameBuffer(int index) { return m_swap_chain_framebuffers[index]; }
@@ -34,8 +34,8 @@ namespace Hallow {
     }
 
     VkFormat findDepthFormat();
-    VkResult acquireNextImage(uint32_t* imageIndex);
-    VkResult submitCommandBuffers(const VkCommandBuffer* buffers, uint32_t* imageIndex);
+    VkResult acquireNextImage(uint32_t* image_index);
+    VkResult submitCommandBuffers(const VkCommandBuffer* buffers, uint32_t* image_index);
 
     HallowSwapChain(const HallowSwapChain&) = delete;
     void operator=(const HallowSwapChain&) = delete;
@@ -68,11 +68,11 @@ namespace Hallow {
 
     // Helper functions
     VkSurfaceFormatKHR chooseSwapSurfaceFormat(
-            const std::vector<VkSurfaceFormatKHR>& availableFormats);
+            const std::vector<VkSurfaceFormatKHR>& available_formats);
 
     VkPresentModeKHR chooseSwapPresentMode(
-            const std::vector<VkPresentModeKHR>& availablePresentModes,
-            VkPresentModeKHR preferredMode);
+            const std::vector<VkPresentModeKHR>& available_present_modes,
+            VkPresentModeKHR preferred_mode);
 
     VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
   };
