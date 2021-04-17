@@ -20,12 +20,19 @@ namespace Hallow {
     ~HallowSwapChain();
 
     VkFramebuffer frameBuffer(int index) { return m_swap_chain_framebuffers[index]; }
+
     VkRenderPass renderPass() { return m_render_pass; }
+
     VkImageView imageView(int index) { return m_swap_chain_image_views[index]; }
+
     size_t imageCount() { return m_swap_chain_images.size(); }
+
     VkFormat swapChainImageFormat() { return m_swap_chain_image_format; }
+
     VkExtent2D swapChainExtent() { return m_swap_chain_extent; }
+
     uint32_t width() const { return m_swap_chain_extent.width; }
+
     uint32_t height() const { return m_swap_chain_extent.height; }
 
     float extentAspectRatio() {
@@ -68,11 +75,11 @@ namespace Hallow {
 
     // Helper functions
     VkSurfaceFormatKHR chooseSwapSurfaceFormat(
-            const std::vector<VkSurfaceFormatKHR>& available_formats);
+        const std::vector<VkSurfaceFormatKHR>& available_formats);
 
     VkPresentModeKHR chooseSwapPresentMode(
-            const std::vector<VkPresentModeKHR>& available_present_modes,
-            VkPresentModeKHR preferred_mode);
+        const std::vector<VkPresentModeKHR>& available_present_modes,
+        VkPresentModeKHR preferred_mode);
 
     VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
   };

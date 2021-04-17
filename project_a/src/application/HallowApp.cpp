@@ -63,7 +63,7 @@ namespace Hallow {
                                &pipeline_layout_info, nullptr,
                                &m_pipeline_layout) != VK_SUCCESS) {
       throw std::runtime_error(
-              "HallowApp: Failed to create pipeline layout!");
+          "HallowApp: Failed to create pipeline layout!");
     }
   }
 
@@ -71,9 +71,9 @@ namespace Hallow {
     PipelineConfigInfo pipeline_config{};
 
     HallowPipeline::defaultPipelineConfig(
-            pipeline_config,
-            m_hallow_swap_chain.width(),
-            m_hallow_swap_chain.height());
+        pipeline_config,
+        m_hallow_swap_chain.width(),
+        m_hallow_swap_chain.height());
 
     // render pass describes the structure and format of frame buffer objects and their attachments
     pipeline_config.render_pass = m_hallow_swap_chain.renderPass();
@@ -96,7 +96,7 @@ namespace Hallow {
     if (vkAllocateCommandBuffers(m_hallow_device.device(), &alloc_info,
                                  m_command_buffers.data()) != VK_SUCCESS) {
       throw std::runtime_error(
-              "HallowApp: Failed to allocate command buffers!");
+          "HallowApp: Failed to allocate command buffers!");
     }
 
     for (int i = 0; i < m_command_buffers.size(); ++i) {
@@ -106,7 +106,7 @@ namespace Hallow {
       if (vkBeginCommandBuffer(m_command_buffers[i], &begin_info) !=
           VK_SUCCESS) {
         throw std::runtime_error(
-                "HallowApp: Failed to begin recording command buffer!");
+            "HallowApp: Failed to begin recording command buffer!");
       }
 
       VkRenderPassBeginInfo render_pass_info{};
@@ -139,7 +139,7 @@ namespace Hallow {
       vkCmdEndRenderPass(m_command_buffers[i]);
       if (vkEndCommandBuffer(m_command_buffers[i]) != VK_SUCCESS) {
         throw std::runtime_error(
-                "HallowApp: Failed to record command buffer!");
+            "HallowApp: Failed to record command buffer!");
       }
     }
   }
@@ -149,14 +149,14 @@ namespace Hallow {
     auto result = m_hallow_swap_chain.acquireNextImage(&image_index);
     if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
       throw std::runtime_error(
-              "HallowApp: Failed to acquire next swap chain image!");
+          "HallowApp: Failed to acquire next swap chain image!");
     }
 
     result = m_hallow_swap_chain.submitCommandBuffers(
-            &m_command_buffers[image_index], &image_index);
+        &m_command_buffers[image_index], &image_index);
     if (result != VK_SUCCESS) {
       throw std::runtime_error(
-              "HallowApp: Failed to present swap chain image!");
+          "HallowApp: Failed to present swap chain image!");
     }
   }
 }

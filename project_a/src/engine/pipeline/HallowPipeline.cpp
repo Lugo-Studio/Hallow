@@ -35,7 +35,7 @@ namespace Hallow {
                                  std::ios::binary}; // ate says to skip to onEnd of file
     if (!file.is_open()) {
       throw std::runtime_error(
-              "HallowPipeline: Failed to open file: " + filePath);
+          "HallowPipeline: Failed to open file: " + filePath);
     }
 
     size_t fileSize = static_cast<size_t>(file.tellg()); // tellg reports position
@@ -50,18 +50,18 @@ namespace Hallow {
   }
 
   void HallowPipeline::createGraphicsPipeline(
-          const PipelineConfigInfo& pipelineConfigInfo,
-          const std::string& vertFilePath,
-          const std::string& fragFilePath) {
+      const PipelineConfigInfo& pipelineConfigInfo,
+      const std::string& vertFilePath,
+      const std::string& fragFilePath) {
     std::cout << "Creating graphics pipeline...\n";
 
     if (pipelineConfigInfo.pipeline_layout == VK_NULL_HANDLE) {
       throw std::runtime_error(
-              "HallowPipeline: Cannot create graphics pipeline. No pipeline_layout was provided!");
+          "HallowPipeline: Cannot create graphics pipeline. No pipeline_layout was provided!");
     }
     if (pipelineConfigInfo.render_pass == VK_NULL_HANDLE) {
       throw std::runtime_error(
-              "HallowPipeline: Cannot create graphics pipeline. No m_render_pass was provided!");
+          "HallowPipeline: Cannot create graphics pipeline. No m_render_pass was provided!");
     }
 
     auto vertCode = readFile(vertFilePath);
@@ -124,7 +124,7 @@ namespace Hallow {
                                   nullptr,
                                   &m_graphics_pipeline) != VK_SUCCESS) {
       throw std::runtime_error(
-              "HallowPipeline: Failed to create graphics pipeline!");
+          "HallowPipeline: Failed to create graphics pipeline!");
     }
 
     std::cout << "Graphics pipeline created!\n";
@@ -140,13 +140,13 @@ namespace Hallow {
     if (vkCreateShaderModule(m_device.device(), &createInfo, nullptr,
                              shaderModule) != VK_SUCCESS) {
       throw std::runtime_error(
-              "HallowPipeline: Failed to create shader module!");
+          "HallowPipeline: Failed to create shader module!");
     }
   }
 
   void HallowPipeline::defaultPipelineConfig(
-          PipelineConfigInfo& pipelineConfigInfo, uint32_t width,
-          uint32_t height) {
+      PipelineConfigInfo& pipelineConfigInfo, uint32_t width,
+      uint32_t height) {
     pipelineConfigInfo.input_assembly_info.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
     pipelineConfigInfo.input_assembly_info.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
     pipelineConfigInfo.input_assembly_info.primitiveRestartEnable = VK_FALSE;
@@ -193,9 +193,9 @@ namespace Hallow {
 
     // how we combine colors in frame buffer
     pipelineConfigInfo.color_blend_attachment_state.colorWriteMask =
-            VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT |
-            VK_COLOR_COMPONENT_B_BIT |
-            VK_COLOR_COMPONENT_A_BIT;
+        VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT |
+        VK_COLOR_COMPONENT_B_BIT |
+        VK_COLOR_COMPONENT_A_BIT;
     pipelineConfigInfo.color_blend_attachment_state.blendEnable = VK_FALSE;
     pipelineConfigInfo.color_blend_attachment_state.srcColorBlendFactor = VK_BLEND_FACTOR_ONE;   // Optional
     pipelineConfigInfo.color_blend_attachment_state.dstColorBlendFactor = VK_BLEND_FACTOR_ZERO;  // Optional

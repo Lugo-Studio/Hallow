@@ -40,17 +40,25 @@ namespace Hallow {
     ~HallowDevice();
 
     VkCommandPool commandPool() { return m_command_pool; }
+
     VkDevice device() { return m_device; }
+
     VkSurfaceKHR surface() { return m_surface; }
+
     VkQueue graphicsQueue() { return m_graphics_queue; }
+
     VkQueue presentQueue() { return m_present_queue; }
+
     SwapChainSupportDetails swapChainSupport() {
       return querySwapChainSupport(m_physical_device);
     }
+
     uint32_t findMemoryType(uint32_t type_filter, VkMemoryPropertyFlags properties);
+
     QueueFamilyIndices findPhysicalQueueFamilies() {
       return findQueueFamilies(m_physical_device);
     }
+
     VkFormat findSupportedFormat(const std::vector<VkFormat>& candidates,
                                  VkImageTiling tiling,
                                  VkFormatFeatureFlags features);
@@ -113,9 +121,9 @@ namespace Hallow {
     VkQueue m_present_queue;
 
     const std::vector<const char*> VALIDATION_LAYERS = {
-            "VK_LAYER_KHRONOS_validation"};
+        "VK_LAYER_KHRONOS_validation"};
     const std::vector<const char*> DEVICE_EXTENSIONS = {
-            VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+        VK_KHR_SWAPCHAIN_EXTENSION_NAME};
   };
 
 }  // namespace Hallow

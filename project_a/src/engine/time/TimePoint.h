@@ -14,7 +14,7 @@ namespace Hallow {
   class TimePoint {
   public:
     TimePoint(double time = 0.0)
-            : m_time(time) {
+        : m_time(time) {
     }
 
     // override operators to increment time

@@ -13,7 +13,7 @@
 namespace Hallow {
 
   HallowSwapChain::HallowSwapChain(HallowDevice& device_ref, VkExtent2D extent)
-          : m_hallow_device{device_ref}, m_window_extent{extent} {
+      : m_hallow_device{device_ref}, m_window_extent{extent} {
     createSwapChain();
     createImageViews();
     createRenderPass();
@@ -57,25 +57,25 @@ namespace Hallow {
 
   VkResult HallowSwapChain::acquireNextImage(uint32_t* image_index) {
     vkWaitForFences(
-            m_hallow_device.device(),
-            1,
-            &m_in_flight_fences[m_current_frame],
-            VK_TRUE,
-            std::numeric_limits<uint64_t>::max());
+        m_hallow_device.device(),
+        1,
+        &m_in_flight_fences[m_current_frame],
+        VK_TRUE,
+        std::numeric_limits<uint64_t>::max());
 
     VkResult result = vkAcquireNextImageKHR(
-            m_hallow_device.device(),
-            m_swap_chain,
-            std::numeric_limits<uint64_t>::max(),
-            m_image_available_semaphores[m_current_frame],  // must be a not signaled semaphore
-            VK_NULL_HANDLE,
-            image_index);
+        m_hallow_device.device(),
+        m_swap_chain,
+        std::numeric_limits<uint64_t>::max(),
+        m_image_available_semaphores[m_current_frame],  // must be a not signaled semaphore
+        VK_NULL_HANDLE,
+        image_index);
 
     return result;
   }
 
   VkResult HallowSwapChain::submitCommandBuffers(
-          const VkCommandBuffer* buffers, uint32_t* image_index) {
+      const VkCommandBuffer* buffers, uint32_t* image_index) {
     if (m_images_in_flight[*image_index] != VK_NULL_HANDLE) {
       vkWaitForFences(m_hallow_device.device(), 1, &m_images_in_flight[*image_index],
                       VK_TRUE, UINT64_MAX);
@@ -87,7 +87,7 @@ namespace Hallow {
 
     VkSemaphore wait_semaphores[]{m_image_available_semaphores[m_current_frame]};
     VkPipelineStageFlags wait_stages[] = {
-            VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
+        VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
     submit_info.waitSemaphoreCount = 1;
     submit_info.pWaitSemaphores = wait_semaphores;
     submit_info.pWaitDstStageMask = wait_stages;
@@ -129,9 +129,9 @@ namespace Hallow {
     SwapChainSupportDetails swap_chain_support = m_hallow_device.swapChainSupport();
 
     VkSurfaceFormatKHR surface_format = chooseSwapSurfaceFormat(
-            swap_chain_support.formats);
+        swap_chain_support.formats);
     VkPresentModeKHR presentMode = chooseSwapPresentMode(
-            swap_chain_support.present_modes, m_preferred_present_mode);
+        swap_chain_support.present_modes, m_preferred_present_mode);
     VkExtent2D extent = chooseSwapExtent(swap_chain_support.capabilities);
 
     uint32_t image_count = swap_chain_support.capabilities.minImageCount + 1;
@@ -210,7 +210,7 @@ namespace Hallow {
                             &m_swap_chain_image_views[i]) !=
           VK_SUCCESS) {
         throw std::runtime_error(
-                "failed to create texture image view!");
+            "failed to create texture image view!");
       }
     }
   }
@@ -293,10 +293,10 @@ namespace Hallow {
       framebuffer_info.layers = 1;
 
       if (vkCreateFramebuffer(
-              m_hallow_device.device(),
-              &framebuffer_info,
-              nullptr,
-              &m_swap_chain_framebuffers[i]) != VK_SUCCESS) {
+          m_hallow_device.device(),
+          &framebuffer_info,
+          nullptr,
+          &m_swap_chain_framebuffers[i]) != VK_SUCCESS) {
         throw std::runtime_error("failed to create framebuffer!");
       }
     }
@@ -328,10 +328,10 @@ namespace Hallow {
       image_info.flags = 0;
 
       m_hallow_device.createImageWithInfo(
-              image_info,
-              VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
-              m_depth_images[i],
-              m_depth_image_memorys[i]);
+          image_info,
+          VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
+          m_depth_images[i],
+          m_depth_image_memorys[i]);
 
       VkImageViewCreateInfo view_info{};
       view_info.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
@@ -347,7 +347,7 @@ namespace Hallow {
       if (vkCreateImageView(m_hallow_device.device(), &view_info, nullptr,
                             &m_depth_image_views[i]) != VK_SUCCESS) {
         throw std::runtime_error(
-                "failed to create texture image view!");
+            "failed to create texture image view!");
       }
     }
   }
@@ -375,13 +375,13 @@ namespace Hallow {
           vkCreateFence(m_hallow_device.device(), &fence_info, nullptr,
                         &m_in_flight_fences[i]) != VK_SUCCESS) {
         throw std::runtime_error(
-                "failed to create synchronization objects for a frame!");
+            "failed to create synchronization objects for a frame!");
       }
     }
   }
 
   VkSurfaceFormatKHR HallowSwapChain::chooseSwapSurfaceFormat(
-          const std::vector<VkSurfaceFormatKHR>& available_formats) {
+      const std::vector<VkSurfaceFormatKHR>& available_formats) {
     for (const auto& available_format : available_formats) {
       if (available_format.format == VK_FORMAT_B8G8R8A8_UNORM &&
           available_format.colorSpace ==
@@ -394,8 +394,8 @@ namespace Hallow {
   }
 
   VkPresentModeKHR HallowSwapChain::chooseSwapPresentMode(
-          const std::vector<VkPresentModeKHR>& available_present_modes,
-          VkPresentModeKHR preferred_mode) {
+      const std::vector<VkPresentModeKHR>& available_present_modes,
+      VkPresentModeKHR preferred_mode) {
     for (const auto& present_mode : available_present_modes) {
       if (present_mode == preferred_mode) {
         std::cout << "Present mode: ";
@@ -432,20 +432,20 @@ namespace Hallow {
   }
 
   VkExtent2D HallowSwapChain::chooseSwapExtent(
-          const VkSurfaceCapabilitiesKHR& capabilities) {
+      const VkSurfaceCapabilitiesKHR& capabilities) {
     if (capabilities.currentExtent.width !=
         std::numeric_limits<uint32_t>::max()) {
       return capabilities.currentExtent;
     } else {
       VkExtent2D actual_extent = m_window_extent;
       actual_extent.width = std::max(
-              capabilities.minImageExtent.width,
-              std::min(capabilities.maxImageExtent.width,
-                       actual_extent.width));
+          capabilities.minImageExtent.width,
+          std::min(capabilities.maxImageExtent.width,
+                   actual_extent.width));
       actual_extent.height = std::max(
-              capabilities.minImageExtent.height,
-              std::min(capabilities.maxImageExtent.height,
-                       actual_extent.height));
+          capabilities.minImageExtent.height,
+          std::min(capabilities.maxImageExtent.height,
+                   actual_extent.height));
 
       return actual_extent;
     }
@@ -453,10 +453,10 @@ namespace Hallow {
 
   VkFormat HallowSwapChain::findDepthFormat() {
     return m_hallow_device.findSupportedFormat(
-            {VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT,
-             VK_FORMAT_D24_UNORM_S8_UINT},
-            VK_IMAGE_TILING_OPTIMAL,
-            VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
+        {VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT,
+         VK_FORMAT_D24_UNORM_S8_UINT},
+        VK_IMAGE_TILING_OPTIMAL,
+        VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
   }
 
 }  // namespace Hallow

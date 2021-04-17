@@ -26,7 +26,7 @@ namespace Hallow {
     using Hours = std::chrono::duration<double, std::ratio<3600>>;
 
     Stopwatch()
-            : m_start(Clock::now()) {}
+        : m_start(Clock::now()) {}
 
     void reset() {
       m_start = Clock::now();
@@ -35,7 +35,7 @@ namespace Hallow {
     template<typename T>
     double timeElapsed() const {
       return std::chrono::duration_cast<T>(
-              Clock::now() - m_start).count();
+          Clock::now() - m_start).count();
     }
 
     double hours() const { return timeElapsed<Hours>(); }

@@ -36,19 +36,21 @@ namespace Hallow {
     HallowPipeline(HallowDevice& device,
                    const PipelineConfigInfo& pipelineConfigInfo,
                    const std::string& shaderFilePath)
-            : m_device{device} {
+        : m_device{device} {
       init(device,
            pipelineConfigInfo,
            shaderFilePath + ".vert.spv",
            shaderFilePath + ".frag.spv");
     }
+
     HallowPipeline(HallowDevice& device,
                    const PipelineConfigInfo& pipelineConfigInfo,
                    const std::string& vertFilePath,
                    const std::string& fragFilePath)
-            : m_device{device} {
+        : m_device{device} {
       init(device, pipelineConfigInfo, vertFilePath, fragFilePath);
     }
+
     ~HallowPipeline();
 
     static void defaultPipelineConfig(PipelineConfigInfo& pipelineConfigInfo,
