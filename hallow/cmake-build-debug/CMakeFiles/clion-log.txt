@@ -1,0 +1,14 @@
+C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=C:/Dev/git/vcpkg/scripts/buildsystems/vcpkg.cmake -G "CodeBlocks - NMake Makefiles" C:\Home\Projects\Personal\Hallow\hallow
+Vert shaders found: res/shaders/simple_shader.vert
+Frag shaders found: res/shaders/simple_shader.frag
+-- Compiling vertex shaders...
+-- Compiling shader: res/shaders/simple_shader.vert
+-- Compiling fragment shaders...
+-- Compiling shader: res/shaders/simple_shader.frag
+-- Cmake build type: Debug
+-- C:/Dev/VulkanSDK/1.2.170.0/Lib/vulkan-1.lib included at C:/Dev/VulkanSDK/1.2.170.0/Include
+-- glm included!
+-- glfw3 included!
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug

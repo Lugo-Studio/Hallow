@@ -1,0 +1,3 @@
+C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/hallow.dir
+C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/rebuild_cache.dir

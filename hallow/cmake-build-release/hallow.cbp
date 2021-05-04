@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="hallow"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\Dev\;CMake Files\..\..\..\..\..\Dev\git\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\scripts\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\scripts\buildsystems\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glm\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glfw3\;CMake Files\src\;CMake Files\src\helpers\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hallow">
+				<Option output="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/hallow.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DMODE_RELEASE"/>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/src"/>
+					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/src"/>
+					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/include"/>
+					<Add directory="C:/Dev/VulkanSDK/1.2.170.0/Include"/>
+					<Add directory="C:/Dev/git/vcpkg/installed/x64-windows/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 hallow"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hallow/fast">
+				<Option output="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/hallow.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DMODE_RELEASE"/>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/src"/>
+					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/src"/>
+					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/include"/>
+					<Add directory="C:/Dev/VulkanSDK/1.2.170.0/Include"/>
+					<Add directory="C:/Dev/git/vcpkg/installed/x64-windows/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 hallow/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Home\Projects\Personal\Hallow\hallow\cmake-build-release\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/WinMain.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game/HallowGame.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game/HallowGame.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/HallowColor.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/device/HallowDevice.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/device/HallowDevice.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/model/HallowModel.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/model/HallowModel.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/pipeline/HallowPipeline.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/pipeline/HallowPipeline.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/swap_chain/HallowSwapChain.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/swap_chain/HallowSwapChain.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/time/Stopwatch.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/time/Time.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/time/Time.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/time/TimePoint.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/window/HallowWindow.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/window/HallowWindow.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/../../../../../Dev/git/vcpkg/scripts/buildsystems/vcpkg.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Dev\git\vcpkg\scripts\buildsystems\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/../../../../../Dev/git/vcpkg/installed/x64-windows/share/glm/glm-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glm\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/../../../../../Dev/git/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/../../../../../Dev/git/vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/../../../../../Dev/git/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/../../../../../Dev/git/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/../../../../../Dev/git/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glfw3\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/helpers/RootDir.h.in">
+			<Option virtualFolder="CMake Files\src\helpers\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
