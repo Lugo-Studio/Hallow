@@ -24,8 +24,9 @@ namespace Hallow {
     bool shouldClose() { return glfwWindowShouldClose(m_glfw_window); }
 
     VkExtent2D extent() {
-      return {static_cast<uint32_t>(m_width),
-              static_cast<uint32_t>(m_height)};
+      return {
+          static_cast<uint32_t>(m_width), static_cast<uint32_t>(m_height)
+      };
     }
 
     void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);

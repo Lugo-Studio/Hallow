@@ -6,8 +6,8 @@
 #include "HallowModel.hpp"
 
 namespace Hallow {
-  HallowModel::HallowModel(HallowDevice& hallow_device, const std::vector<Vertex>& vertices)
-    : m_hallow_device(hallow_device) {
+  HallowModel::HallowModel(HallowDevice& hallow_device, const std::vector<Vertex>& vertices) : m_hallow_device(
+      hallow_device) {
     createVertexBuffers(vertices);
   }
 

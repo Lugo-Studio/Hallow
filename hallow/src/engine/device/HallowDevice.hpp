@@ -59,28 +59,26 @@ namespace Hallow {
       return findQueueFamilies(m_physical_device);
     }
 
-    VkFormat findSupportedFormat(const std::vector<VkFormat>& candidates,
-                                 VkImageTiling tiling,
-                                 VkFormatFeatureFlags features);
+    VkFormat findSupportedFormat(
+        const std::vector<VkFormat>& candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
 
     // Buffer Helper Functions
-    void createBuffer(VkDeviceSize size,
-                      VkBufferUsageFlags usage,
-                      VkMemoryPropertyFlags mem_properties,
-                      VkBuffer& buffer,
-                      VkDeviceMemory& buffer_memory);
+    void createBuffer(
+        VkDeviceSize size,
+        VkBufferUsageFlags usage,
+        VkMemoryPropertyFlags mem_properties,
+        VkBuffer& buffer,
+        VkDeviceMemory& buffer_memory);
     VkCommandBuffer beginSingleTimeCommands();
     void endSingleTimeCommands(VkCommandBuffer command_buffer);
     void copyBuffer(VkBuffer src_buffer, VkBuffer dst_buffer, VkDeviceSize size);
-    void copyBufferToImage(VkBuffer buffer,
-                           VkImage image,
-                           uint32_t width,
-                           uint32_t height,
-                           uint32_t layer_count);
-    void createImageWithInfo(const VkImageCreateInfo& image_info,
-                             VkMemoryPropertyFlags mem_properties,
-                             VkImage& image,
-                             VkDeviceMemory& image_memory);
+    void copyBufferToImage(
+        VkBuffer buffer, VkImage image, uint32_t width, uint32_t height, uint32_t layer_count);
+    void createImageWithInfo(
+        const VkImageCreateInfo& image_info,
+        VkMemoryPropertyFlags mem_properties,
+        VkImage& image,
+        VkDeviceMemory& image_memory);
 
     // Not copyable or movable
     HallowDevice(const HallowDevice&) = delete;
@@ -121,9 +119,11 @@ namespace Hallow {
     VkQueue m_present_queue;
 
     const std::vector<const char*> VALIDATION_LAYERS = {
-        "VK_LAYER_KHRONOS_validation"};
+        "VK_LAYER_KHRONOS_validation"
+    };
     const std::vector<const char*> DEVICE_EXTENSIONS = {
-        VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+        VK_KHR_SWAPCHAIN_EXTENSION_NAME
+    };
   };
 
 }  // namespace Hallow

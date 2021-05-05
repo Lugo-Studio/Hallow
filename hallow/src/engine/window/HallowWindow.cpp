@@ -26,17 +26,15 @@ namespace Hallow {
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API); // Don't automagically create OpenGL context
     glfwWindowHint(GLFW_RESIZABLE, false); // Window resizing will need special treatment, so disable normal resizing
+    //glfwWindowHint(GLFW_DECORATED, false);
 
-    m_glfw_window = glfwCreateWindow(m_width, m_height, m_name.c_str(),
-                                     nullptr, nullptr);
+    m_glfw_window = glfwCreateWindow(m_width, m_height, m_name.c_str(), nullptr, nullptr);
   }
 
-  void HallowWindow::createWindowSurface(VkInstance instance,
-                                         VkSurfaceKHR* surface) {
-    if (glfwCreateWindowSurface(instance, m_glfw_window, nullptr,
-                                surface) != VK_SUCCESS) {
-      throw std::runtime_error(
-          "GLFW Error: Failed to create m_hallow_window surface!");
+  void HallowWindow::createWindowSurface(
+      VkInstance instance, VkSurfaceKHR* surface) {
+    if (glfwCreateWindowSurface(instance, m_glfw_window, nullptr, surface) != VK_SUCCESS) {
+      throw std::runtime_error("GLFW Error: Failed to create m_hallow_window surface!");
     }
   }
 }

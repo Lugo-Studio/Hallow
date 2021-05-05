@@ -12,6 +12,7 @@
 #include <glm/glm.hpp>
 
 #include <vector>
+#include <array>
 
 namespace Hallow {
   class HallowModel {
@@ -21,6 +22,12 @@ namespace Hallow {
 
       static std::vector<VkVertexInputBindingDescription> bindingDescriptions();
       static std::vector<VkVertexInputAttributeDescription> attributeDescriptions();
+    };
+
+    struct Triangle {
+      std::array<Vertex, 3> vertices;
+
+
     };
 
     HallowModel(HallowDevice& hallow_device, const std::vector<Vertex>& vertices);

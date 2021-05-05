@@ -18,13 +18,13 @@ namespace Hallow {
     vkDestroyPipeline(m_device.device(), m_graphics_pipeline, nullptr);
   }
 
-  void HallowPipeline::init(HallowDevice& device,
-                            const PipelineConfigInfo& pipelineConfigData,
-                            const std::string& vertFilePath,
-                            const std::string& fragFilePath) {
+  void HallowPipeline::init(
+      HallowDevice& device,
+      const PipelineConfigInfo& pipelineConfigData,
+      const std::string& vertFilePath,
+      const std::string& fragFilePath) {
     try {
-      createGraphicsPipeline(pipelineConfigData, vertFilePath,
-                             fragFilePath);
+      createGraphicsPipeline(pipelineConfigData, vertFilePath, fragFilePath);
     } catch (const std::exception& e) {
       std::cerr << e.what() << "\n";
       std::terminate();
@@ -32,37 +32,32 @@ namespace Hallow {
   }
 
   std::vector<char> HallowPipeline::readFile(const std::string& filePath) {
-    std::ifstream file{filePath, std::ios::ate |
-                                 std::ios::binary}; // ate says to skip to onEnd of file
+    std::ifstream file{
+        filePath, std::ios::ate | std::ios::binary
+    }; // ate says to skip to onEnd of file
     if (!file.is_open()) {
-      throw std::runtime_error(
-          "HallowPipeline: Failed to open file: " + filePath);
+      throw std::runtime_error("HallowPipeline: Failed to open file: " + filePath);
     }
 
     size_t fileSize = static_cast<size_t>(file.tellg()); // tellg reports position
     std::vector<char> buffer(fileSize);
 
     file.seekg(0); // go back to beginning
-    file.read(buffer.data(),
-              fileSize); // read for as many bits as file size
+    file.read(buffer.data(), fileSize); // read for as many bits as file size
 
     file.close();
     return buffer;
   }
 
   void HallowPipeline::createGraphicsPipeline(
-      const PipelineConfigInfo& pipelineConfigInfo,
-      const std::string& vertFilePath,
-      const std::string& fragFilePath) {
+      const PipelineConfigInfo& pipelineConfigInfo, const std::string& vertFilePath, const std::string& fragFilePath) {
     std::cout << "Creating graphics pipeline...\n";
 
     if (pipelineConfigInfo.pipeline_layout == VK_NULL_HANDLE) {
-      throw std::runtime_error(
-          "HallowPipeline: Cannot create graphics pipeline. No pipeline_layout was provided!");
+      throw std::runtime_error("HallowPipeline: Cannot create graphics pipeline. No pipeline_layout was provided!");
     }
     if (pipelineConfigInfo.render_pass == VK_NULL_HANDLE) {
-      throw std::runtime_error(
-          "HallowPipeline: Cannot create graphics pipeline. No m_render_pass was provided!");
+      throw std::runtime_error("HallowPipeline: Cannot create graphics pipeline. No m_render_pass was provided!");
     }
 
     auto vertCode = readFile(vertFilePath);
@@ -120,36 +115,28 @@ namespace Hallow {
     pipelineInfo.basePipelineIndex = -1;
     pipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
-    if (vkCreateGraphicsPipelines(m_device.device(),
-                                  VK_NULL_HANDLE,
-                                  1,
-                                  &pipelineInfo,
-                                  nullptr,
-                                  &m_graphics_pipeline) != VK_SUCCESS) {
-      throw std::runtime_error(
-          "HallowPipeline: Failed to create graphics pipeline!");
+    if (vkCreateGraphicsPipelines(m_device.device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &m_graphics_pipeline) !=
+        VK_SUCCESS) {
+      throw std::runtime_error("HallowPipeline: Failed to create graphics pipeline!");
     }
 
     std::cout << "Graphics pipeline created!\n";
   }
 
-  void HallowPipeline::createShaderModule(const std::vector<char>& shaderCode,
-                                          VkShaderModule* shaderModule) {
+  void HallowPipeline::createShaderModule(
+      const std::vector<char>& shaderCode, VkShaderModule* shaderModule) {
     VkShaderModuleCreateInfo createInfo{};
     createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
     createInfo.codeSize = shaderCode.size();
     createInfo.pCode = reinterpret_cast<const uint32_t*>(shaderCode.data());
 
-    if (vkCreateShaderModule(m_device.device(), &createInfo, nullptr,
-                             shaderModule) != VK_SUCCESS) {
-      throw std::runtime_error(
-          "HallowPipeline: Failed to create shader module!");
+    if (vkCreateShaderModule(m_device.device(), &createInfo, nullptr, shaderModule) != VK_SUCCESS) {
+      throw std::runtime_error("HallowPipeline: Failed to create shader module!");
     }
   }
 
   void HallowPipeline::defaultPipelineConfig(
-      PipelineConfigInfo& pipelineConfigInfo, uint32_t width,
-      uint32_t height) {
+      PipelineConfigInfo& pipelineConfigInfo, uint32_t width, uint32_t height) {
     pipelineConfigInfo.input_assembly_info.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
     pipelineConfigInfo.input_assembly_info.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
     pipelineConfigInfo.input_assembly_info.primitiveRestartEnable = VK_FALSE;
@@ -195,10 +182,10 @@ namespace Hallow {
     pipelineConfigInfo.multisample_info.alphaToOneEnable = VK_FALSE;       // Optional
 
     // how we combine colors in frame buffer
-    pipelineConfigInfo.color_blend_attachment_state.colorWriteMask =
-        VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT |
-        VK_COLOR_COMPONENT_B_BIT |
-        VK_COLOR_COMPONENT_A_BIT;
+    pipelineConfigInfo.color_blend_attachment_state.colorWriteMask = VK_COLOR_COMPONENT_R_BIT |
+                                                                     VK_COLOR_COMPONENT_G_BIT |
+                                                                     VK_COLOR_COMPONENT_B_BIT |
+                                                                     VK_COLOR_COMPONENT_A_BIT;
     pipelineConfigInfo.color_blend_attachment_state.blendEnable = VK_FALSE;
     pipelineConfigInfo.color_blend_attachment_state.srcColorBlendFactor = VK_BLEND_FACTOR_ONE;   // Optional
     pipelineConfigInfo.color_blend_attachment_state.dstColorBlendFactor = VK_BLEND_FACTOR_ZERO;  // Optional
@@ -231,7 +218,6 @@ namespace Hallow {
   }
 
   void HallowPipeline::bind(VkCommandBuffer commandBuffer) {
-    vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
-                      m_graphics_pipeline);
+    vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, m_graphics_pipeline);
   }
 }

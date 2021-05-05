@@ -9,19 +9,14 @@ namespace Hallow {
   struct Color {
     float r, g, b, a;
 
-    Color(float r, float g, float b, float a)
-        : r(r), g(g), b(b), a(a) {}
+    Color(float r, float g, float b, float a) : r(r), g(g), b(b), a(a) {}
 
     explicit Color(unsigned int hexValue) {
       // RRGGBBAA
-      r = static_cast<float>((hexValue >> 24) & 0xFF) /
-          255.0f;  // Extract the RR byte
-      g = static_cast<float>((hexValue >> 16) & 0xFF) /
-          255.0f;   // Extract the GG byte
-      b = static_cast<float>((hexValue >> 8) & 0xFF) /
-          255.0f;   // Extract the BB byte
-      a = static_cast<float>((hexValue) & 0xFF) /
-          255.0f;   // Extract the AA byte
+      r = static_cast<float>((hexValue >> 24) & 0xFF) / 255.0f;  // Extract the RR byte
+      g = static_cast<float>((hexValue >> 16) & 0xFF) / 255.0f;   // Extract the GG byte
+      b = static_cast<float>((hexValue >> 8) & 0xFF) / 255.0f;   // Extract the BB byte
+      a = static_cast<float>((hexValue) & 0xFF) / 255.0f;   // Extract the AA byte
     }
   };
 }

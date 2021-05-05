@@ -10,6 +10,7 @@
 
 #ifdef MODE_RELEASE
 #include <windows.h>
+
 #endif
 
 
@@ -27,10 +28,8 @@ int run() {
 
 #ifdef MODE_RELEASE
 
-int WINAPI WinMain(HINSTANCE h_instance,
-                   HINSTANCE h_prev_instance,
-                   LPSTR lp_cmd_line,
-                   int n_cmd_show) {
+int WINAPI WinMain(
+    HINSTANCE h_instance, HINSTANCE h_prev_instance, LPSTR lp_cmd_line, int n_cmd_show) {
   return run();
 }
 

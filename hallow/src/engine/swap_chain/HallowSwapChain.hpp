@@ -36,8 +36,7 @@ namespace Hallow {
     uint32_t height() const { return m_swap_chain_extent.height; }
 
     float extentAspectRatio() {
-      return static_cast<float>(m_swap_chain_extent.width) /
-             static_cast<float>(m_swap_chain_extent.height);
+      return static_cast<float>(m_swap_chain_extent.width) / static_cast<float>(m_swap_chain_extent.height);
     }
 
     VkFormat findDepthFormat();
@@ -78,8 +77,7 @@ namespace Hallow {
         const std::vector<VkSurfaceFormatKHR>& available_formats);
 
     VkPresentModeKHR chooseSwapPresentMode(
-        const std::vector<VkPresentModeKHR>& available_present_modes,
-        VkPresentModeKHR preferred_mode);
+        const std::vector<VkPresentModeKHR>& available_present_modes, VkPresentModeKHR preferred_mode);
 
     VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
   };

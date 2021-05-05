@@ -36,28 +36,24 @@ namespace Hallow {
 
   class HallowPipeline {
   public:
-    HallowPipeline(HallowDevice& device,
-                   const PipelineConfigInfo& pipelineConfigInfo,
-                   const std::string& shaderFilePath)
+    HallowPipeline(
+        HallowDevice& device, const PipelineConfigInfo& pipelineConfigInfo, const std::string& shaderFilePath)
         : m_device{device} {
-      init(device,
-           pipelineConfigInfo,
-           shaderFilePath + ".vert.spv",
-           shaderFilePath + ".frag.spv");
+      init(device, pipelineConfigInfo, shaderFilePath + ".vert.spv", shaderFilePath + ".frag.spv");
     }
 
-    HallowPipeline(HallowDevice& device,
-                   const PipelineConfigInfo& pipelineConfigInfo,
-                   const std::string& vertFilePath,
-                   const std::string& fragFilePath)
-        : m_device{device} {
+    HallowPipeline(
+        HallowDevice& device,
+        const PipelineConfigInfo& pipelineConfigInfo,
+        const std::string& vertFilePath,
+        const std::string& fragFilePath) : m_device{device} {
       init(device, pipelineConfigInfo, vertFilePath, fragFilePath);
     }
 
     ~HallowPipeline();
 
-    static void defaultPipelineConfig(PipelineConfigInfo& pipelineConfigInfo,
-                                      uint32_t width, uint32_t height);
+    static void defaultPipelineConfig(
+        PipelineConfigInfo& pipelineConfigInfo, uint32_t width, uint32_t height);
     void bind(VkCommandBuffer commandBuffer);
 
     HallowPipeline(const HallowPipeline&) = delete;
@@ -69,19 +65,19 @@ namespace Hallow {
     VkShaderModule m_vert_shader_module;
     VkShaderModule m_frag_shader_module;
 
-    void init(HallowDevice& device,
-              const PipelineConfigInfo& pipelineConfigData,
-              const std::string& vertFilePath,
-              const std::string& fragFilePath);
+    void init(
+        HallowDevice& device,
+        const PipelineConfigInfo& pipelineConfigData,
+        const std::string& vertFilePath,
+        const std::string& fragFilePath);
 
     static std::vector<char> readFile(const std::string& filePath);
 
-    void createGraphicsPipeline(const PipelineConfigInfo& pipelineConfigInfo,
-                                const std::string& vertFilePath,
-                                const std::string& fragFilePath);
+    void createGraphicsPipeline(
+        const PipelineConfigInfo& pipelineConfigInfo, const std::string& vertFilePath, const std::string& fragFilePath);
 
-    void createShaderModule(const std::vector<char>& shaderCode,
-                            VkShaderModule* shaderModule);
+    void createShaderModule(
+        const std::vector<char>& shaderCode, VkShaderModule* shaderModule);
   };
 }
 

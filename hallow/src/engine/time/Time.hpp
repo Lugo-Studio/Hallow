@@ -41,8 +41,7 @@ namespace Hallow {
       }
     }
 
-    friend std::ostream&
-    operator<<(std::ostream& output, const Time& time) {
+    friend std::ostream& operator<<(std::ostream& output, const Time& time) {
       time.display(output);
       return output;
     }
@@ -57,10 +56,8 @@ namespace Hallow {
     Stopwatch m_print_interval{};
 
     void display(std::ostream& output) const {
-      output << "FPS: " << (int) (1.0 / m_frame.seconds()) << "\n"
-             << "Frametime: " << m_frame.seconds() << " s\n"
-             << "Deltatime: " << m_delta.seconds() << " s\n"
-             << "Lasttime: " << m_game_last.seconds() << " s\n"
+      output << "FPS: " << (int) (1.0 / m_frame.seconds()) << "\n" << "Frametime: " << m_frame.seconds() << " s\n"
+             << "Deltatime: " << m_delta.seconds() << " s\n" << "Lasttime: " << m_game_last.seconds() << " s\n"
              << "Currtime: " << m_game_current.seconds() << " s\n";
     }
   };

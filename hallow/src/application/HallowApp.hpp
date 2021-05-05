@@ -39,8 +39,9 @@ namespace Hallow {
     HallowGame m_hallow_game{};
     HallowWindow m_hallow_window{WIDTH, HEIGHT, m_name};
     HallowDevice m_hallow_device{m_hallow_window};
-    HallowSwapChain m_hallow_swap_chain{m_hallow_device,
-                                        m_hallow_window.extent()};
+    HallowSwapChain m_hallow_swap_chain{
+        m_hallow_device, m_hallow_window.extent()
+    };
     std::unique_ptr<HallowPipeline> m_hallow_pipeline;
     VkPipelineLayout m_pipeline_layout;
     std::vector<VkCommandBuffer> m_command_buffers;
