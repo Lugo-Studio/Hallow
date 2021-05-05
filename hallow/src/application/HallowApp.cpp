@@ -71,8 +71,9 @@ namespace Hallow {
     m_hallow_game.onPostEnd();
   }
 
-  HallowModel::Vertex midpoint(const glm::vec2& v1,
-                               const glm::vec2& v2) {
+  HallowModel::Vertex midpoint(
+      const glm::vec2& v1,
+      const glm::vec2& v2) {
     return {{(v1[0] + v2[0]) * 0.5f, (v1[1] + v2[1]) * 0.5f}};
   }
 
@@ -80,41 +81,33 @@ namespace Hallow {
       std::vector<HallowModel::Vertex>& vertices,
       const HallowModel::Triangle& triangle,
       int depth) {
-    HallowModel::Vertex midpoint_bottom = midpoint(triangle.vertices[0].position,
-                                                   triangle.vertices[1].position);
-    HallowModel::Vertex midpoint_right = midpoint(triangle.vertices[1].position,
-                                                  triangle.vertices[2].position);
-    HallowModel::Vertex midpoint_left = midpoint(triangle.vertices[2].position,
-                                                  triangle.vertices[0].position);
+    HallowModel::Vertex midpoints[] = {
+        midpoint(triangle.vertices[0].position, triangle.vertices[1].position),
+        midpoint(triangle.vertices[1].position, triangle.vertices[2].position),
+        midpoint(triangle.vertices[2].position, triangle.vertices[0].position)
+    };
 
     if (depth == 0) {
       vertices.push_back(triangle.vertices[0]);
       vertices.push_back(triangle.vertices[1]);
       vertices.push_back(triangle.vertices[2]);
     } else {
-      HallowModel::Triangle triangle_left {
-          triangle.vertices[0],
-          midpoint_bottom,
-          midpoint_left
-      };
-      HallowModel::Triangle triangle_right {
-          midpoint_bottom,
-          triangle.vertices[1],
-          midpoint_right
-      };
-      HallowModel::Triangle triangle_top {
-          midpoint_left,
-          midpoint_right,
-          triangle.vertices[2]
+      --depth;
+      HallowModel::Triangle triangles[] = {
+          {triangle.vertices[0],
+              midpoints[0],
+              midpoints[2]},
+          {midpoints[0],
+              triangle.vertices[1],
+              midpoints[1]},
+          {midpoints[2],
+              midpoints[1],
+              triangle.vertices[2]}
       };
 
-      --depth;
-      // left triangle
-      sierpinski(vertices, triangle_left, depth);
-      // right triangle
-      sierpinski(vertices, triangle_right, depth);
-      // top triangle
-      sierpinski(vertices, triangle_top, depth);
+      sierpinski(vertices, triangles[0], depth);
+      sierpinski(vertices, triangles[1], depth);
+      sierpinski(vertices, triangles[2], depth);
     }
   }
 
@@ -125,7 +118,7 @@ namespace Hallow {
     triangle.vertices[2].position = {0.0, -0.5};
 
     std::vector<HallowModel::Vertex> vertices{};
-    sierpinski(vertices, triangle, 1);
+    sierpinski(vertices, triangle, 7);
 
     m_hallow_model = std::make_unique<HallowModel>(m_hallow_device, vertices);
   }
