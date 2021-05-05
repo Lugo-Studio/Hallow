@@ -8,6 +8,8 @@
 
 ../src/application/game/HallowGame.hpp
 
+../src/application/sierpinski/Sierpinski.hpp
+
 ../src/engine/color/HallowColor.hpp
 
 ../src/engine/device/HallowDevice.hpp
@@ -1249,6 +1251,8 @@ stdexcept
 -
 array
 -
+application/sierpinski/Sierpinski.hpp
+-
 
 C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.hpp
 engine/time/Time.hpp
@@ -1273,6 +1277,18 @@ application/game/HallowGame.hpp
 -
 engine/model/HallowModel.hpp
 -
+
+C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.cpp
+vector
+-
+engine/model/HallowModel.hpp
+-
+iostream
+-
+Sierpinski.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.hpp
+
+C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.hpp
 
 src/helpers/RootDir.h
 

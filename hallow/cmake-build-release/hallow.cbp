@@ -113,6 +113,12 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game/HallowGame.hpp">
 			<Option target="hallow"/>
 		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.hpp">
+			<Option target="hallow"/>
+		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/HallowColor.hpp">
 			<Option target="hallow"/>
 		</Unit>

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <array>
+#include <application/sierpinski/Sierpinski.hpp>
 
 
 namespace Hallow {
@@ -71,56 +72,13 @@ namespace Hallow {
     m_hallow_game.onPostEnd();
   }
 
-  HallowModel::Vertex midpoint(
-      const glm::vec2& v1,
-      const glm::vec2& v2) {
-    return {{(v1[0] + v2[0]) * 0.5f, (v1[1] + v2[1]) * 0.5f}};
-  }
-
-  void sierpinski(
-      std::vector<HallowModel::Vertex>& vertices,
-      const HallowModel::Triangle& triangle,
-      int depth) {
-    HallowModel::Vertex midpoints[] = {
-        midpoint(triangle.vertices[0].position, triangle.vertices[1].position),
-        midpoint(triangle.vertices[1].position, triangle.vertices[2].position),
-        midpoint(triangle.vertices[2].position, triangle.vertices[0].position)
-    };
-
-    if (depth == 0) {
-      for (const auto& vert : triangle.vertices) {
-        vertices.push_back(vert);
-      }
-    } else {
-      --depth;
-      HallowModel::Triangle triangles[] = {
-          {triangle.vertices[0],
-              midpoints[0],
-              midpoints[2]},
-          {midpoints[0],
-              triangle.vertices[1],
-              midpoints[1]},
-          {midpoints[2],
-              midpoints[1],
-              triangle.vertices[2]}
-      };
-
-      for (const auto& tri : triangles) {
-        sierpinski(vertices, tri, depth);
-      }
-    }
-  }
-
   void HallowApp::loadModels() {
     HallowModel::Triangle triangle{};
     triangle.vertices[0].position = {-0.5, 0.5};
     triangle.vertices[1].position = {0.5, 0.5};
     triangle.vertices[2].position = {0.0, -0.5};
 
-    std::vector<HallowModel::Vertex> vertices{};
-    sierpinski(vertices, triangle, 7);
-
-    m_hallow_model = std::make_unique<HallowModel>(m_hallow_device, vertices);
+    m_hallow_model = std::make_unique<HallowModel>(m_hallow_device, Sierpinski::sierpinski(triangle, 6));
   }
 
   void HallowApp::createPipelineLayout() {

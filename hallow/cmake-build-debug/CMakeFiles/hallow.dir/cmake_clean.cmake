@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hallow.dir/src/WinMain.cpp.obj"
   "CMakeFiles/hallow.dir/src/application/HallowApp.cpp.obj"
   "CMakeFiles/hallow.dir/src/application/game/HallowGame.cpp.obj"
+  "CMakeFiles/hallow.dir/src/application/sierpinski/Sierpinski.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/device/HallowDevice.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/model/HallowModel.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/pipeline/HallowPipeline.cpp.obj"

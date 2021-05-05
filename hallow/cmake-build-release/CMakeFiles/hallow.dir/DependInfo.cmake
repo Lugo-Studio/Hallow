@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Home/Projects/Personal/Hallow/hallow/src/WinMain.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/WinMain.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/application/HallowApp.cpp.obj"
+  "C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/application/Sierpinski/Sierpinski.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/application/game/HallowGame.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/application/game/HallowGame.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/engine/device/HallowDevice.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/engine/device/HallowDevice.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/engine/model/HallowModel.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/engine/model/HallowModel.cpp.obj"

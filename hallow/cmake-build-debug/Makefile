@@ -207,6 +207,33 @@ src\application\game\HallowGame.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game\HallowGame.cpp.s
 .PHONY : src\application\game\HallowGame.cpp.s
 
+src\application\sierpinski\Sierpinski.obj: src\application\sierpinski\Sierpinski.cpp.obj
+
+.PHONY : src\application\sierpinski\Sierpinski.obj
+
+# target to build an object file
+src\application\sierpinski\Sierpinski.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.obj
+.PHONY : src\application\sierpinski\Sierpinski.cpp.obj
+
+src\application\sierpinski\Sierpinski.i: src\application\sierpinski\Sierpinski.cpp.i
+
+.PHONY : src\application\sierpinski\Sierpinski.i
+
+# target to preprocess a source file
+src\application\sierpinski\Sierpinski.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.i
+.PHONY : src\application\sierpinski\Sierpinski.cpp.i
+
+src\application\sierpinski\Sierpinski.s: src\application\sierpinski\Sierpinski.cpp.s
+
+.PHONY : src\application\sierpinski\Sierpinski.s
+
+# target to generate assembly for a file
+src\application\sierpinski\Sierpinski.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.s
+.PHONY : src\application\sierpinski\Sierpinski.cpp.s
+
 src\engine\device\HallowDevice.obj: src\engine\device\HallowDevice.cpp.obj
 
 .PHONY : src\engine\device\HallowDevice.obj
@@ -387,6 +414,9 @@ help:
 	@echo ... src/application/game/HallowGame.obj
 	@echo ... src/application/game/HallowGame.i
 	@echo ... src/application/game/HallowGame.s
+	@echo ... src/application/sierpinski/Sierpinski.obj
+	@echo ... src/application/sierpinski/Sierpinski.i
+	@echo ... src/application/sierpinski/Sierpinski.s
 	@echo ... src/engine/device/HallowDevice.obj
 	@echo ... src/engine/device/HallowDevice.i
 	@echo ... src/engine/device/HallowDevice.s

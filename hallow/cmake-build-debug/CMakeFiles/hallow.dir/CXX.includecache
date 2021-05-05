@@ -8,6 +8,8 @@
 
 ../src/application/game/HallowGame.hpp
 
+../src/application/sierpinski/Sierpinski.hpp
+
 ../src/engine/color/HallowColor.hpp
 
 ../src/engine/device/HallowDevice.hpp
@@ -1248,6 +1250,8 @@ iostream
 stdexcept
 -
 array
+-
+application/sierpinski/Sierpinski.hpp
 -
 
 C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.hpp

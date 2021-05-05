@@ -26,8 +26,6 @@ namespace Hallow {
 
     struct Triangle {
       std::array<Vertex, 3> vertices;
-
-
     };
 
     HallowModel(HallowDevice& hallow_device, const std::vector<Vertex>& vertices);
