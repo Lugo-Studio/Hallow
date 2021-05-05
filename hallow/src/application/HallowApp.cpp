@@ -88,9 +88,9 @@ namespace Hallow {
     };
 
     if (depth == 0) {
-      vertices.push_back(triangle.vertices[0]);
-      vertices.push_back(triangle.vertices[1]);
-      vertices.push_back(triangle.vertices[2]);
+      for (const auto& vert : triangle.vertices) {
+        vertices.push_back(vert);
+      }
     } else {
       --depth;
       HallowModel::Triangle triangles[] = {
@@ -105,9 +105,9 @@ namespace Hallow {
               triangle.vertices[2]}
       };
 
-      sierpinski(vertices, triangles[0], depth);
-      sierpinski(vertices, triangles[1], depth);
-      sierpinski(vertices, triangles[2], depth);
+      for (const auto& tri : triangles) {
+        sierpinski(vertices, tri, depth);
+      }
     }
   }
 
