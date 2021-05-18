@@ -3,11 +3,12 @@
 //
 
 #include <stdexcept>
+#include <iostream>
 #include "HallowModel.hpp"
 
 namespace Hallow {
   HallowModel::HallowModel(HallowDevice& hallow_device, const std::vector<Vertex>& vertices) : m_hallow_device(
-      hallow_device) {
+    hallow_device) {
     createVertexBuffers(vertices);
   }
 
@@ -51,6 +52,14 @@ namespace Hallow {
   }
 
   std::vector<VkVertexInputAttributeDescription> HallowModel::Vertex::attributeDescriptions() {
-    return {{0, 0, VK_FORMAT_R32G32_SFLOAT, 0}};
+    uint32_t positionOffset = offsetof(Vertex, position);
+    uint32_t colorOffset = offsetof(Vertex, color);
+    return {
+      {0, 0, VK_FORMAT_R32G32_SFLOAT,    positionOffset}, // position
+      {1, 0, VK_FORMAT_R32G32B32_SFLOAT, colorOffset}}; // color
+  }
+
+  std::vector<HallowModel::Vertex> HallowModel::Triangle::vertexVector() {
+    return {vertices.begin(), vertices.end()};
   }
 }

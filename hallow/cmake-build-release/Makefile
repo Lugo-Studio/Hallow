@@ -207,6 +207,33 @@ src\application\game\HallowGame.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game\HallowGame.cpp.s
 .PHONY : src\application\game\HallowGame.cpp.s
 
+src\application\game_objects\SimpleTriangle.obj: src\application\game_objects\SimpleTriangle.cpp.obj
+
+.PHONY : src\application\game_objects\SimpleTriangle.obj
+
+# target to build an object file
+src\application\game_objects\SimpleTriangle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.obj
+.PHONY : src\application\game_objects\SimpleTriangle.cpp.obj
+
+src\application\game_objects\SimpleTriangle.i: src\application\game_objects\SimpleTriangle.cpp.i
+
+.PHONY : src\application\game_objects\SimpleTriangle.i
+
+# target to preprocess a source file
+src\application\game_objects\SimpleTriangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.i
+.PHONY : src\application\game_objects\SimpleTriangle.cpp.i
+
+src\application\game_objects\SimpleTriangle.s: src\application\game_objects\SimpleTriangle.cpp.s
+
+.PHONY : src\application\game_objects\SimpleTriangle.s
+
+# target to generate assembly for a file
+src\application\game_objects\SimpleTriangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.s
+.PHONY : src\application\game_objects\SimpleTriangle.cpp.s
+
 src\application\sierpinski\Sierpinski.obj: src\application\sierpinski\Sierpinski.cpp.obj
 
 .PHONY : src\application\sierpinski\Sierpinski.obj
@@ -234,6 +261,33 @@ src\application\sierpinski\Sierpinski.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.s
 .PHONY : src\application\sierpinski\Sierpinski.cpp.s
 
+src\engine\color\srgb_transform\SrgbTransform.obj: src\engine\color\srgb_transform\SrgbTransform.cpp.obj
+
+.PHONY : src\engine\color\srgb_transform\SrgbTransform.obj
+
+# target to build an object file
+src\engine\color\srgb_transform\SrgbTransform.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.obj
+.PHONY : src\engine\color\srgb_transform\SrgbTransform.cpp.obj
+
+src\engine\color\srgb_transform\SrgbTransform.i: src\engine\color\srgb_transform\SrgbTransform.cpp.i
+
+.PHONY : src\engine\color\srgb_transform\SrgbTransform.i
+
+# target to preprocess a source file
+src\engine\color\srgb_transform\SrgbTransform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.i
+.PHONY : src\engine\color\srgb_transform\SrgbTransform.cpp.i
+
+src\engine\color\srgb_transform\SrgbTransform.s: src\engine\color\srgb_transform\SrgbTransform.cpp.s
+
+.PHONY : src\engine\color\srgb_transform\SrgbTransform.s
+
+# target to generate assembly for a file
+src\engine\color\srgb_transform\SrgbTransform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.s
+.PHONY : src\engine\color\srgb_transform\SrgbTransform.cpp.s
+
 src\engine\device\HallowDevice.obj: src\engine\device\HallowDevice.cpp.obj
 
 .PHONY : src\engine\device\HallowDevice.obj
@@ -260,6 +314,33 @@ src\engine\device\HallowDevice.s: src\engine\device\HallowDevice.cpp.s
 src\engine\device\HallowDevice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.s
 .PHONY : src\engine\device\HallowDevice.cpp.s
+
+src\engine\game_object\HallowGameObject.obj: src\engine\game_object\HallowGameObject.cpp.obj
+
+.PHONY : src\engine\game_object\HallowGameObject.obj
+
+# target to build an object file
+src\engine\game_object\HallowGameObject.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.obj
+.PHONY : src\engine\game_object\HallowGameObject.cpp.obj
+
+src\engine\game_object\HallowGameObject.i: src\engine\game_object\HallowGameObject.cpp.i
+
+.PHONY : src\engine\game_object\HallowGameObject.i
+
+# target to preprocess a source file
+src\engine\game_object\HallowGameObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.i
+.PHONY : src\engine\game_object\HallowGameObject.cpp.i
+
+src\engine\game_object\HallowGameObject.s: src\engine\game_object\HallowGameObject.cpp.s
+
+.PHONY : src\engine\game_object\HallowGameObject.s
+
+# target to generate assembly for a file
+src\engine\game_object\HallowGameObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.s
+.PHONY : src\engine\game_object\HallowGameObject.cpp.s
 
 src\engine\model\HallowModel.obj: src\engine\model\HallowModel.cpp.obj
 
@@ -314,6 +395,60 @@ src\engine\pipeline\HallowPipeline.s: src\engine\pipeline\HallowPipeline.cpp.s
 src\engine\pipeline\HallowPipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.s
 .PHONY : src\engine\pipeline\HallowPipeline.cpp.s
+
+src\engine\renderer\HallowRenderer.obj: src\engine\renderer\HallowRenderer.cpp.obj
+
+.PHONY : src\engine\renderer\HallowRenderer.obj
+
+# target to build an object file
+src\engine\renderer\HallowRenderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj
+.PHONY : src\engine\renderer\HallowRenderer.cpp.obj
+
+src\engine\renderer\HallowRenderer.i: src\engine\renderer\HallowRenderer.cpp.i
+
+.PHONY : src\engine\renderer\HallowRenderer.i
+
+# target to preprocess a source file
+src\engine\renderer\HallowRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.i
+.PHONY : src\engine\renderer\HallowRenderer.cpp.i
+
+src\engine\renderer\HallowRenderer.s: src\engine\renderer\HallowRenderer.cpp.s
+
+.PHONY : src\engine\renderer\HallowRenderer.s
+
+# target to generate assembly for a file
+src\engine\renderer\HallowRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.s
+.PHONY : src\engine\renderer\HallowRenderer.cpp.s
+
+src\engine\renderer\render_system\SimpleRenderSystem.obj: src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj
+
+.PHONY : src\engine\renderer\render_system\SimpleRenderSystem.obj
+
+# target to build an object file
+src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj
+.PHONY : src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj
+
+src\engine\renderer\render_system\SimpleRenderSystem.i: src\engine\renderer\render_system\SimpleRenderSystem.cpp.i
+
+.PHONY : src\engine\renderer\render_system\SimpleRenderSystem.i
+
+# target to preprocess a source file
+src\engine\renderer\render_system\SimpleRenderSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.i
+.PHONY : src\engine\renderer\render_system\SimpleRenderSystem.cpp.i
+
+src\engine\renderer\render_system\SimpleRenderSystem.s: src\engine\renderer\render_system\SimpleRenderSystem.cpp.s
+
+.PHONY : src\engine\renderer\render_system\SimpleRenderSystem.s
+
+# target to generate assembly for a file
+src\engine\renderer\render_system\SimpleRenderSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.s
+.PHONY : src\engine\renderer\render_system\SimpleRenderSystem.cpp.s
 
 src\engine\swap_chain\HallowSwapChain.obj: src\engine\swap_chain\HallowSwapChain.cpp.obj
 
@@ -414,18 +549,33 @@ help:
 	@echo ... src/application/game/HallowGame.obj
 	@echo ... src/application/game/HallowGame.i
 	@echo ... src/application/game/HallowGame.s
+	@echo ... src/application/game_objects/SimpleTriangle.obj
+	@echo ... src/application/game_objects/SimpleTriangle.i
+	@echo ... src/application/game_objects/SimpleTriangle.s
 	@echo ... src/application/sierpinski/Sierpinski.obj
 	@echo ... src/application/sierpinski/Sierpinski.i
 	@echo ... src/application/sierpinski/Sierpinski.s
+	@echo ... src/engine/color/srgb_transform/SrgbTransform.obj
+	@echo ... src/engine/color/srgb_transform/SrgbTransform.i
+	@echo ... src/engine/color/srgb_transform/SrgbTransform.s
 	@echo ... src/engine/device/HallowDevice.obj
 	@echo ... src/engine/device/HallowDevice.i
 	@echo ... src/engine/device/HallowDevice.s
+	@echo ... src/engine/game_object/HallowGameObject.obj
+	@echo ... src/engine/game_object/HallowGameObject.i
+	@echo ... src/engine/game_object/HallowGameObject.s
 	@echo ... src/engine/model/HallowModel.obj
 	@echo ... src/engine/model/HallowModel.i
 	@echo ... src/engine/model/HallowModel.s
 	@echo ... src/engine/pipeline/HallowPipeline.obj
 	@echo ... src/engine/pipeline/HallowPipeline.i
 	@echo ... src/engine/pipeline/HallowPipeline.s
+	@echo ... src/engine/renderer/HallowRenderer.obj
+	@echo ... src/engine/renderer/HallowRenderer.i
+	@echo ... src/engine/renderer/HallowRenderer.s
+	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.obj
+	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.i
+	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.s
 	@echo ... src/engine/swap_chain/HallowSwapChain.obj
 	@echo ... src/engine/swap_chain/HallowSwapChain.i
 	@echo ... src/engine/swap_chain/HallowSwapChain.s

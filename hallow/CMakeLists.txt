@@ -54,10 +54,10 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/src)
 # Hide console on release & define the executable
 message(STATUS "Cmake build type: ${CMAKE_BUILD_TYPE}")
 if (${CMAKE_BUILD_TYPE} STREQUAL Release)
-  add_compile_definitions(MODE_RELEASE)
+  #add_compile_definitions(MODE_RELEASE)
   add_executable(${PROJECT_NAME} WIN32 ${HEADER_FILES} ${SOURCE_FILES})
 else ()
-  add_compile_definitions(MODE_DEBUG)
+  #add_compile_definitions(MODE_DEBUG)
   add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 endif ()
 
@@ -66,7 +66,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 # Vulkan
 find_package(Vulkan REQUIRED)
-message(STATUS "${Vulkan_LIBRARY} included at ${Vulkan_INCLUDE_DIR}")
+message(STATUS "${Vulkan_LIBRARIES} included at ${Vulkan_INCLUDE_DIRS}")
 
 # GLM
 find_package(glm CONFIG REQUIRED)
@@ -79,12 +79,12 @@ set(GLFW_LIBRARY glfw)
 message(STATUS "glfw3 included!")
 
 # Define the include DIRs
-set(LIB_INCL ${Vulkan_INCLUDE_DIR})
+set(LIB_INCL ${Vulkan_INCLUDE_DIRS})
 include_directories("${SRC_DIR}" "${INCL_DIR}" "${LIB_INCL}")
 
 # Define the link libraries
 link_directories("${LIB_DIR}")
 
 # Put all libraries into a variable
-set(LIBS ${Vulkan_LIBRARY} ${GLM_LIBRARY} ${GLFW_LIBRARY})
+set(LIBS ${Vulkan_LIBRARIES} ${GLM_LIBRARY} ${GLFW_LIBRARY})
 target_link_libraries(${PROJECT_NAME} ${LIBS})

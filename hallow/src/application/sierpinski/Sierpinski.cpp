@@ -10,8 +10,8 @@
 namespace Hallow {
 
   std::vector<HallowModel::Vertex> Sierpinski::sierpinski(
-      const HallowModel::Triangle& triangle,
-      int depth) {
+    const Triangle& triangle,
+    int depth) {
     std::vector<HallowModel::Vertex> vertices;
     auto inner_triangle = midpoints(triangle);
 
@@ -22,7 +22,7 @@ namespace Hallow {
 
       return vertices;
     } else {
-      auto triangles = smaller_triangles(triangle, inner_triangle);
+      auto triangles = triangle_fragments(triangle, inner_triangle);
 
       --depth;
       for (const auto& tri : triangles) {
@@ -34,27 +34,30 @@ namespace Hallow {
     }
   }
 
-  HallowModel::Triangle Sierpinski::midpoints(const HallowModel::Triangle& triangle) {
+  Sierpinski::Triangle Sierpinski::midpoints(const Triangle& triangle) {
     return {
-        midpoint(triangle.vertices[0].position, triangle.vertices[1].position),
-        midpoint(triangle.vertices[1].position, triangle.vertices[2].position),
-        midpoint(triangle.vertices[2].position, triangle.vertices[0].position)
+      midpoint(triangle.vertices[0], triangle.vertices[1]),
+      midpoint(triangle.vertices[1], triangle.vertices[2]),
+      midpoint(triangle.vertices[2], triangle.vertices[0])
     };
   }
 
-  std::array<HallowModel::Triangle, 3> Sierpinski::smaller_triangles(
-      const HallowModel::Triangle& outer_triangle,
-      const HallowModel::Triangle& inner_triangle) {
+  std::array<Sierpinski::Triangle, 3> Sierpinski::triangle_fragments(
+    const Triangle& outer_triangle,
+    const Triangle& inner_triangle) {
+
     return {{
-                {outer_triangle.vertices[0],
-                    inner_triangle.vertices[0],
-                    inner_triangle.vertices[2]},
-                {inner_triangle.vertices[0],
-                    outer_triangle.vertices[1],
-                    inner_triangle.vertices[1]},
-                {inner_triangle.vertices[2],
-                    inner_triangle.vertices[1],
-                    outer_triangle.vertices[2]}
+              {outer_triangle.vertices[0],
+                inner_triangle.vertices[0],
+                inner_triangle.vertices[2]},
+
+              {inner_triangle.vertices[0],
+                outer_triangle.vertices[1],
+                inner_triangle.vertices[1]},
+
+              {inner_triangle.vertices[2],
+                inner_triangle.vertices[1],
+                outer_triangle.vertices[2]}
             }};
   }
 }

@@ -14,8 +14,6 @@
 
 namespace Hallow {
   struct PipelineConfigInfo {
-    VkViewport viewport{};
-    VkRect2D scissor{};
     VkPipelineInputAssemblyStateCreateInfo input_assembly_info{};
     VkPipelineViewportStateCreateInfo viewport_info{};
     VkPipelineRasterizationStateCreateInfo rasterization_info{};
@@ -26,6 +24,8 @@ namespace Hallow {
     VkPipelineLayout pipeline_layout = (VkPipelineLayout) nullptr;
     VkRenderPass render_pass = (VkRenderPass) nullptr;
     uint32_t subpass = 0;
+    std::vector<VkDynamicState> dynamic_state_enables;
+    VkPipelineDynamicStateCreateInfo dynamic_state_info;
 
     PipelineConfigInfo() = default;
     ~PipelineConfigInfo() = default;
@@ -37,27 +37,25 @@ namespace Hallow {
   class HallowPipeline {
   public:
     HallowPipeline(
-        HallowDevice& device, const PipelineConfigInfo& pipelineConfigInfo, const std::string& shaderFilePath)
-        : m_device{device} {
-      init(device, pipelineConfigInfo, shaderFilePath + ".vert.spv", shaderFilePath + ".frag.spv");
+      HallowDevice& device, const PipelineConfigInfo& pipeline_config_info, const std::string& shader_file_path)
+      : m_device{device} {
+      init(device, pipeline_config_info, shader_file_path + ".vert.spv", shader_file_path + ".frag.spv");
     }
 
     HallowPipeline(
-        HallowDevice& device,
-        const PipelineConfigInfo& pipelineConfigInfo,
-        const std::string& vertFilePath,
-        const std::string& fragFilePath) : m_device{device} {
-      init(device, pipelineConfigInfo, vertFilePath, fragFilePath);
+      HallowDevice& device,
+      const PipelineConfigInfo& pipeline_config_info,
+      const std::string& vert_file_path,
+      const std::string& frag_file_path) : m_device{device} {
+      init(device, pipeline_config_info, vert_file_path, frag_file_path);
     }
 
     ~HallowPipeline();
-
-    static void defaultPipelineConfig(
-        PipelineConfigInfo& pipelineConfigInfo, uint32_t width, uint32_t height);
-    void bind(VkCommandBuffer commandBuffer);
-
     HallowPipeline(const HallowPipeline&) = delete;
     HallowPipeline& operator=(const HallowPipeline&) = delete;
+
+    static void defaultPipelineConfig(PipelineConfigInfo& pipeline_config_info);
+    void bind(VkCommandBuffer command_buffer);
   private:
     HallowDevice& m_device;
     VkPipeline m_graphics_pipeline;
@@ -66,18 +64,20 @@ namespace Hallow {
     VkShaderModule m_frag_shader_module;
 
     void init(
-        HallowDevice& device,
-        const PipelineConfigInfo& pipelineConfigData,
-        const std::string& vertFilePath,
-        const std::string& fragFilePath);
+      HallowDevice& device,
+      const PipelineConfigInfo& pipeline_config_data,
+      const std::string& vert_file_path,
+      const std::string& frag_file_path);
 
-    static std::vector<char> readFile(const std::string& filePath);
+    static std::vector<char> readFile(const std::string& file_path);
 
     void createGraphicsPipeline(
-        const PipelineConfigInfo& pipelineConfigInfo, const std::string& vertFilePath, const std::string& fragFilePath);
+      const PipelineConfigInfo& pipeline_config_info,
+      const std::string& vert_file_path,
+      const std::string& frag_file_path);
 
     void createShaderModule(
-        const std::vector<char>& shaderCode, VkShaderModule* shaderModule);
+      const std::vector<char>& shader_code, VkShaderModule* shader_module);
   };
 }
 

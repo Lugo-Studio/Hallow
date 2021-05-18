@@ -34,12 +34,11 @@
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add option="-DMODE_DEBUG"/>
 					<Add option="-DGLFW_DLL"/>
 					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/src"/>
 					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/src"/>
 					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/include"/>
-					<Add directory="C:/Dev/VulkanSDK/1.2.170.0/Include"/>
+					<Add directory="C:/Dev/VulkanSDK/1.2.176.1/Include"/>
 					<Add directory="C:/Dev/git/vcpkg/installed/x64-windows/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include"/>
@@ -64,12 +63,11 @@
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add option="-DMODE_DEBUG"/>
 					<Add option="-DGLFW_DLL"/>
 					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/src"/>
 					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/src"/>
 					<Add directory="C:/Home/Projects/Personal/Hallow/hallow/include"/>
-					<Add directory="C:/Dev/VulkanSDK/1.2.170.0/Include"/>
+					<Add directory="C:/Dev/VulkanSDK/1.2.176.1/Include"/>
 					<Add directory="C:/Dev/git/vcpkg/installed/x64-windows/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include"/>
@@ -113,6 +111,12 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game/HallowGame.hpp">
 			<Option target="hallow"/>
 		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.hpp">
+			<Option target="hallow"/>
+		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.cpp">
 			<Option target="hallow"/>
 		</Unit>
@@ -122,10 +126,22 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/HallowColor.hpp">
 			<Option target="hallow"/>
 		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/srgb_transform/SrgbTransform.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/srgb_transform/SrgbTransform.hpp">
+			<Option target="hallow"/>
+		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/device/HallowDevice.cpp">
 			<Option target="hallow"/>
 		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/device/HallowDevice.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/HallowGameObject.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/HallowGameObject.hpp">
 			<Option target="hallow"/>
 		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/model/HallowModel.cpp">
@@ -138,6 +154,18 @@
 			<Option target="hallow"/>
 		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/pipeline/HallowPipeline.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/HallowRenderer.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/HallowRenderer.hpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.hpp">
 			<Option target="hallow"/>
 		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/swap_chain/HallowSwapChain.cpp">

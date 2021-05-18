@@ -8,7 +8,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#ifdef MODE_RELEASE
+#ifdef NDEBUG
 #include <windows.h>
 
 #endif
@@ -26,16 +26,14 @@ int run() {
   return EXIT_SUCCESS;
 }
 
-#ifdef MODE_RELEASE
+#ifdef NDEBUG
 
 int WINAPI WinMain(
     HINSTANCE h_instance, HINSTANCE h_prev_instance, LPSTR lp_cmd_line, int n_cmd_show) {
   return run();
 }
 
-#endif
-
-#ifdef MODE_DEBUG
+#else
 
 int main() {
   return run();

@@ -5,18 +5,18 @@
 #ifndef PROJECT_A_HALLOWAPP_H
 #define PROJECT_A_HALLOWAPP_H
 
+#include "helpers/RootDir.h"
 #include "engine/time/Time.hpp"
+#include "application/game/HallowGame.hpp"
 #include "engine/window/HallowWindow.hpp"
 #include "engine/device/HallowDevice.hpp"
-#include "engine/swap_chain/HallowSwapChain.hpp"
-#include "engine/pipeline/HallowPipeline.hpp"
-#include "helpers/RootDir.h"
+#include "engine/game_object/HallowGameObject.hpp"
+#include "engine/renderer/HallowRenderer.hpp"
+#include <engine/renderer/render_system/SimpleRenderSystem.hpp>
 
 #include <string>
 #include <memory>
 #include <vector>
-#include <application/game/HallowGame.hpp>
-#include <engine/model/HallowModel.hpp>
 
 
 namespace Hallow {
@@ -27,46 +27,32 @@ namespace Hallow {
 
     HallowApp();
     ~HallowApp();
-
-    void run();
-
     HallowApp(const HallowApp&) = delete;
     HallowApp& operator=(const HallowApp&) = delete;
+
+    void run();
   private:
     const std::string m_name{"Hallow Engine"};
 
+    bool m_use_srgb_color_space{false};
+
     Time m_time{};
     HallowGame m_hallow_game{};
+
     HallowWindow m_hallow_window{WIDTH, HEIGHT, m_name};
     HallowDevice m_hallow_device{m_hallow_window};
-    HallowSwapChain m_hallow_swap_chain{
-        m_hallow_device, m_hallow_window.extent()
-    };
-    std::unique_ptr<HallowPipeline> m_hallow_pipeline;
-    VkPipelineLayout m_pipeline_layout;
-    std::vector<VkCommandBuffer> m_command_buffers;
+    HallowRenderer m_hallow_renderer{m_hallow_window, m_hallow_device, m_use_srgb_color_space};
 
-    std::unique_ptr<HallowModel> m_hallow_model;
+    std::vector<HallowGameObject> m_game_objects;
 
-    void loadModels();
-    void createPipelineLayout();
-    void createPipeline();
-    void createCommandBuffers();
-    void drawFrame();
+    void loadGameObjects();
 
     // TODO: Move to lifetime events class
-    void onStart();
-    void onUpdate();
-    void onEnd();
+    void onStart(SimpleRenderSystem& render_system);
+    void onUpdate(SimpleRenderSystem& render_system);
+    void onEnd(SimpleRenderSystem& render_system);
   };
 }
-
-
-/*HallowPipeline m_hallow_pipeline{
-    m_hallow_device,
-    HallowPipeline::defaultPipelineConfig(WIDTH, HEIGHT),
-    "res/shaders/simple_shader"
-};*/
 
 
 #endif //PROJECT_A_HALLOWAPP_H
