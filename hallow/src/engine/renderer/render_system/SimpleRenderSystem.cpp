@@ -22,8 +22,8 @@ namespace Hallow {
     alignas(16) glm::vec3 color;
   };
 
-  SimpleRenderSystem::SimpleRenderSystem(Time& time, HallowDevice& device, VkRenderPass render_pass, bool use_srgb_color_space)
-    : m_time{time}, m_hallow_device{device}, m_use_srgb_color_space{use_srgb_color_space} {
+  SimpleRenderSystem::SimpleRenderSystem(Time& time, HallowDevice& device, VkRenderPass render_pass, RendererOptions renderer_options)
+    : m_time{time}, m_hallow_device{device}, m_renderer_options{renderer_options} {
     createPipelineLayout();
     createPipeline(render_pass);
   }

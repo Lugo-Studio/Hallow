@@ -26,7 +26,7 @@ namespace Hallow {
     SimpleRenderSystem simple_render_system{m_time,
                                             m_hallow_device,
                                             m_hallow_renderer.swapChainRenderPass(),
-                                            m_use_srgb_color_space};
+                                            m_renderer_options};
 
     onStart(simple_render_system);
 
@@ -84,7 +84,7 @@ namespace Hallow {
 
   void HallowApp::loadGameObjects() {
     //sierpinskiModel();
-    SimpleTriangle triangle_object{m_hallow_device, m_use_srgb_color_space};
+    SimpleTriangle triangle_object{m_hallow_device, m_renderer_options.using_srgb_color_space};
 
     m_game_objects.push_back(std::move(triangle_object));
   }

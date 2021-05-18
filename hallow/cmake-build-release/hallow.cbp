@@ -162,6 +162,9 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/HallowRenderer.hpp">
 			<Option target="hallow"/>
 		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/RendererOptions.hpp">
+			<Option target="hallow"/>
+		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.cpp">
 			<Option target="hallow"/>
 		</Unit>

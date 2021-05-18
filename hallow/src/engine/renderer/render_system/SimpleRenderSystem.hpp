@@ -15,19 +15,20 @@
 #include <vector>
 #include <application/game/HallowGame.hpp>
 #include <engine/game_object/HallowGameObject.hpp>
+#include <engine/renderer/RendererOptions.hpp>
 
 
 namespace Hallow {
   class SimpleRenderSystem {
   public:
-    SimpleRenderSystem(Time& time, HallowDevice& device, VkRenderPass render_pass, bool m_use_srgb_color_space = false);
+    SimpleRenderSystem(Time& time, HallowDevice& device, VkRenderPass render_pass, RendererOptions renderer_options);
     ~SimpleRenderSystem();
     SimpleRenderSystem(const SimpleRenderSystem&) = delete;
     SimpleRenderSystem& operator=(const SimpleRenderSystem&) = delete;
 
     void renderGameObjects(VkCommandBuffer command_buffer, std::vector<HallowGameObject>& game_objects);
   private:
-    bool m_use_srgb_color_space;
+    RendererOptions m_renderer_options;
     Time& m_time;
 
     HallowDevice& m_hallow_device;

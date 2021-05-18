@@ -9,6 +9,7 @@ CMakeFiles\hallow.dir\src\WinMain.cpp.obj: ..\src\engine\game_object\HallowGameO
 CMakeFiles\hallow.dir\src\WinMain.cpp.obj: ..\src\engine\model\HallowModel.hpp
 CMakeFiles\hallow.dir\src\WinMain.cpp.obj: ..\src\engine\pipeline\HallowPipeline.hpp
 CMakeFiles\hallow.dir\src\WinMain.cpp.obj: ..\src\engine\renderer\HallowRenderer.hpp
+CMakeFiles\hallow.dir\src\WinMain.cpp.obj: ..\src\engine\renderer\RendererOptions.hpp
 CMakeFiles\hallow.dir\src\WinMain.cpp.obj: ..\src\engine\renderer\render_system\SimpleRenderSystem.hpp
 CMakeFiles\hallow.dir\src\WinMain.cpp.obj: ..\src\engine\swap_chain\HallowSwapChain.hpp
 CMakeFiles\hallow.dir\src\WinMain.cpp.obj: ..\src\engine\time\Stopwatch.hpp
@@ -206,6 +207,7 @@ CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj: ..\src\engine\game_obje
 CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj: ..\src\engine\model\HallowModel.hpp
 CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj: ..\src\engine\pipeline\HallowPipeline.hpp
 CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj: ..\src\engine\renderer\HallowRenderer.hpp
+CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj: ..\src\engine\renderer\RendererOptions.hpp
 CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj: ..\src\engine\renderer\render_system\SimpleRenderSystem.hpp
 CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj: ..\src\engine\swap_chain\HallowSwapChain.hpp
 CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj: ..\src\engine\time\Stopwatch.hpp
@@ -1370,6 +1372,7 @@ CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\applica
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\color\HallowColor.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\color\srgb_transform\SrgbTransform.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\device\HallowDevice.hpp
+CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\renderer\RendererOptions.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\swap_chain\HallowSwapChain.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\time\Stopwatch.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\time\Time.hpp
@@ -1555,6 +1558,7 @@ CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: C:\Dev\git\vcp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: C:\Dev\git\vcpkg\installed\x64-windows\include\glm\vector_relational.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\renderer\HallowRenderer.cpp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\renderer\HallowRenderer.hpp
+CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\renderer\RendererOptions.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: src\helpers\RootDir.h
 
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\application\game\HallowGame.hpp
@@ -1565,6 +1569,7 @@ CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.o
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\game_object\HallowGameObject.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\model\HallowModel.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\pipeline\HallowPipeline.hpp
+CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\renderer\RendererOptions.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\time\Stopwatch.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\time\Time.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\time\TimePoint.hpp
@@ -1756,6 +1761,7 @@ CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.o
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: src\helpers\RootDir.h
 
 CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: ..\src\engine\device\HallowDevice.hpp
+CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: ..\src\engine\renderer\RendererOptions.hpp
 CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: ..\src\engine\window\HallowWindow.hpp
 CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\vk_video\vulkan_video_codec_h264std.h
 CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\vk_video\vulkan_video_codec_h264std_decode.h

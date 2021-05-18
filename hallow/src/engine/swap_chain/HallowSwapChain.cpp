@@ -13,18 +13,20 @@
 
 namespace Hallow {
 
-  HallowSwapChain::HallowSwapChain(HallowDevice& device_ref, VkExtent2D window_extent, bool use_srgb_color_space)
-    : m_hallow_device{device_ref}, m_window_extent{window_extent}, m_use_srgb_color_space(use_srgb_color_space) {
+  HallowSwapChain::HallowSwapChain(HallowDevice& device_ref, VkExtent2D window_extent, RendererOptions renderer_options)
+    : m_hallow_device{device_ref}, m_window_extent{window_extent},
+      m_renderer_options{renderer_options} {
     init();
   }
 
   HallowSwapChain::HallowSwapChain(
     HallowDevice& device_ref,
     VkExtent2D window_extent,
-    bool use_srgb_color_space,
+    RendererOptions renderer_options,
     std::shared_ptr<HallowSwapChain> previous)
-    : m_hallow_device{device_ref}, m_window_extent{window_extent}, m_old_swap_chain{std::move(previous)},
-      m_use_srgb_color_space(use_srgb_color_space) { // clion
+    : m_hallow_device{device_ref}, m_window_extent{window_extent},
+      m_renderer_options{renderer_options}, m_old_swap_chain{std::move
+      (previous)} { // clion
     // recommended adding std::move
     init();
 
@@ -163,7 +165,7 @@ namespace Hallow {
         break;
     }*/
 
-    VkPresentModeKHR present_mode = chooseSwapPresentMode(swap_chain_support.present_modes, m_preferred_present_mode);
+    VkPresentModeKHR present_mode = chooseSwapPresentMode(swap_chain_support.present_modes);
     /*std::cout << "Present mode: ";
     switch (present_mode) {
       case VK_PRESENT_MODE_IMMEDIATE_KHR:std::cout << "IMMEDIATE\n";
@@ -427,11 +429,11 @@ namespace Hallow {
 
   VkSurfaceFormatKHR HallowSwapChain::chooseSwapSurfaceFormat(
     const std::vector<VkSurfaceFormatKHR>& available_formats) {
-    for (const auto& available_format : available_formats) {
-      VkFormat preferred_format = m_use_srgb_color_space
-                                  ? VK_FORMAT_B8G8R8A8_SRGB
-                                  : VK_FORMAT_B8G8R8A8_UNORM;
+    auto preferred_format = m_renderer_options.using_srgb_color_space
+                            ? VK_FORMAT_B8G8R8A8_SRGB
+                            : VK_FORMAT_B8G8R8A8_UNORM;
 
+    for (const auto& available_format : available_formats) {
       if (available_format.format == preferred_format &&
           available_format.colorSpace == VK_COLOR_SPACE_SRGB_NONLINEAR_KHR) {
         return available_format;
@@ -442,9 +444,13 @@ namespace Hallow {
   }
 
   VkPresentModeKHR HallowSwapChain::chooseSwapPresentMode(
-    const std::vector<VkPresentModeKHR>& available_present_modes, VkPresentModeKHR preferred_mode) {
+    const std::vector<VkPresentModeKHR>& available_present_modes) {
+    auto mode = m_renderer_options.using_vsync
+                ? VK_PRESENT_MODE_FIFO_KHR
+                : VK_PRESENT_MODE_IMMEDIATE_KHR;
+
     for (const auto& present_mode : available_present_modes) {
-      if (present_mode == preferred_mode) {
+      if (present_mode == mode) {
         return present_mode;
       }
     }

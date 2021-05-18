@@ -9,6 +9,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <engine/renderer/RendererOptions.hpp>
 
 
 namespace Hallow {
@@ -17,8 +18,10 @@ namespace Hallow {
   public:
     static constexpr int MAX_FRAMES_IN_FLIGHT = 2;
 
-    HallowSwapChain(HallowDevice& device_ref, VkExtent2D window_extent, bool use_srgb_color_space);
-    HallowSwapChain(HallowDevice& device_ref, VkExtent2D window_extent, bool use_srgb_color_space,
+    HallowSwapChain(HallowDevice& device_ref, VkExtent2D window_extent, RendererOptions renderer_options);
+    HallowSwapChain(HallowDevice& device_ref,
+                    VkExtent2D window_extent,
+                    RendererOptions renderer_options,
                     std::shared_ptr<HallowSwapChain> previous);
     ~HallowSwapChain();
     HallowSwapChain(const HallowSwapChain&) = delete;
@@ -35,7 +38,7 @@ namespace Hallow {
     float extentAspectRatio() const {
       return static_cast<float>(m_swap_chain_extent.width) / static_cast<float>(m_swap_chain_extent.height);
     }
-    //bool usingSrgbColorSpace() const { return m_use_srgb_color_space; }
+    //bool usingSrgbColorSpace() const { return m_using_srgb_color_space; }
     VkFormat findDepthFormat();
     VkResult acquireNextImage(uint32_t* image_index);
     VkResult submitCommandBuffers(const VkCommandBuffer* buffers, uint32_t* image_index);
@@ -65,8 +68,8 @@ namespace Hallow {
     std::vector<VkFence> m_images_in_flight;
     size_t m_current_frame = 0;
 
-    VkPresentModeKHR m_preferred_present_mode{VK_PRESENT_MODE_IMMEDIATE_KHR};
-    bool m_use_srgb_color_space;
+    // VkPresentModeKHR m_preferred_present_mode{VK_PRESENT_MODE_IMMEDIATE_KHR};
+    RendererOptions m_renderer_options;
     // VkSurfaceFormatKHR m_preferred_surface_format{VK_FORMAT_B8G8R8A8_SRGB, VK_COLOR_SPACE_SRGB_NONLINEAR_KHR};
 
     void init();
@@ -82,7 +85,7 @@ namespace Hallow {
       const std::vector<VkSurfaceFormatKHR>& available_formats);
 
     VkPresentModeKHR chooseSwapPresentMode(
-      const std::vector<VkPresentModeKHR>& available_present_modes, VkPresentModeKHR preferred_mode);
+      const std::vector<VkPresentModeKHR>& available_present_modes);
 
     VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
   };

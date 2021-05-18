@@ -34,14 +34,18 @@ namespace Hallow {
   private:
     const std::string m_name{"Hallow Engine"};
 
-    bool m_use_srgb_color_space{false};
+    RendererOptions m_renderer_options {
+      false,
+      false
+    };
+
 
     Time m_time{};
     HallowGame m_hallow_game{};
 
     HallowWindow m_hallow_window{WIDTH, HEIGHT, m_name};
     HallowDevice m_hallow_device{m_hallow_window};
-    HallowRenderer m_hallow_renderer{m_hallow_window, m_hallow_device, m_use_srgb_color_space};
+    HallowRenderer m_hallow_renderer{m_hallow_window, m_hallow_device, m_renderer_options};
 
     std::vector<HallowGameObject> m_game_objects;
 
