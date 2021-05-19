@@ -39,9 +39,7 @@ namespace Hallow {
       false
     };
 
-
     Time m_time{};
-    HallowGame m_hallow_game{};
 
     HallowWindow m_hallow_window{WIDTH, HEIGHT, m_name};
     HallowDevice m_hallow_device{m_hallow_window};

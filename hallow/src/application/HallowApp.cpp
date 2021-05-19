@@ -23,40 +23,31 @@ namespace Hallow {
   HallowApp::~HallowApp() {}
 
   void HallowApp::run() {
+    // Initilization
     SimpleRenderSystem simple_render_system{m_time,
                                             m_hallow_device,
                                             m_hallow_renderer.swapChainRenderPass(),
                                             m_renderer_options};
 
+    // Run start
     onStart(simple_render_system);
-
+    // Run loop
     while (!m_hallow_window.shouldClose()) {
       onUpdate(simple_render_system);
     }
-
+    // Run end
     onEnd(simple_render_system);
   }
 
   void HallowApp::onStart(SimpleRenderSystem& render_system) {
-    // Pre-start
-    m_hallow_game.onPreStart();
 
-    // Start
-    m_hallow_game.onStart();
-
-    // Post-start
-    m_hallow_game.onPostStart();
   }
 
   void HallowApp::onUpdate(SimpleRenderSystem& render_system) {
-    // Pre-update
-    m_hallow_game.onPreUpdate();
-
     // Update
     m_time.tick(); // onStart with tick to get newest time
     //m_time.printOnInterval(1);
     glfwPollEvents(); // poll for user events and such
-    m_hallow_game.onUpdate();
 
 
     // Post-update
@@ -67,19 +58,10 @@ namespace Hallow {
       m_hallow_renderer.endSwapChainRenderPass(command_buffer);
       m_hallow_renderer.endFrame();
     }
-    m_hallow_game.onPostUpdate();
   }
 
   void HallowApp::onEnd(SimpleRenderSystem& render_system) {
-    // Pre-end
-    m_hallow_game.onPreEnd();
-
-    // End
     vkDeviceWaitIdle(m_hallow_device.device());
-    m_hallow_game.onEnd();
-
-    // Post-end
-    m_hallow_game.onPostEnd();
   }
 
   void HallowApp::loadGameObjects() {
