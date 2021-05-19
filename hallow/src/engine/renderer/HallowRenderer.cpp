@@ -9,7 +9,7 @@
 
 namespace Hallow {
 
-  HallowRenderer::HallowRenderer(HallowWindow& window, HallowDevice& device, RendererOptions renderer_options)
+  HallowRenderer::HallowRenderer(HallowWindow& window, HallowDevice& device, RendererOptions& renderer_options)
     : m_hallow_window{window}, m_hallow_device{device}, m_renderer_options{renderer_options} {
     recreateSwapChain();
     createCommandBuffers();

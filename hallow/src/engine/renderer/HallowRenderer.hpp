@@ -20,7 +20,7 @@
 namespace Hallow {
   class HallowRenderer {
   public:
-    HallowRenderer(HallowWindow& window, HallowDevice& device, RendererOptions renderer_options);
+    HallowRenderer(HallowWindow& window, HallowDevice& device, RendererOptions& renderer_options);
     ~HallowRenderer();
     HallowRenderer(const HallowRenderer&) = delete;
     HallowRenderer& operator=(const HallowRenderer&) = delete;
@@ -46,7 +46,7 @@ namespace Hallow {
     void endSwapChainRenderPass(VkCommandBuffer command_buffer);
 
   private:
-    RendererOptions m_renderer_options;
+    RendererOptions& m_renderer_options;
 
     HallowWindow& m_hallow_window;
     HallowDevice& m_hallow_device;

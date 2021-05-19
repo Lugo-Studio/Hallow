@@ -26,8 +26,7 @@ namespace Hallow {
     // Initilization
     SimpleRenderSystem simple_render_system{m_time,
                                             m_hallow_device,
-                                            m_hallow_renderer.swapChainRenderPass(),
-                                            m_renderer_options};
+                                            m_hallow_renderer.swapChainRenderPass()};
 
     // Run start
     onStart(simple_render_system);

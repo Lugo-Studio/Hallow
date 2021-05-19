@@ -20,14 +20,14 @@
 namespace Hallow {
   class SimpleRenderSystem {
   public:
-    SimpleRenderSystem(Time& time, HallowDevice& device, VkRenderPass render_pass, RendererOptions renderer_options);
+    SimpleRenderSystem(Time& time, HallowDevice& device, VkRenderPass render_pass);
     ~SimpleRenderSystem();
     SimpleRenderSystem(const SimpleRenderSystem&) = delete;
     SimpleRenderSystem& operator=(const SimpleRenderSystem&) = delete;
 
     void renderGameObjects(VkCommandBuffer command_buffer, std::vector<HallowGameObject>& game_objects);
   private:
-    RendererOptions m_renderer_options;
+    // RendererOptions m_renderer_options;
     Time& m_time;
 
     HallowDevice& m_hallow_device;
