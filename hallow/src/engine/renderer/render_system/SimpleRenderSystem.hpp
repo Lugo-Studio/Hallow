@@ -13,7 +13,6 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include <application/game/HallowGame.hpp>
 #include <engine/game_object/HallowGameObject.hpp>
 #include <engine/renderer/RendererOptions.hpp>
 

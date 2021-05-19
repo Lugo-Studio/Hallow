@@ -15,7 +15,6 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include <application/game/HallowGame.hpp>
 
 
 namespace Hallow {

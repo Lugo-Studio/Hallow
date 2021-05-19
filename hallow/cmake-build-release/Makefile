@@ -180,33 +180,6 @@ src\application\HallowApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\HallowApp.cpp.s
 .PHONY : src\application\HallowApp.cpp.s
 
-src\application\game\HallowGame.obj: src\application\game\HallowGame.cpp.obj
-
-.PHONY : src\application\game\HallowGame.obj
-
-# target to build an object file
-src\application\game\HallowGame.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game\HallowGame.cpp.obj
-.PHONY : src\application\game\HallowGame.cpp.obj
-
-src\application\game\HallowGame.i: src\application\game\HallowGame.cpp.i
-
-.PHONY : src\application\game\HallowGame.i
-
-# target to preprocess a source file
-src\application\game\HallowGame.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game\HallowGame.cpp.i
-.PHONY : src\application\game\HallowGame.cpp.i
-
-src\application\game\HallowGame.s: src\application\game\HallowGame.cpp.s
-
-.PHONY : src\application\game\HallowGame.s
-
-# target to generate assembly for a file
-src\application\game\HallowGame.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game\HallowGame.cpp.s
-.PHONY : src\application\game\HallowGame.cpp.s
-
 src\application\game_objects\SimpleTriangle.obj: src\application\game_objects\SimpleTriangle.cpp.obj
 
 .PHONY : src\application\game_objects\SimpleTriangle.obj
@@ -546,9 +519,6 @@ help:
 	@echo ... src/application/HallowApp.obj
 	@echo ... src/application/HallowApp.i
 	@echo ... src/application/HallowApp.s
-	@echo ... src/application/game/HallowGame.obj
-	@echo ... src/application/game/HallowGame.i
-	@echo ... src/application/game/HallowGame.s
 	@echo ... src/application/game_objects/SimpleTriangle.obj
 	@echo ... src/application/game_objects/SimpleTriangle.i
 	@echo ... src/application/game_objects/SimpleTriangle.s

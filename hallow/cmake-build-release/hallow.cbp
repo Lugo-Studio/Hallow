@@ -105,12 +105,6 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.hpp">
 			<Option target="hallow"/>
 		</Unit>
-		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game/HallowGame.cpp">
-			<Option target="hallow"/>
-		</Unit>
-		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game/HallowGame.hpp">
-			<Option target="hallow"/>
-		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.cpp">
 			<Option target="hallow"/>
 		</Unit>

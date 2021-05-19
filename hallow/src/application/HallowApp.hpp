@@ -7,7 +7,6 @@
 
 #include "helpers/RootDir.h"
 #include "engine/time/Time.hpp"
-#include "application/game/HallowGame.hpp"
 #include "engine/window/HallowWindow.hpp"
 #include "engine/device/HallowDevice.hpp"
 #include "engine/game_object/HallowGameObject.hpp"

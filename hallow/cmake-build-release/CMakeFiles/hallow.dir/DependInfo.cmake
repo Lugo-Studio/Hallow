@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Home/Projects/Personal/Hallow/hallow/src/WinMain.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/WinMain.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/application/HallowApp.cpp.obj"
-  "C:/Home/Projects/Personal/Hallow/hallow/src/application/game/HallowGame.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/application/game/HallowGame.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/application/game_objects/SimpleTriangle.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/application/sierpinski/Sierpinski.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/srgb_transform/SrgbTransform.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release/CMakeFiles/hallow.dir/src/engine/color/srgb_transform/SrgbTransform.cpp.obj"
