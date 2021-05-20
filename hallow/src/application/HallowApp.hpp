@@ -11,7 +11,7 @@
 #include "engine/device/HallowDevice.hpp"
 #include "engine/game_object/HallowGameObject.hpp"
 #include "engine/renderer/HallowRenderer.hpp"
-#include <engine/renderer/render_system/SimpleRenderSystem.hpp>
+#include <engine/renderer/render_system/RenderSystem.hpp>
 
 #include <string>
 #include <memory>
@@ -49,9 +49,9 @@ namespace Hallow {
     void loadGameObjects();
 
     // TODO: Move to lifetime events class
-    void onStart(SimpleRenderSystem& render_system);
-    void onUpdate(SimpleRenderSystem& render_system);
-    void onEnd(SimpleRenderSystem& render_system);
+    void onStart(RenderSystem& render_system);
+    void onUpdate(RenderSystem& render_system);
+    void onEnd(RenderSystem& render_system);
   };
 }
 

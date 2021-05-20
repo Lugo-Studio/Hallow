@@ -6,8 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../src/application/game/HallowGame.hpp
-
 ../src/application/game_objects/SimpleTriangle.hpp
 engine/game_object/HallowGameObject.hpp
 -
@@ -67,16 +65,18 @@ engine/swap_chain/HallowSwapChain.hpp
 ../src/engine/renderer/engine/swap_chain/HallowSwapChain.hpp
 helpers/RootDir.h
 ../src/engine/renderer/helpers/RootDir.h
+RendererOptions.hpp
+../src/engine/renderer/RendererOptions.hpp
 string
 -
 memory
 -
 vector
 -
-application/game/HallowGame.hpp
--
 
-../src/engine/renderer/render_system/SimpleRenderSystem.hpp
+../src/engine/renderer/RendererOptions.hpp
+
+../src/engine/renderer/render_system/RenderSystem.hpp
 helpers/RootDir.h
 ../src/engine/renderer/render_system/helpers/RootDir.h
 engine/time/Time.hpp
@@ -91,10 +91,14 @@ memory
 -
 vector
 -
-application/game/HallowGame.hpp
--
 engine/game_object/HallowGameObject.hpp
 -
+engine/renderer/RendererOptions.hpp
+-
+
+../src/engine/renderer/render_system/SimpleRenderSystem.hpp
+RenderSystem.hpp
+../src/engine/renderer/render_system/RenderSystem.hpp
 
 ../src/engine/swap_chain/HallowSwapChain.hpp
 engine/device/HallowDevice.hpp
@@ -106,6 +110,8 @@ memory
 string
 -
 vector
+-
+engine/renderer/RendererOptions.hpp
 -
 
 ../src/engine/time/Stopwatch.hpp
@@ -1381,14 +1387,14 @@ stdexcept
 -
 array
 -
+engine/renderer/render_system/SimpleRenderSystem.hpp
+-
 
 C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.hpp
 helpers/RootDir.h
 C:/Home/Projects/Personal/Hallow/hallow/src/application/helpers/RootDir.h
 engine/time/Time.hpp
 C:/Home/Projects/Personal/Hallow/hallow/src/application/engine/time/Time.hpp
-application/game/HallowGame.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/application/application/game/HallowGame.hpp
 engine/window/HallowWindow.hpp
 C:/Home/Projects/Personal/Hallow/hallow/src/application/engine/window/HallowWindow.hpp
 engine/device/HallowDevice.hpp
@@ -1397,7 +1403,7 @@ engine/game_object/HallowGameObject.hpp
 C:/Home/Projects/Personal/Hallow/hallow/src/application/engine/game_object/HallowGameObject.hpp
 engine/renderer/HallowRenderer.hpp
 C:/Home/Projects/Personal/Hallow/hallow/src/application/engine/renderer/HallowRenderer.hpp
-engine/renderer/render_system/SimpleRenderSystem.hpp
+engine/renderer/render_system/RenderSystem.hpp
 -
 string
 -
@@ -1406,33 +1412,51 @@ memory
 vector
 -
 
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/HallowRenderer.cpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.cpp
+RenderSystem.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.hpp
 engine/color/HallowColor.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/engine/color/HallowColor.hpp
+glm/glm.hpp
+-
+glm/gtc/constants.hpp
+-
+iostream
+-
+stdexcept
 -
 array
 -
-HallowRenderer.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/HallowRenderer.hpp
+application/game_objects/SimpleTriangle.hpp
+-
 
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/HallowRenderer.hpp
-engine/time/Time.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/engine/time/Time.hpp
-engine/window/HallowWindow.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/engine/window/HallowWindow.hpp
-engine/device/HallowDevice.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/engine/device/HallowDevice.hpp
-engine/swap_chain/HallowSwapChain.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/engine/swap_chain/HallowSwapChain.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.hpp
 helpers/RootDir.h
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/helpers/RootDir.h
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/helpers/RootDir.h
+engine/time/Time.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/engine/time/Time.hpp
+engine/device/HallowDevice.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/engine/device/HallowDevice.hpp
+engine/pipeline/HallowPipeline.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/engine/pipeline/HallowPipeline.hpp
 string
 -
 memory
 -
 vector
 -
-application/game/HallowGame.hpp
+engine/game_object/HallowGameObject.hpp
 -
+engine/renderer/RendererOptions.hpp
+-
+
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.cpp
+SimpleRenderSystem.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.hpp
+
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.hpp
+RenderSystem.hpp
+C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.hpp
 
 src/helpers/RootDir.h
 

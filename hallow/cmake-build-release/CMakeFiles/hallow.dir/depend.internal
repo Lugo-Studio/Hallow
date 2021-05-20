@@ -10,7 +10,7 @@ CMakeFiles/hallow.dir/src/WinMain.cpp.obj
  ../src/engine/pipeline/HallowPipeline.hpp
  ../src/engine/renderer/HallowRenderer.hpp
  ../src/engine/renderer/RendererOptions.hpp
- ../src/engine/renderer/render_system/SimpleRenderSystem.hpp
+ ../src/engine/renderer/render_system/RenderSystem.hpp
  ../src/engine/swap_chain/HallowSwapChain.hpp
  ../src/engine/time/Stopwatch.hpp
  ../src/engine/time/Time.hpp
@@ -207,6 +207,7 @@ CMakeFiles/hallow.dir/src/application/HallowApp.cpp.obj
  ../src/engine/pipeline/HallowPipeline.hpp
  ../src/engine/renderer/HallowRenderer.hpp
  ../src/engine/renderer/RendererOptions.hpp
+ ../src/engine/renderer/render_system/RenderSystem.hpp
  ../src/engine/renderer/render_system/SimpleRenderSystem.hpp
  ../src/engine/swap_chain/HallowSwapChain.hpp
  ../src/engine/time/Stopwatch.hpp
@@ -1555,7 +1556,7 @@ CMakeFiles/hallow.dir/src/engine/renderer/HallowRenderer.cpp.obj
  C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/HallowRenderer.hpp
  C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/RendererOptions.hpp
  src/helpers/RootDir.h
-CMakeFiles/hallow.dir/src/engine/renderer/render_system/SimpleRenderSystem.cpp.obj
+CMakeFiles/hallow.dir/src/engine/renderer/render_system/RenderSystem.cpp.obj
  ../src/application/game_objects/SimpleTriangle.hpp
  ../src/engine/color/HallowColor.hpp
  ../src/engine/color/srgb_transform/SrgbTransform.hpp
@@ -1750,6 +1751,200 @@ CMakeFiles/hallow.dir/src/engine/renderer/render_system/SimpleRenderSystem.cpp.o
  C:/Dev/git/vcpkg/installed/x64-windows/include/glm/vec3.hpp
  C:/Dev/git/vcpkg/installed/x64-windows/include/glm/vec4.hpp
  C:/Dev/git/vcpkg/installed/x64-windows/include/glm/vector_relational.hpp
+ C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.cpp
+ C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.hpp
+ src/helpers/RootDir.h
+CMakeFiles/hallow.dir/src/engine/renderer/render_system/SimpleRenderSystem.cpp.obj
+ ../src/engine/color/HallowColor.hpp
+ ../src/engine/color/srgb_transform/SrgbTransform.hpp
+ ../src/engine/device/HallowDevice.hpp
+ ../src/engine/game_object/HallowGameObject.hpp
+ ../src/engine/model/HallowModel.hpp
+ ../src/engine/pipeline/HallowPipeline.hpp
+ ../src/engine/renderer/RendererOptions.hpp
+ ../src/engine/time/Stopwatch.hpp
+ ../src/engine/time/Time.hpp
+ ../src/engine/time/TimePoint.hpp
+ ../src/engine/window/HallowWindow.hpp
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vk_video/vulkan_video_codec_h264std.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vk_video/vulkan_video_codec_h264std_decode.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vk_video/vulkan_video_codec_h264std_encode.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vk_video/vulkan_video_codec_h265std.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vk_video/vulkan_video_codec_h265std_decode.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vk_video/vulkan_video_codecs_common.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vk_platform.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_android.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_beta.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_core.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_directfb.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_fuchsia.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_ggp.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_ios.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_macos.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_metal.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_screen.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_vi.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_wayland.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_win32.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_xcb.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_xlib.h
+ C:/Dev/VulkanSDK/1.2.176.1/Include/vulkan/vulkan_xlib_xrandr.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/GLFW/glfw3.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/gl/GL.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/gl/GLU.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/common.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/_fixes.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/_swizzle.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/_swizzle_func.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/_vectorize.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/compute_common.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/compute_vector_relational.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_common.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_common_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_exponential.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_exponential_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_geometric.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_geometric_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_integer.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_integer_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_matrix.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_matrix_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_packing.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_packing_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_trigonometric.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_trigonometric_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_vector_relational.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_vector_relational_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/qualifier.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_half.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_half.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x2.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x3.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat2x4.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x2.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x3.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat3x4.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x2.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x3.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_mat4x4_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec1.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec1.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec2.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec3.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec4.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/type_vec4_simd.inl
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/exponential.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double2x4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double3x4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_double4x4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float2x4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float3x4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/matrix_float4x4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/scalar_int_sized.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/scalar_uint_sized.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_bool2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_bool2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_bool3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_bool3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_bool4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_bool4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_double2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_double2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_double3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_double3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_double4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_double4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_float2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_float2_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_float3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_float3_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_float4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_float4_precision.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_int2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_int2_sized.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_int3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_int3_sized.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_int4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_int4_sized.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_uint2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_uint2_sized.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_uint3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_uint3_sized.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_uint4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/ext/vector_uint4_sized.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/fwd.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/geometric.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/glm.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/integer.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat2x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat2x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat2x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat3x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat3x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat3x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat4x2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat4x3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/mat4x4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/matrix.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/packing.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/simd/common.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/simd/exponential.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/simd/geometric.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/simd/integer.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/simd/matrix.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/simd/neon.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/simd/platform.h
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/trigonometric.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/vec2.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/vec3.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/vec4.hpp
+ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/vector_relational.hpp
+ C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.hpp
  C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.cpp
  C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.hpp
  src/helpers/RootDir.h

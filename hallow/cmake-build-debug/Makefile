@@ -396,6 +396,33 @@ src\engine\renderer\HallowRenderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.s
 .PHONY : src\engine\renderer\HallowRenderer.cpp.s
 
+src\engine\renderer\render_system\RenderSystem.obj: src\engine\renderer\render_system\RenderSystem.cpp.obj
+
+.PHONY : src\engine\renderer\render_system\RenderSystem.obj
+
+# target to build an object file
+src\engine\renderer\render_system\RenderSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\render_system\RenderSystem.cpp.obj
+.PHONY : src\engine\renderer\render_system\RenderSystem.cpp.obj
+
+src\engine\renderer\render_system\RenderSystem.i: src\engine\renderer\render_system\RenderSystem.cpp.i
+
+.PHONY : src\engine\renderer\render_system\RenderSystem.i
+
+# target to preprocess a source file
+src\engine\renderer\render_system\RenderSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\render_system\RenderSystem.cpp.i
+.PHONY : src\engine\renderer\render_system\RenderSystem.cpp.i
+
+src\engine\renderer\render_system\RenderSystem.s: src\engine\renderer\render_system\RenderSystem.cpp.s
+
+.PHONY : src\engine\renderer\render_system\RenderSystem.s
+
+# target to generate assembly for a file
+src\engine\renderer\render_system\RenderSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\render_system\RenderSystem.cpp.s
+.PHONY : src\engine\renderer\render_system\RenderSystem.cpp.s
+
 src\engine\renderer\render_system\SimpleRenderSystem.obj: src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj
 
 .PHONY : src\engine\renderer\render_system\SimpleRenderSystem.obj
@@ -543,6 +570,9 @@ help:
 	@echo ... src/engine/renderer/HallowRenderer.obj
 	@echo ... src/engine/renderer/HallowRenderer.i
 	@echo ... src/engine/renderer/HallowRenderer.s
+	@echo ... src/engine/renderer/render_system/RenderSystem.obj
+	@echo ... src/engine/renderer/render_system/RenderSystem.i
+	@echo ... src/engine/renderer/render_system/RenderSystem.s
 	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.obj
 	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.i
 	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.s

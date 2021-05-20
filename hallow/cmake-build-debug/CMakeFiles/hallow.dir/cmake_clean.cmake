@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hallow.dir/src/engine/model/HallowModel.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/pipeline/HallowPipeline.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/renderer/HallowRenderer.cpp.obj"
+  "CMakeFiles/hallow.dir/src/engine/renderer/render_system/RenderSystem.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/renderer/render_system/SimpleRenderSystem.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/swap_chain/HallowSwapChain.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/time/Time.cpp.obj"

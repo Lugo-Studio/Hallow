@@ -13,6 +13,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <array>
+#include <engine/renderer/render_system/SimpleRenderSystem.hpp>
 
 
 namespace Hallow {
@@ -27,6 +28,7 @@ namespace Hallow {
     SimpleRenderSystem simple_render_system{m_time,
                                             m_hallow_device,
                                             m_hallow_renderer.swapChainRenderPass()};
+    simple_render_system.initilizePipeline();
 
     // Run start
     onStart(simple_render_system);
@@ -38,11 +40,11 @@ namespace Hallow {
     onEnd(simple_render_system);
   }
 
-  void HallowApp::onStart(SimpleRenderSystem& render_system) {
+  void HallowApp::onStart(RenderSystem& render_system) {
 
   }
 
-  void HallowApp::onUpdate(SimpleRenderSystem& render_system) {
+  void HallowApp::onUpdate(RenderSystem& render_system) {
     // Update
     m_time.tick(); // onStart with tick to get newest time
     //m_time.printOnInterval(1);
@@ -59,7 +61,7 @@ namespace Hallow {
     }
   }
 
-  void HallowApp::onEnd(SimpleRenderSystem& render_system) {
+  void HallowApp::onEnd(RenderSystem& render_system) {
     vkDeviceWaitIdle(m_hallow_device.device());
   }
 

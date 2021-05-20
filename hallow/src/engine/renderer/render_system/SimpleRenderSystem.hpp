@@ -1,42 +1,20 @@
 //
-// Created by galex on 5/18/2021.
+// Created by galex on 5/20/2021.
 //
 
 #ifndef HALLOW_SIMPLERENDERSYSTEM_HPP
 #define HALLOW_SIMPLERENDERSYSTEM_HPP
 
-#include "helpers/RootDir.h"
-#include "engine/time/Time.hpp"
-#include "engine/device/HallowDevice.hpp"
-#include "engine/pipeline/HallowPipeline.hpp"
-
-#include <string>
-#include <memory>
-#include <vector>
-#include <engine/game_object/HallowGameObject.hpp>
-#include <engine/renderer/RendererOptions.hpp>
-
+#include "RenderSystem.hpp"
 
 namespace Hallow {
-  class SimpleRenderSystem {
+  class SimpleRenderSystem : public RenderSystem {
   public:
     SimpleRenderSystem(Time& time, HallowDevice& device, VkRenderPass render_pass);
-    ~SimpleRenderSystem();
     SimpleRenderSystem(const SimpleRenderSystem&) = delete;
     SimpleRenderSystem& operator=(const SimpleRenderSystem&) = delete;
-
-    void renderGameObjects(VkCommandBuffer command_buffer, std::vector<HallowGameObject>& game_objects);
   private:
-    // RendererOptions m_renderer_options;
-    Time& m_time;
 
-    HallowDevice& m_hallow_device;
-
-    std::unique_ptr<HallowPipeline> m_hallow_pipeline;
-    VkPipelineLayout m_pipeline_layout;
-
-    void createPipelineLayout();
-    void createPipeline(VkRenderPass render_pass);
   };
 }
 
