@@ -25,7 +25,7 @@ namespace Hallow {
     VkRenderPass render_pass = (VkRenderPass) nullptr;
     uint32_t subpass = 0;
     std::vector<VkDynamicState> dynamic_state_enables;
-    VkPipelineDynamicStateCreateInfo dynamic_state_info;
+    VkPipelineDynamicStateCreateInfo dynamic_state_info{};
 
     PipelineConfigInfo() = default;
     ~PipelineConfigInfo() = default;
