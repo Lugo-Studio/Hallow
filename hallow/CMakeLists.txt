@@ -80,10 +80,10 @@ message(STATUS "glfw3 included!")
 
 # GLSLANG
 #[[find_package(glslang CONFIG REQUIRED)
-set(GLSLANG_LIBRARY glslang::HLSL glslang::SPIRV glslang::glslang glslang::OGLCompiler)
-message(STATUS "glslang included!")]]
+set(GLSLANG_LIBRARY glslang::HLSL glslang::SPIRV glslang::glslang glslang::OGLCompiler)]]
 #[[find_package(GLSLang COMPONENTS GLSLang SPIRV)
-set(GLSLANG_LIBRARY GLSLang::GLSLang GLSLang::SPIRV)]]
+set(GLSLANG_LIBRARY GLSLang::GLSLang GLSLang::SPIRV)
+message(STATUS "glslang included!")]]
 
 # Define the include DIRs
 set(LIB_INCL ${Vulkan_INCLUDE_DIRS})

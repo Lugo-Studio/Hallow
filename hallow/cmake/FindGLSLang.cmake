@@ -24,6 +24,8 @@ Also, some search functions define some variables which can be useful.
 
 set(_GLSLang_Include_Path_ "")
 set(_GLSLang_Library_Path_ "")
+set(GLSLang_Path $ENV{GLSLANG_PATH}/build)
+message("GLSLang location: ${GLSLang_Path}")
 
 if(WIN32)
   set(_GLSLang_Include_Path_ "$ENV{VULKAN_SDK}/Include")
@@ -38,24 +40,27 @@ else()
 endif()
 
 function(_GLSLang_find_component COMPONENT HEADERS LIBRARIES EXTRADEPS)
-  message("Finding compoment ${COMPONENT}")
+  message("---Finding compoment ${COMPONENT}")
+  #[["${_GLSLang_Include_Path_}" ]]
   find_path(GLSLang_${COMPONENT}_INCLUDE_DIR
             NAMES "${HEADERS}"
-            PATHS "${_GLSLang_Include_Path_}"
+            PATHS "${GLSLang_Path}"
             )
-  message("${COMPONENT}: ${GLSLang_${COMPONENT}_INCLUDE_DIR}")
+  #message("${COMPONENT}: ${GLSLang_${COMPONENT}_INCLUDE_DIR}")
+  #[["${_GLSLang_Library_Path_}" ]]
   find_library(GLSLang_${COMPONENT}_LIBRARY
                NAMES "${LIBRARIES}"
-               PATHS "${_GLSLang_Library_Path_}"
+               PATHS "${GLSLang_Path}"
                )
   message("${COMPONENT}: ${GLSLang_${COMPONENT}_LIBRARY}")
 
   set(EXTRALIBS "")
+  #[["${_GLSLang_Library_Path_}" ]]
   foreach(DEP ${EXTRADEPS})
     if (NOT TARGET ${DEP})
       find_library(GLSLang_${DEP}_LIBRARY
                    NAMES "${DEP}"
-                   PATHS "${_GLSLang_Library_Path_}"
+                   PATHS "${GLSLang_Path}"
                    )
     else()
       set(GLSLang_${DEP}_LIBRARY ${DEP})

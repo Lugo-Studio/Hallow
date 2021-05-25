@@ -8,11 +8,11 @@
 #include <iostream>
 #include <stdexcept>
 #include <engine/model/HallowModel.hpp>
-#include "glslang/Include/ShHandle.h"
+/*#include "glslang/Include/ShHandle.h"
 #include "glslang/Public/ShaderLang.h"
 #include "glslang/SPIRV/GlslangToSpv.h"
 #include "glslang/Include/BaseTypes.h"
-#include "glslang/Include/Common.h"
+#include "glslang/Include/Common.h"*/
 
 
 namespace Hallow {
@@ -153,24 +153,67 @@ namespace Hallow {
     }
   }
 
-  void HallowPipeline::createShaderModule2(const std::vector<char>& vert_code,
-                                           const std::vector<char>& frag_code,
+  void HallowPipeline::createShaderModule2(const std::vector<char>& shader_code,
                                            VkShaderModule* shader_module) {
 
+    throw std::runtime_error("HallowPipeline: createShaderModule2 not implemented!");
+    /*const glslang_input_t input =
+      {
+        .language = GLSLANG_SOURCE_GLSL,
+        .stage = GLSLANG_STAGE_VERTEX,
+        .client = GLSLANG_CLIENT_VULKAN,
+        .client_version = GLSLANG_TARGET_VULKAN_1_1,
+        .target_language = GLSLANG_TARGET_SPV,
+        .target_language_version = GLSLANG_TARGET_SPV_1_3,
+        .code = shaderCodeVertex,
+        .default_version = 100,
+        .default_profile = GLSLANG_NO_PROFILE,
+        .force_default_version_and_profile = false,
+        .forward_compatible = false,
+        .messages = GLSLANG_MSG_DEFAULT_BIT,
+      };
 
+    glslang_initialize_process();
 
-    auto essl_version = glslang::GetEsslVersionString();
-    auto glsl_version = glslang::GetGlslVersionString();
+    glslang_shader_t* shader = glslang_shader_create( &input );
 
+    if ( !glslang_shader_preprocess(shader, &input) )
+    {
+      // use glslang_shader_get_info_log() and glslang_shader_get_info_debug_log()
+    }
 
-    glslang::TShader shader{EShLangVertex};
-    shader.setStrings(reinterpret_cast<const char* const*>(vert_code.data()), 1);
+    if ( !glslang_shader_parse(shader, &input) )
+    {
+      // use glslang_shader_get_info_log() and glslang_shader_get_info_debug_log()
+    }
 
-    bool initialized = glslang::InitializeProcess();
+    glslang_program_t* program = glslang_program_create();
+    glslang_program_add_shader( program, shader );
 
+    if (!glslang_program_link(program, GLSLANG_MSG_SPV_RULES_BIT | GLSLANG_MSG_VULKAN_RULES_BIT))
+    {
+      // use glslang_program_get_info_log() and glslang_program_get_info_debug_log();
+    }
 
+    glslang_program_SPIRV_generate( program, input.stage );
 
-    glslang::FinalizeProcess();
+    if ( glslang_program_SPIRV_get_messages(program) )
+    {
+      printf("%s", glslang_program_SPIRV_get_messages(program));
+    }
+
+    glslang_shader_delete( shader );
+
+    const VkShaderModuleCreateInfo ci =
+      {
+        .sType    = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO,
+        .codeSize = glslang_program_SPIRV_get_size(program) * sizeof(unsigned int),
+        .pCode    = glslang_program_SPIRV_get_ptr(program)
+      };
+
+    VkResult result = vkCreateShaderModule(device, &ci, nullptr, ...);
+
+    glslang_program_delete( program );
 
 
 
@@ -185,7 +228,8 @@ namespace Hallow {
 
     if (vkCreateShaderModule(m_device.device(), &create_info, nullptr, shader_module) != VK_SUCCESS) {
       throw std::runtime_error("HallowPipeline: Failed to create shader module!");
-    }
+    }*/
+
   }
 
   void HallowPipeline::defaultPipelineConfig(PipelineConfigInfo& pipeline_config_info) {

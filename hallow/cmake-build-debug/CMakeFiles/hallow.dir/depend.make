@@ -1182,6 +1182,21 @@ CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: ..\src\engine\
 CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: ..\src\engine\device\HallowDevice.hpp
 CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: ..\src\engine\model\HallowModel.hpp
 CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: ..\src\engine\window\HallowWindow.hpp
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\BaseTypes.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\Common.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\ConstantUnion.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\PoolAlloc.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\ResourceLimits.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\Types.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\arrays.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\intermediate.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\MachineIndependent\Versions.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\MachineIndependent\localintermediate.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Public\ShaderLang.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\SPIRV\GlslangToSpv.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\SPIRV\Logger.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\SPIRV\SpvTools.h
+CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\spirv-tools\libspirv.h
 CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\vk_video\vulkan_video_codec_h264std.h
 CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\vk_video\vulkan_video_codec_h264std_decode.h
 CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\vk_video\vulkan_video_codec_h264std_encode.h
@@ -1947,6 +1962,24 @@ CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.o
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\renderer\render_system\SimpleRenderSystem.cpp
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\renderer\render_system\SimpleRenderSystem.hpp
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: src\helpers\RootDir.h
+
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\BaseTypes.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\Common.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\ConstantUnion.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\PoolAlloc.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\ResourceLimits.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\Types.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\arrays.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Include\intermediate.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\MachineIndependent\Versions.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\MachineIndependent\localintermediate.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\Public\ShaderLang.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\SPIRV\GlslangToSpv.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\SPIRV\Logger.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\glslang\SPIRV\SpvTools.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: C:\Dev\VulkanSDK\1.2.176.1\Include\spirv-tools\libspirv.h
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: ..\src\engine\shaders\HallowShader.cpp
+CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: ..\src\engine\shaders\HallowShader.hpp
 
 CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: ..\src\engine\device\HallowDevice.hpp
 CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: ..\src\engine\renderer\RendererOptions.hpp
