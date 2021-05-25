@@ -69,6 +69,12 @@ namespace Hallow {
       const std::string& vert_file_path,
       const std::string& frag_file_path);
 
+    void init2(
+      HallowDevice& device,
+      const PipelineConfigInfo& pipeline_config_data,
+      const std::string& vert_file_path,
+      const std::string& frag_file_path);
+
     static std::vector<char> readFile(const std::string& file_path);
 
     void createGraphicsPipeline(
@@ -77,6 +83,8 @@ namespace Hallow {
       const std::string& frag_file_path);
 
     void createShaderModule(
+      const std::vector<char>& shader_code, VkShaderModule* shader_module);
+    void createShaderModule2(
       const std::vector<char>& shader_code, VkShaderModule* shader_module);
   };
 }

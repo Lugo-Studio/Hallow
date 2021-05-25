@@ -31,6 +31,7 @@ namespace Hallow {
   protected:
     // RendererOptions m_renderer_options;
     Time& m_time;
+    const std::string m_shader_path{"res/shaders/simple_shader"};
 
     HallowDevice& m_hallow_device;
 

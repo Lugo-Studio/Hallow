@@ -5,7 +5,7 @@
 		<Option title="hallow"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="msvc8"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\Dev\;CMake Files\..\..\..\..\..\Dev\git\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\scripts\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\scripts\buildsystems\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glm\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glfw3\;CMake Files\src\;CMake Files\src\helpers\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\Dev\;CMake Files\..\..\..\..\..\Dev\git\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\scripts\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\scripts\buildsystems\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glm\;CMake Files\..\..\..\..\..\Dev\git\vcpkg\installed\x64-windows\share\glfw3\;CMake Files\src\;CMake Files\src\helpers\;CMake Files\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Home/Projects/Personal/Hallow/hallow/cmake-build-release"/>
@@ -171,6 +171,12 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.hpp">
 			<Option target="hallow"/>
 		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/shaders/HallowShader.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/shaders/HallowShader.hpp">
+			<Option target="hallow"/>
+		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/swap_chain/HallowSwapChain.cpp">
 			<Option target="hallow"/>
 		</Unit>
@@ -221,6 +227,9 @@
 		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/helpers/RootDir.h.in">
 			<Option virtualFolder="CMake Files\src\helpers\"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/cmake/FindGLSLang.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

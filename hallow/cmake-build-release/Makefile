@@ -450,6 +450,33 @@ src\engine\renderer\render_system\SimpleRenderSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.s
 .PHONY : src\engine\renderer\render_system\SimpleRenderSystem.cpp.s
 
+src\engine\shaders\HallowShader.obj: src\engine\shaders\HallowShader.cpp.obj
+
+.PHONY : src\engine\shaders\HallowShader.obj
+
+# target to build an object file
+src\engine\shaders\HallowShader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj
+.PHONY : src\engine\shaders\HallowShader.cpp.obj
+
+src\engine\shaders\HallowShader.i: src\engine\shaders\HallowShader.cpp.i
+
+.PHONY : src\engine\shaders\HallowShader.i
+
+# target to preprocess a source file
+src\engine\shaders\HallowShader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.i
+.PHONY : src\engine\shaders\HallowShader.cpp.i
+
+src\engine\shaders\HallowShader.s: src\engine\shaders\HallowShader.cpp.s
+
+.PHONY : src\engine\shaders\HallowShader.s
+
+# target to generate assembly for a file
+src\engine\shaders\HallowShader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.s
+.PHONY : src\engine\shaders\HallowShader.cpp.s
+
 src\engine\swap_chain\HallowSwapChain.obj: src\engine\swap_chain\HallowSwapChain.cpp.obj
 
 .PHONY : src\engine\swap_chain\HallowSwapChain.obj
@@ -576,6 +603,9 @@ help:
 	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.obj
 	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.i
 	@echo ... src/engine/renderer/render_system/SimpleRenderSystem.s
+	@echo ... src/engine/shaders/HallowShader.obj
+	@echo ... src/engine/shaders/HallowShader.i
+	@echo ... src/engine/shaders/HallowShader.s
 	@echo ... src/engine/swap_chain/HallowSwapChain.obj
 	@echo ... src/engine/swap_chain/HallowSwapChain.i
 	@echo ... src/engine/swap_chain/HallowSwapChain.s

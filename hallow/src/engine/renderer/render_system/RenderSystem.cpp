@@ -99,7 +99,7 @@ namespace Hallow {
     pipeline_config.render_pass = render_pass;
     pipeline_config.pipeline_layout = m_pipeline_layout;
 
-    m_hallow_pipeline = std::make_unique<HallowPipeline>(m_hallow_device, pipeline_config, "res/shaders/simple_shader");
+    m_hallow_pipeline = std::make_unique<HallowPipeline>(m_hallow_device, pipeline_config, m_shader_path);
 
     m_pipeline_created = true;
   }

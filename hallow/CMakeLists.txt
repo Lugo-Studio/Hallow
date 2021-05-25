@@ -78,6 +78,13 @@ find_package(glfw3 CONFIG REQUIRED)
 set(GLFW_LIBRARY glfw)
 message(STATUS "glfw3 included!")
 
+# GLSLANG
+#[[find_package(glslang CONFIG REQUIRED)
+set(GLSLANG_LIBRARY glslang::HLSL glslang::SPIRV glslang::glslang glslang::OGLCompiler)
+message(STATUS "glslang included!")]]
+#[[find_package(GLSLang COMPONENTS GLSLang SPIRV)
+set(GLSLANG_LIBRARY GLSLang::GLSLang GLSLang::SPIRV)]]
+
 # Define the include DIRs
 set(LIB_INCL ${Vulkan_INCLUDE_DIRS})
 include_directories("${SRC_DIR}" "${INCL_DIR}" "${LIB_INCL}")
@@ -86,5 +93,5 @@ include_directories("${SRC_DIR}" "${INCL_DIR}" "${LIB_INCL}")
 link_directories("${LIB_DIR}")
 
 # Put all libraries into a variable
-set(LIBS ${Vulkan_LIBRARIES} ${GLM_LIBRARY} ${GLFW_LIBRARY})
+set(LIBS ${Vulkan_LIBRARIES} ${GLM_LIBRARY} ${GLFW_LIBRARY} ${GLSLANG_LIBRARY})
 target_link_libraries(${PROJECT_NAME} ${LIBS})

@@ -8,6 +8,11 @@
 #include <iostream>
 #include <stdexcept>
 #include <engine/model/HallowModel.hpp>
+#include "glslang/Include/ShHandle.h"
+#include "glslang/Public/ShaderLang.h"
+#include "glslang/SPIRV/GlslangToSpv.h"
+#include "glslang/Include/BaseTypes.h"
+#include "glslang/Include/Common.h"
 
 
 namespace Hallow {
@@ -18,17 +23,29 @@ namespace Hallow {
     vkDestroyPipeline(m_device.device(), m_graphics_pipeline, nullptr);
   }
 
-  void HallowPipeline::init(
-    HallowDevice& device,
-    const PipelineConfigInfo& pipeline_config_data,
-    const std::string& vert_file_path,
-    const std::string& frag_file_path) {
+  void HallowPipeline::init(HallowDevice& device,
+                            const PipelineConfigInfo& pipeline_config_data,
+                            const std::string& vert_file_path,
+                            const std::string& frag_file_path) {
     try {
       createGraphicsPipeline(pipeline_config_data, vert_file_path, frag_file_path);
     } catch (const std::exception& e) {
       std::cerr << e.what() << "\n";
       std::terminate();
     }
+  }
+
+  void HallowPipeline::init2(HallowDevice& device,
+                             const PipelineConfigInfo& pipeline_config_data,
+                             const std::string& vert_file_path,
+                             const std::string& frag_file_path) {
+    try {
+      createGraphicsPipeline(pipeline_config_data, vert_file_path, frag_file_path);
+    } catch (const std::exception& e) {
+      std::cerr << e.what() << "\n";
+      std::terminate();
+    }
+
   }
 
   std::vector<char> HallowPipeline::readFile(const std::string& file_path) {
@@ -124,8 +141,43 @@ namespace Hallow {
     std::cout << "Graphics pipeline created!\n";
   }
 
-  void HallowPipeline::createShaderModule(
-    const std::vector<char>& shader_code, VkShaderModule* shader_module) {
+  void HallowPipeline::createShaderModule(const std::vector<char>& shader_code,
+                                          VkShaderModule* shader_module) {
+    VkShaderModuleCreateInfo create_info{};
+    create_info.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+    create_info.codeSize = shader_code.size();
+    create_info.pCode = reinterpret_cast<const uint32_t*>(shader_code.data());
+
+    if (vkCreateShaderModule(m_device.device(), &create_info, nullptr, shader_module) != VK_SUCCESS) {
+      throw std::runtime_error("HallowPipeline: Failed to create shader module!");
+    }
+  }
+
+  void HallowPipeline::createShaderModule2(const std::vector<char>& vert_code,
+                                           const std::vector<char>& frag_code,
+                                           VkShaderModule* shader_module) {
+
+
+
+    auto essl_version = glslang::GetEsslVersionString();
+    auto glsl_version = glslang::GetGlslVersionString();
+
+
+    glslang::TShader shader{EShLangVertex};
+    shader.setStrings(reinterpret_cast<const char* const*>(vert_code.data()), 1);
+
+    bool initialized = glslang::InitializeProcess();
+
+
+
+    glslang::FinalizeProcess();
+
+
+
+
+
+
+
     VkShaderModuleCreateInfo create_info{};
     create_info.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
     create_info.codeSize = shader_code.size();

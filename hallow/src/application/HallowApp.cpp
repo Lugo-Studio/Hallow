@@ -21,7 +21,7 @@ namespace Hallow {
     loadGameObjects();
   }
 
-  HallowApp::~HallowApp() {}
+  HallowApp::~HallowApp() = default;
 
   void HallowApp::run() {
     // Initilization
