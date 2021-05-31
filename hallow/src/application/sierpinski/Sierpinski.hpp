@@ -7,7 +7,7 @@
 
 #include <glm/glm.hpp>
 
-namespace Hallow {
+/*namespace Hallow {
   class Sierpinski {
   public:
     struct Triangle {
@@ -40,6 +40,6 @@ namespace Hallow {
       const Triangle& outer_triangle,
       const Triangle& inner_triangle);
   };
-}
+}*/
 
 #endif //HALLOW_SIERPINSKI_HPP

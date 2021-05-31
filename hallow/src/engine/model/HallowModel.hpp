@@ -19,19 +19,19 @@ namespace Hallow {
   class HallowModel {
   public:
     struct Vertex {
-      glm::vec2 position;
+      glm::vec3 position;
       glm::vec3 color;
 
-      Vertex() : position{0.0f, 0.0f}, color{1.0f, 1.0f, 1.0f} {}
+      Vertex() : position{0.f, 0.f, 0.f}, color{1.f, 1.f, 1.f} {}
 
-      Vertex(glm::vec2 position, glm::vec3 color)
-        : position(position), color(color) {}
+      Vertex(glm::vec3 position, glm::vec3 color)
+        : position{position}, color{color} {}
 
-      explicit Vertex(glm::vec2 position)
-        : position(position), color{1.0f, 1.0f, 1.0f} {}
+      Vertex(glm::vec3 position)
+        : position{position}, color{1.f, 1.f, 1.f} {}
 
-      Vertex(float p1, float p2)
-        : position{p1, p2}, color{1.0f, 1.0f, 1.0f} {}
+      Vertex(float x, float y, float z)
+        : position{x, y, z}, color{1.f, 1.f, 1.f} {}
 
       // Static functions to get size of struct and such for buffers
       static std::vector<VkVertexInputBindingDescription> bindingDescriptions();
@@ -42,23 +42,85 @@ namespace Hallow {
       std::array<Vertex, 3> vertices;
 
       Triangle(std::array<Vertex, 3> vertices, HallowColor color)
-        : vertices(vertices) {
-        set_colors({color, color, color});
+        : vertices{vertices} {
+        set_colors(color);
       }
 
       Triangle(std::array<Vertex, 3> vertices, std::array<HallowColor, 3> colors)
-        : vertices(vertices) {
+        : vertices{vertices} {
         set_colors(colors);
       }
 
-      std::vector<Vertex> vertexVector();
+      std::vector<Vertex> vertexVector() {
+        return {vertices.begin(), vertices.end()};
+      }
 
     private:
+      void set_colors(HallowColor color) {
+        for (auto& vertex : vertices) {
+          vertex.color = {
+            color.r,
+            color.g,
+            color.b
+          };
+        }
+      }
+
       void set_colors(std::array<HallowColor, 3> colors) {
         for (int i = 0; i < vertices.size(); ++i) {
-          /*if (m_hallow_swap_chain.usingSrgbColorSpace()) {
-            background_color.toSrgb();
-          }*/
+          vertices[i].color = {
+            colors[i].r,
+            colors[i].g,
+            colors[i].b
+          };
+        }
+      }
+    };
+
+    struct Quad {
+      /* vertex order:
+       * 3 2
+       * 0 1
+       *
+       * triangles formed:
+       * (0 1 2)
+       * (0 2 3)
+       */
+      std::array<Vertex, 4> vertices;
+
+      Quad(std::array<Vertex, 4> vertices, HallowColor color)
+        : vertices{vertices} {
+        set_colors(color);
+      }
+
+      Quad(std::array<Vertex, 4> vertices, std::array<HallowColor, 4> colors)
+        : vertices{vertices} {
+        set_colors(colors);
+      }
+
+      std::vector<Vertex> vertexVector() {
+        return {
+          vertices[0],
+          vertices[1],
+          vertices[2],
+          vertices[0],
+          vertices[2],
+          vertices[3]
+        };
+      }
+    private:
+      void set_colors(HallowColor color) {
+        for (auto& vertex : vertices) {
+          vertex.color = {
+            color.r,
+            color.g,
+            color.b
+          };
+        }
+      }
+
+      void set_colors(std::array<HallowColor, 4> colors) {
+        for (int i = 0; i < vertices.size(); ++i) {
           vertices[i].color = {
             colors[i].r,
             colors[i].g,

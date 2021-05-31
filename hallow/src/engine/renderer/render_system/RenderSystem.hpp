@@ -13,7 +13,7 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include <engine/game_object/HallowGameObject.hpp>
+#include <engine/game_object/GameObject.hpp>
 #include <engine/renderer/RendererOptions.hpp>
 
 
@@ -26,7 +26,7 @@ namespace Hallow {
     RenderSystem& operator=(const RenderSystem&) = delete;
 
     virtual void initilizePipeline();
-    virtual void renderGameObjects(VkCommandBuffer command_buffer, std::vector<HallowGameObject>& game_objects);
+    virtual void renderGameObjects(VkCommandBuffer command_buffer, std::vector<GameObject>& game_objects);
 
   protected:
     // RendererOptions m_renderer_options;

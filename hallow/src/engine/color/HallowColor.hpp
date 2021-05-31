@@ -20,7 +20,7 @@ namespace Hallow {
       }
     }
 
-    explicit HallowColor(unsigned int hexValue = 0x00000000, bool is_color_space_srgb = false) {
+    HallowColor(unsigned int hexValue = 0x00000000, bool is_color_space_srgb = false) {
       // RRGGBBAA
       r = static_cast<float>((hexValue >> 24) & 0xFF) / 255.0f;  // Extract the RR byte
       g = static_cast<float>((hexValue >> 16) & 0xFF) / 255.0f;   // Extract the GG byte

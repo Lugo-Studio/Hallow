@@ -98,9 +98,28 @@ CMakeFiles\hallow.dir\src\application\HallowApp.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\hallow.dir\src\application\HallowApp.cpp.s /c C:\Home\Projects\Personal\Hallow\hallow\src\application\HallowApp.cpp
 <<
 
+CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.obj: CMakeFiles\hallow.dir\flags.make
+CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.obj: ..\src\application\game_objects\Cube.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hallow.dir/src/application/game_objects/Cube.cpp.obj"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\application\game_objects\Cube.cpp
+<<
+
+CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hallow.dir/src/application/game_objects/Cube.cpp.i"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe > CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Home\Projects\Personal\Hallow\hallow\src\application\game_objects\Cube.cpp
+<<
+
+CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hallow.dir/src/application/game_objects/Cube.cpp.s"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.s /c C:\Home\Projects\Personal\Hallow\hallow\src\application\game_objects\Cube.cpp
+<<
+
 CMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.obj: ..\src\application\game_objects\SimpleTriangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hallow.dir/src/application/game_objects/SimpleTriangle.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/hallow.dir/src/application/game_objects/SimpleTriangle.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\application\game_objects\SimpleTriangle.cpp
 <<
@@ -119,7 +138,7 @@ CMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.s: cmake_f
 
 CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.obj: ..\src\application\sierpinski\Sierpinski.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/hallow.dir/src/application/sierpinski/Sierpinski.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hallow.dir/src/application/sierpinski/Sierpinski.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\application\sierpinski\Sierpinski.cpp
 <<
@@ -138,7 +157,7 @@ CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.s: cmake_force
 
 CMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.obj: ..\src\engine\color\srgb_transform\SrgbTransform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hallow.dir/src/engine/color/srgb_transform/SrgbTransform.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hallow.dir/src/engine/color/srgb_transform/SrgbTransform.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\color\srgb_transform\SrgbTransform.cpp
 <<
@@ -157,7 +176,7 @@ CMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.s: cmake
 
 CMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.obj: ..\src\engine\device\HallowDevice.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hallow.dir/src/engine/device/HallowDevice.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/hallow.dir/src/engine/device/HallowDevice.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\device\HallowDevice.cpp
 <<
@@ -174,28 +193,28 @@ CMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.s /c C:\Home\Projects\Personal\Hallow\hallow\src\engine\device\HallowDevice.cpp
 <<
 
-CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.obj: CMakeFiles\hallow.dir\flags.make
-CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.obj: ..\src\engine\game_object\HallowGameObject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/hallow.dir/src/engine/game_object/HallowGameObject.cpp.obj"
+CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.obj: CMakeFiles\hallow.dir\flags.make
+CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.obj: ..\src\engine\game_object\GameObject.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/hallow.dir/src/engine/game_object/GameObject.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\game_object\HallowGameObject.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\game_object\GameObject.cpp
 <<
 
-CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hallow.dir/src/engine/game_object/HallowGameObject.cpp.i"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe > CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Home\Projects\Personal\Hallow\hallow\src\engine\game_object\HallowGameObject.cpp
+CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hallow.dir/src/engine/game_object/GameObject.cpp.i"
+	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe > CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Home\Projects\Personal\Hallow\hallow\src\engine\game_object\GameObject.cpp
 <<
 
-CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hallow.dir/src/engine/game_object/HallowGameObject.cpp.s"
+CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hallow.dir/src/engine/game_object/GameObject.cpp.s"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.s /c C:\Home\Projects\Personal\Hallow\hallow\src\engine\game_object\HallowGameObject.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.s /c C:\Home\Projects\Personal\Hallow\hallow\src\engine\game_object\GameObject.cpp
 <<
 
 CMakeFiles\hallow.dir\src\engine\model\HallowModel.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\model\HallowModel.cpp.obj: ..\src\engine\model\HallowModel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/hallow.dir/src/engine/model/HallowModel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/hallow.dir/src/engine/model/HallowModel.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\model\HallowModel.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\model\HallowModel.cpp
 <<
@@ -214,7 +233,7 @@ CMakeFiles\hallow.dir\src\engine\model\HallowModel.cpp.s: cmake_force
 
 CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj: ..\src\engine\pipeline\HallowPipeline.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/hallow.dir/src/engine/pipeline/HallowPipeline.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/hallow.dir/src/engine/pipeline/HallowPipeline.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\pipeline\HallowPipeline.cpp
 <<
@@ -233,7 +252,7 @@ CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.s: cmake_force
 
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj: ..\src\engine\renderer\HallowRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/hallow.dir/src/engine/renderer/HallowRenderer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/hallow.dir/src/engine/renderer/HallowRenderer.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\renderer\HallowRenderer.cpp
 <<
@@ -252,7 +271,7 @@ CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.s: cmake_force
 
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\RenderSystem.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\RenderSystem.cpp.obj: ..\src\engine\renderer\render_system\RenderSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/hallow.dir/src/engine/renderer/render_system/RenderSystem.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/hallow.dir/src/engine/renderer/render_system/RenderSystem.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\renderer\render_system\RenderSystem.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\renderer\render_system\RenderSystem.cpp
 <<
@@ -271,7 +290,7 @@ CMakeFiles\hallow.dir\src\engine\renderer\render_system\RenderSystem.cpp.s: cmak
 
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj: ..\src\engine\renderer\render_system\SimpleRenderSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/hallow.dir/src/engine/renderer/render_system/SimpleRenderSystem.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/hallow.dir/src/engine/renderer/render_system/SimpleRenderSystem.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\renderer\render_system\SimpleRenderSystem.cpp
 <<
@@ -290,7 +309,7 @@ CMakeFiles\hallow.dir\src\engine\renderer\render_system\SimpleRenderSystem.cpp.s
 
 CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj: ..\src\engine\shaders\HallowShader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/hallow.dir/src/engine/shaders/HallowShader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/hallow.dir/src/engine/shaders/HallowShader.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\shaders\HallowShader.cpp
 <<
@@ -309,7 +328,7 @@ CMakeFiles\hallow.dir\src\engine\shaders\HallowShader.cpp.s: cmake_force
 
 CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj: ..\src\engine\swap_chain\HallowSwapChain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/hallow.dir/src/engine/swap_chain/HallowSwapChain.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/hallow.dir/src/engine/swap_chain/HallowSwapChain.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\swap_chain\HallowSwapChain.cpp
 <<
@@ -328,7 +347,7 @@ CMakeFiles\hallow.dir\src\engine\swap_chain\HallowSwapChain.cpp.s: cmake_force
 
 CMakeFiles\hallow.dir\src\engine\time\Time.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\time\Time.cpp.obj: ..\src\engine\time\Time.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/hallow.dir/src/engine/time/Time.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/hallow.dir/src/engine/time/Time.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\time\Time.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\time\Time.cpp
 <<
@@ -347,7 +366,7 @@ CMakeFiles\hallow.dir\src\engine\time\Time.cpp.s: cmake_force
 
 CMakeFiles\hallow.dir\src\engine\window\HallowWindow.cpp.obj: CMakeFiles\hallow.dir\flags.make
 CMakeFiles\hallow.dir\src\engine\window\HallowWindow.cpp.obj: ..\src\engine\window\HallowWindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/hallow.dir/src/engine/window/HallowWindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/hallow.dir/src/engine/window/HallowWindow.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\hallow.dir\src\engine\window\HallowWindow.cpp.obj /FdCMakeFiles\hallow.dir\ /FS -c C:\Home\Projects\Personal\Hallow\hallow\src\engine\window\HallowWindow.cpp
 <<
@@ -368,11 +387,12 @@ CMakeFiles\hallow.dir\src\engine\window\HallowWindow.cpp.s: cmake_force
 hallow_OBJECTS = \
 "CMakeFiles\hallow.dir\src\WinMain.cpp.obj" \
 "CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj" \
+"CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.obj" \
 "CMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.obj" \
 "CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.obj" \
 "CMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.obj" \
 "CMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.obj" \
-"CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.obj" \
+"CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.obj" \
 "CMakeFiles\hallow.dir\src\engine\model\HallowModel.cpp.obj" \
 "CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj" \
 "CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj" \
@@ -388,11 +408,12 @@ hallow_EXTERNAL_OBJECTS =
 
 hallow.exe: CMakeFiles\hallow.dir\src\WinMain.cpp.obj
 hallow.exe: CMakeFiles\hallow.dir\src\application\HallowApp.cpp.obj
+hallow.exe: CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.obj
 hallow.exe: CMakeFiles\hallow.dir\src\application\game_objects\SimpleTriangle.cpp.obj
 hallow.exe: CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.obj
 hallow.exe: CMakeFiles\hallow.dir\src\engine\color\srgb_transform\SrgbTransform.cpp.obj
 hallow.exe: CMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.obj
-hallow.exe: CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.obj
+hallow.exe: CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.obj
 hallow.exe: CMakeFiles\hallow.dir\src\engine\model\HallowModel.cpp.obj
 hallow.exe: CMakeFiles\hallow.dir\src\engine\pipeline\HallowPipeline.cpp.obj
 hallow.exe: CMakeFiles\hallow.dir\src\engine\renderer\HallowRenderer.cpp.obj
@@ -406,7 +427,7 @@ hallow.exe: CMakeFiles\hallow.dir\build.make
 hallow.exe: C:\Dev\VulkanSDK\1.2.176.1\Lib\vulkan-1.lib
 hallow.exe: C:\Dev\git\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib
 hallow.exe: CMakeFiles\hallow.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable hallow.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable hallow.exe"
 	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\hallow.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\hallow.dir\objects1.rsp @<<
  /out:hallow.exe /implib:hallow.lib /pdb:C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\hallow.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  C:\Dev\VulkanSDK\1.2.176.1\Lib\vulkan-1.lib C:\Dev\git\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

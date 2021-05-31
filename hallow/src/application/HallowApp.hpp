@@ -9,7 +9,7 @@
 #include "engine/time/Time.hpp"
 #include "engine/window/HallowWindow.hpp"
 #include "engine/device/HallowDevice.hpp"
-#include "engine/game_object/HallowGameObject.hpp"
+#include "engine/game_object/GameObject.hpp"
 #include "engine/renderer/HallowRenderer.hpp"
 #include <engine/renderer/render_system/RenderSystem.hpp>
 
@@ -44,7 +44,7 @@ namespace Hallow {
     HallowDevice m_hallow_device{m_hallow_window};
     HallowRenderer m_hallow_renderer{m_hallow_window, m_hallow_device, m_renderer_options};
 
-    std::vector<HallowGameObject> m_game_objects;
+    std::vector<GameObject> m_game_objects;
 
     void loadGameObjects();
 

@@ -7,6 +7,7 @@
 #include <iostream>
 #include "Sierpinski.hpp"
 
+/*
 namespace Hallow {
 
   std::vector<HallowModel::Vertex> Sierpinski::sierpinski(
@@ -60,4 +61,4 @@ namespace Hallow {
                 outer_triangle.vertices[2]}
             }};
   }
-}
+}*/

@@ -105,6 +105,12 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.hpp">
 			<Option target="hallow"/>
 		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/Cube.cpp">
+			<Option target="hallow"/>
+		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/Cube.hpp">
+			<Option target="hallow"/>
+		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.cpp">
 			<Option target="hallow"/>
 		</Unit>
@@ -132,10 +138,10 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/device/HallowDevice.hpp">
 			<Option target="hallow"/>
 		</Unit>
-		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/HallowGameObject.cpp">
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/GameObject.cpp">
 			<Option target="hallow"/>
 		</Unit>
-		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/HallowGameObject.hpp">
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/GameObject.hpp">
 			<Option target="hallow"/>
 		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/model/HallowModel.cpp">

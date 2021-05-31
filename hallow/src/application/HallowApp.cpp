@@ -2,18 +2,22 @@
 // Created by Gabriel Lugo on 3/28/2021.
 //
 
+// hallow
 #include "HallowApp.hpp"
 #include <application/game_objects/SimpleTriangle.hpp>
+#include <engine/renderer/render_system/SimpleRenderSystem.hpp>
+#include <application/game_objects/Cube.hpp>
 
+// lib
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 #include <glm/gtc/constants.hpp>
 
+// std
 #include <iostream>
 #include <stdexcept>
 #include <array>
-#include <engine/renderer/render_system/SimpleRenderSystem.hpp>
 
 
 namespace Hallow {
@@ -67,8 +71,12 @@ namespace Hallow {
 
   void HallowApp::loadGameObjects() {
     //sierpinskiModel();
-    SimpleTriangle triangle_object{m_hallow_device, m_renderer_options.using_srgb_color_space};
+    Cube cube{m_hallow_device,
+              {0.f, 0.f, 0.f},
+              m_renderer_options.using_srgb_color_space};
+    cube.transform().translation = {0.f, 0.f, .5f};
+    cube.transform().scale = {.5f, .5f, .5f};
 
-    m_game_objects.push_back(std::move(triangle_object));
+    m_game_objects.push_back(std::move(cube));
   }
 }

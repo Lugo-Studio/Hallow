@@ -180,6 +180,33 @@ src\application\HallowApp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\HallowApp.cpp.s
 .PHONY : src\application\HallowApp.cpp.s
 
+src\application\game_objects\Cube.obj: src\application\game_objects\Cube.cpp.obj
+
+.PHONY : src\application\game_objects\Cube.obj
+
+# target to build an object file
+src\application\game_objects\Cube.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.obj
+.PHONY : src\application\game_objects\Cube.cpp.obj
+
+src\application\game_objects\Cube.i: src\application\game_objects\Cube.cpp.i
+
+.PHONY : src\application\game_objects\Cube.i
+
+# target to preprocess a source file
+src\application\game_objects\Cube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.i
+.PHONY : src\application\game_objects\Cube.cpp.i
+
+src\application\game_objects\Cube.s: src\application\game_objects\Cube.cpp.s
+
+.PHONY : src\application\game_objects\Cube.s
+
+# target to generate assembly for a file
+src\application\game_objects\Cube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\game_objects\Cube.cpp.s
+.PHONY : src\application\game_objects\Cube.cpp.s
+
 src\application\game_objects\SimpleTriangle.obj: src\application\game_objects\SimpleTriangle.cpp.obj
 
 .PHONY : src\application\game_objects\SimpleTriangle.obj
@@ -288,32 +315,32 @@ src\engine\device\HallowDevice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\device\HallowDevice.cpp.s
 .PHONY : src\engine\device\HallowDevice.cpp.s
 
-src\engine\game_object\HallowGameObject.obj: src\engine\game_object\HallowGameObject.cpp.obj
+src\engine\game_object\GameObject.obj: src\engine\game_object\GameObject.cpp.obj
 
-.PHONY : src\engine\game_object\HallowGameObject.obj
+.PHONY : src\engine\game_object\GameObject.obj
 
 # target to build an object file
-src\engine\game_object\HallowGameObject.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.obj
-.PHONY : src\engine\game_object\HallowGameObject.cpp.obj
+src\engine\game_object\GameObject.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.obj
+.PHONY : src\engine\game_object\GameObject.cpp.obj
 
-src\engine\game_object\HallowGameObject.i: src\engine\game_object\HallowGameObject.cpp.i
+src\engine\game_object\GameObject.i: src\engine\game_object\GameObject.cpp.i
 
-.PHONY : src\engine\game_object\HallowGameObject.i
+.PHONY : src\engine\game_object\GameObject.i
 
 # target to preprocess a source file
-src\engine\game_object\HallowGameObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.i
-.PHONY : src\engine\game_object\HallowGameObject.cpp.i
+src\engine\game_object\GameObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.i
+.PHONY : src\engine\game_object\GameObject.cpp.i
 
-src\engine\game_object\HallowGameObject.s: src\engine\game_object\HallowGameObject.cpp.s
+src\engine\game_object\GameObject.s: src\engine\game_object\GameObject.cpp.s
 
-.PHONY : src\engine\game_object\HallowGameObject.s
+.PHONY : src\engine\game_object\GameObject.s
 
 # target to generate assembly for a file
-src\engine\game_object\HallowGameObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\HallowGameObject.cpp.s
-.PHONY : src\engine\game_object\HallowGameObject.cpp.s
+src\engine\game_object\GameObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\game_object\GameObject.cpp.s
+.PHONY : src\engine\game_object\GameObject.cpp.s
 
 src\engine\model\HallowModel.obj: src\engine\model\HallowModel.cpp.obj
 
@@ -573,6 +600,9 @@ help:
 	@echo ... src/application/HallowApp.obj
 	@echo ... src/application/HallowApp.i
 	@echo ... src/application/HallowApp.s
+	@echo ... src/application/game_objects/Cube.obj
+	@echo ... src/application/game_objects/Cube.i
+	@echo ... src/application/game_objects/Cube.s
 	@echo ... src/application/game_objects/SimpleTriangle.obj
 	@echo ... src/application/game_objects/SimpleTriangle.i
 	@echo ... src/application/game_objects/SimpleTriangle.s
@@ -585,9 +615,9 @@ help:
 	@echo ... src/engine/device/HallowDevice.obj
 	@echo ... src/engine/device/HallowDevice.i
 	@echo ... src/engine/device/HallowDevice.s
-	@echo ... src/engine/game_object/HallowGameObject.obj
-	@echo ... src/engine/game_object/HallowGameObject.i
-	@echo ... src/engine/game_object/HallowGameObject.s
+	@echo ... src/engine/game_object/GameObject.obj
+	@echo ... src/engine/game_object/GameObject.i
+	@echo ... src/engine/game_object/GameObject.s
 	@echo ... src/engine/model/HallowModel.obj
 	@echo ... src/engine/model/HallowModel.i
 	@echo ... src/engine/model/HallowModel.s

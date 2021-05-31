@@ -17,9 +17,8 @@
 
 namespace Hallow {
   struct PushConstantData {
-    alignas(16) glm::mat2 transform{1.0f};
-    alignas(8) glm::vec2 offset;
-    alignas(16) glm::vec3 color;
+    alignas(16) glm::mat4 transform{1.0f};
+    // alignas(16) glm::vec3 color;
   };
 
   RenderSystem::RenderSystem(Time& time, HallowDevice& device, VkRenderPass render_pass)
@@ -36,7 +35,7 @@ namespace Hallow {
   }
 
   void RenderSystem::renderGameObjects(VkCommandBuffer command_buffer,
-                                             std::vector<HallowGameObject>& game_objects) {
+                                             std::vector<GameObject>& game_objects) {
     if (!m_pipeline_created) {
       throw std::runtime_error("RenderSystem: Cannot call renderGameObjects before pipeline creation!");
     }
@@ -46,14 +45,18 @@ namespace Hallow {
     for (auto& object : game_objects) {
       /*object.transform().translation = {.2f, .0f};
       object.transform().scale = {2.f, .5f};*/
-      object.transform().rotation = glm::mod(
-        object.transform().rotation + 2.f * static_cast<float>(m_time.delta().seconds()),
+      object.transform().rotation.y = glm::mod(
+        object.transform().rotation.y
+        + 2.f * static_cast<float>(m_time.delta().seconds()),
+        glm::two_pi<float>());
+      object.transform().rotation.x = glm::mod(
+        object.transform().rotation.x
+        + 1.f * static_cast<float>(m_time.delta().seconds()),
         glm::two_pi<float>());
 
       PushConstantData push{};
-      push.offset = object.transform().translation;
-      push.color = object.color();
-      push.transform = object.transform().mat2();
+      // push.color = object.color();
+      push.transform = object.transform().mat4();
 
       vkCmdPushConstants(
         command_buffer,
