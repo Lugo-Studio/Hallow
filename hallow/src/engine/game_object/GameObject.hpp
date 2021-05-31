@@ -78,9 +78,9 @@ namespace Hallow {
   public:
     using id_t = unsigned int;
 
-    static GameObject createGameObject() {
+    /*static GameObject createGameObject() {
       return GameObject{currentGameObjectId()};
-    }
+    }*/
 
     GameObject(const GameObject&) = delete;
     GameObject& operator=(const GameObject&) = delete;
@@ -92,6 +92,8 @@ namespace Hallow {
     void set_transform(Transform transform) { m_transform = transform; }
     std::shared_ptr<HallowModel>& model() { return m_model; }
     void set_model(std::shared_ptr<HallowModel> model) { m_model = model; }
+    virtual void set_colors(HallowDevice& hallow_device, std::vector<HallowColor> colors) = 0;
+    virtual void set_colors(HallowDevice& hallow_device, HallowColor color) = 0;
     // glm::vec3& color() { return m_color; }
     // void set_color(glm::vec3 color) { m_color = color; }
 
@@ -99,11 +101,12 @@ namespace Hallow {
     id_t m_id;
 
     // Components
+    std::vector<HallowModel::Vertex> m_vertices{};
     Transform m_transform{};
     std::shared_ptr<HallowModel> m_model{};
     // glm::vec3 m_color{};
 
-    GameObject(id_t object_id) : m_id(object_id) {}
+    explicit GameObject(id_t object_id) : m_id(object_id) {}
 
     static id_t currentGameObjectId() {
       static id_t current_id = 0;

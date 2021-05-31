@@ -261,6 +261,33 @@ src\application\sierpinski\Sierpinski.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\application\sierpinski\Sierpinski.cpp.s
 .PHONY : src\application\sierpinski\Sierpinski.cpp.s
 
+src\engine\color\HallowColor.obj: src\engine\color\HallowColor.cpp.obj
+
+.PHONY : src\engine\color\HallowColor.obj
+
+# target to build an object file
+src\engine\color\HallowColor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\color\HallowColor.cpp.obj
+.PHONY : src\engine\color\HallowColor.cpp.obj
+
+src\engine\color\HallowColor.i: src\engine\color\HallowColor.cpp.i
+
+.PHONY : src\engine\color\HallowColor.i
+
+# target to preprocess a source file
+src\engine\color\HallowColor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\color\HallowColor.cpp.i
+.PHONY : src\engine\color\HallowColor.cpp.i
+
+src\engine\color\HallowColor.s: src\engine\color\HallowColor.cpp.s
+
+.PHONY : src\engine\color\HallowColor.s
+
+# target to generate assembly for a file
+src\engine\color\HallowColor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hallow.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\hallow.dir\src\engine\color\HallowColor.cpp.s
+.PHONY : src\engine\color\HallowColor.cpp.s
+
 src\engine\color\srgb_transform\SrgbTransform.obj: src\engine\color\srgb_transform\SrgbTransform.cpp.obj
 
 .PHONY : src\engine\color\srgb_transform\SrgbTransform.obj
@@ -609,6 +636,9 @@ help:
 	@echo ... src/application/sierpinski/Sierpinski.obj
 	@echo ... src/application/sierpinski/Sierpinski.i
 	@echo ... src/application/sierpinski/Sierpinski.s
+	@echo ... src/engine/color/HallowColor.obj
+	@echo ... src/engine/color/HallowColor.i
+	@echo ... src/engine/color/HallowColor.s
 	@echo ... src/engine/color/srgb_transform/SrgbTransform.obj
 	@echo ... src/engine/color/srgb_transform/SrgbTransform.i
 	@echo ... src/engine/color/srgb_transform/SrgbTransform.s

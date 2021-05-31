@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/Cube.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/hallow.dir/src/application/game_objects/Cube.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/hallow.dir/src/application/game_objects/SimpleTriangle.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/hallow.dir/src/application/sierpinski/Sierpinski.cpp.obj"
+  "C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/HallowColor.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/hallow.dir/src/engine/color/HallowColor.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/srgb_transform/SrgbTransform.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/hallow.dir/src/engine/color/srgb_transform/SrgbTransform.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/engine/device/HallowDevice.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/hallow.dir/src/engine/device/HallowDevice.cpp.obj"
   "C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/GameObject.cpp" "C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/CMakeFiles/hallow.dir/src/engine/game_object/GameObject.cpp.obj"

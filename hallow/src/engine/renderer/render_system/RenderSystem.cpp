@@ -35,7 +35,7 @@ namespace Hallow {
   }
 
   void RenderSystem::renderGameObjects(VkCommandBuffer command_buffer,
-                                             std::vector<GameObject>& game_objects) {
+                                       std::vector<std::shared_ptr<GameObject>>& game_objects) {
     if (!m_pipeline_created) {
       throw std::runtime_error("RenderSystem: Cannot call renderGameObjects before pipeline creation!");
     }
@@ -43,21 +43,20 @@ namespace Hallow {
     m_hallow_pipeline->bind(command_buffer);
 
     for (auto& object : game_objects) {
-      /*object.transform().translation = {.2f, .0f};
-      object.transform().scale = {2.f, .5f};*/
-      object.transform().rotation.y = glm::mod(
-        object.transform().rotation.y
+      // Do stuff to objects
+      object->transform().rotation.y = glm::mod(
+        object->transform().rotation.y
         + 2.f * static_cast<float>(m_time.delta().seconds()),
         glm::two_pi<float>());
-      object.transform().rotation.x = glm::mod(
-        object.transform().rotation.x
+      object->transform().rotation.x = glm::mod(
+        object->transform().rotation.x
         + 1.f * static_cast<float>(m_time.delta().seconds()),
         glm::two_pi<float>());
 
+      // Create and fill push constant data
       PushConstantData push{};
-      // push.color = object.color();
-      push.transform = object.transform().mat4();
-
+      /*push.color = object.color();*/
+      push.transform = object->transform().mat4();
       vkCmdPushConstants(
         command_buffer,
         m_pipeline_layout,
@@ -66,8 +65,9 @@ namespace Hallow {
         sizeof(PushConstantData),
         &push);
 
-      object.model()->bind(command_buffer);
-      object.model()->draw(command_buffer);
+      // Draw object
+      object->model()->bind(command_buffer);
+      object->model()->draw(command_buffer);
     }
   }
 

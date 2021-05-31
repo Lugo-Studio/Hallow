@@ -27,7 +27,7 @@
 
 namespace Hallow {
 
-/*---- sRGB values to linear intensities ----*/
+/*---- sRGB values to is_linear intensities ----*/
 
   float srgbToLinear(float x) {
     if (x <= 0.0f) {

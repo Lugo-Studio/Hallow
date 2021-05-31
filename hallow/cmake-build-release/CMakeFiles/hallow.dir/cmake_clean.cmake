@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hallow.dir/src/application/game_objects/Cube.cpp.obj"
   "CMakeFiles/hallow.dir/src/application/game_objects/SimpleTriangle.cpp.obj"
   "CMakeFiles/hallow.dir/src/application/sierpinski/Sierpinski.cpp.obj"
+  "CMakeFiles/hallow.dir/src/engine/color/HallowColor.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/color/srgb_transform/SrgbTransform.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/device/HallowDevice.cpp.obj"
   "CMakeFiles/hallow.dir/src/engine/game_object/GameObject.cpp.obj"

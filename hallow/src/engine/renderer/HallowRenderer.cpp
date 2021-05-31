@@ -5,12 +5,11 @@
 #include <engine/color/HallowColor.hpp>
 #include <array>
 #include "HallowRenderer.hpp"
-#include "RendererOptions.hpp"
 
 namespace Hallow {
 
-  HallowRenderer::HallowRenderer(HallowWindow& window, HallowDevice& device, RendererOptions& renderer_options)
-    : m_hallow_window{window}, m_hallow_device{device}, m_renderer_options{renderer_options} {
+  HallowRenderer::HallowRenderer(HallowWindow& window, HallowDevice& device)
+    : m_hallow_window{window}, m_hallow_device{device} {
     recreateSwapChain();
     createCommandBuffers();
   }
@@ -92,7 +91,7 @@ namespace Hallow {
     render_pass_info.renderArea.offset = {0, 0};
     render_pass_info.renderArea.extent = m_hallow_swap_chain->swapChainExtent();
 
-    HallowColor background_color{0x2E3440FF, m_renderer_options.using_srgb_color_space};
+    HallowColor background_color(0x2E3440FF);
     std::array<VkClearValue, 2> clear_values{};
     clear_values[0].color = background_color.color_rgba<VkClearColorValue>();
     clear_values[1].depthStencil = {1.0f, 0};
@@ -163,13 +162,12 @@ namespace Hallow {
     vkDeviceWaitIdle(m_hallow_device.device());
 
     if (m_hallow_swap_chain == nullptr) {
-      m_hallow_swap_chain = std::make_unique<HallowSwapChain>(m_hallow_device, extent, m_renderer_options);
+      m_hallow_swap_chain = std::make_unique<HallowSwapChain>(m_hallow_device, extent);
     } else {
       std::shared_ptr<HallowSwapChain> old_swap_chain = std::move(m_hallow_swap_chain);
       m_hallow_swap_chain = std::make_unique<HallowSwapChain>(
         m_hallow_device,
         extent,
-        m_renderer_options,
         old_swap_chain
       );
 

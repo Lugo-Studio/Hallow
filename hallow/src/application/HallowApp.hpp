@@ -24,6 +24,9 @@ namespace Hallow {
     static constexpr int WIDTH = 1024;
     static constexpr int HEIGHT = 576;
 
+    static bool using_srgb_color_space;
+    static bool using_vsync;
+
     HallowApp();
     ~HallowApp();
     HallowApp(const HallowApp&) = delete;
@@ -33,18 +36,13 @@ namespace Hallow {
   private:
     const std::string m_name{"Hallow Engine"};
 
-    RendererOptions m_renderer_options {
-      false,
-      false
-    };
-
     Time m_time{};
 
     HallowWindow m_hallow_window{WIDTH, HEIGHT, m_name};
     HallowDevice m_hallow_device{m_hallow_window};
-    HallowRenderer m_hallow_renderer{m_hallow_window, m_hallow_device, m_renderer_options};
+    HallowRenderer m_hallow_renderer{m_hallow_window, m_hallow_device};
 
-    std::vector<GameObject> m_game_objects;
+    std::vector<std::shared_ptr<GameObject>> m_game_objects;
 
     void loadGameObjects();
 

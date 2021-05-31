@@ -1,5 +1,8 @@
 #include "HallowSwapChain.hpp"
 
+// hallow
+#include <application/HallowApp.hpp>
+
 // std
 #include <array>
 #include <cstdlib>
@@ -13,19 +16,16 @@
 
 namespace Hallow {
 
-  HallowSwapChain::HallowSwapChain(HallowDevice& device_ref, VkExtent2D window_extent, RendererOptions renderer_options)
-    : m_hallow_device{device_ref}, m_window_extent{window_extent},
-      m_renderer_options{renderer_options} {
+  HallowSwapChain::HallowSwapChain(HallowDevice& device_ref, VkExtent2D window_extent)
+    : m_hallow_device{device_ref}, m_window_extent{window_extent} {
     init();
   }
 
   HallowSwapChain::HallowSwapChain(
     HallowDevice& device_ref,
     VkExtent2D window_extent,
-    RendererOptions renderer_options,
     std::shared_ptr<HallowSwapChain> previous)
-    : m_hallow_device{device_ref}, m_window_extent{window_extent},
-      m_renderer_options{renderer_options}, m_old_swap_chain{std::move
+    : m_hallow_device{device_ref}, m_window_extent{window_extent}, m_old_swap_chain{std::move
       (previous)} { // clion
     // recommended adding std::move
     init();
@@ -48,7 +48,7 @@ namespace Hallow {
     for (int i = 0; i < m_depth_images.size(); i++) {
       vkDestroyImageView(m_hallow_device.device(), m_depth_image_views[i], nullptr);
       vkDestroyImage(m_hallow_device.device(), m_depth_images[i], nullptr);
-      vkFreeMemory(m_hallow_device.device(), m_depth_image_memorys[i], nullptr);
+      vkFreeMemory(m_hallow_device.device(), m_depth_image_memories[i], nullptr);
     }
 
     for (auto framebuffer : m_swap_chain_framebuffers) {
@@ -356,11 +356,11 @@ namespace Hallow {
 
   void HallowSwapChain::createDepthResources() {
     VkFormat depth_format = findDepthFormat();
-    m_swap_cahin_depth_format = depth_format;
+    m_swap_chain_depth_format = depth_format;
     VkExtent2D swap_chain_extent = swapChainExtent();
 
     m_depth_images.resize(imageCount());
-    m_depth_image_memorys.resize(imageCount());
+    m_depth_image_memories.resize(imageCount());
     m_depth_image_views.resize(imageCount());
 
     for (int i = 0; i < m_depth_images.size(); i++) {
@@ -383,7 +383,7 @@ namespace Hallow {
       m_hallow_device.createImageWithInfo(image_info,
                                           VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
                                           m_depth_images[i],
-                                          m_depth_image_memorys[i]);
+                                          m_depth_image_memories[i]);
 
       VkImageViewCreateInfo view_info{};
       view_info.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
@@ -429,7 +429,7 @@ namespace Hallow {
 
   VkSurfaceFormatKHR HallowSwapChain::chooseSwapSurfaceFormat(
     const std::vector<VkSurfaceFormatKHR>& available_formats) {
-    auto preferred_format = m_renderer_options.using_srgb_color_space
+    auto preferred_format = HallowApp::using_srgb_color_space
                             ? VK_FORMAT_B8G8R8A8_SRGB
                             : VK_FORMAT_B8G8R8A8_UNORM;
 
@@ -445,7 +445,8 @@ namespace Hallow {
 
   VkPresentModeKHR HallowSwapChain::chooseSwapPresentMode(
     const std::vector<VkPresentModeKHR>& available_present_modes) {
-    auto mode = m_renderer_options.using_vsync
+    std::cout << "[HallowSwapChain] Vsync: " << HallowApp::using_vsync << "\n";
+    auto mode = HallowApp::using_vsync
                 ? VK_PRESENT_MODE_FIFO_KHR
                 : VK_PRESENT_MODE_IMMEDIATE_KHR;
 

@@ -21,7 +21,13 @@
 
 
 namespace Hallow {
+  bool HallowApp::using_srgb_color_space = false;
+  bool HallowApp::using_vsync = false;
+
   HallowApp::HallowApp() {
+    std::cout << "[HallowApp] Vsync: " << HallowApp::using_vsync << "\n";
+    std::cout << "[HallowApp] Vsync: " << HallowApp::using_vsync << "\n";
+
     loadGameObjects();
   }
 
@@ -54,15 +60,26 @@ namespace Hallow {
     //m_time.printOnInterval(1);
     glfwPollEvents(); // poll for user events and such
 
+    static unsigned int color_base = 0x000000FF;
 
-    // Post-update
+    // m_game_objects[0]->set_colors(m_hallow_device, color_base);
+
+    if (color_base < 0xFFFFFFFF) {
+      ++color_base;
+    } else {
+      color_base = 0x000000FF;
+    }
+
     // will return nullptr if swapchain needs to be recreated
     if (auto command_buffer = m_hallow_renderer.beginFrame()) {
       m_hallow_renderer.beginSwapChainRenderPass(command_buffer);
+
       render_system.renderGameObjects(command_buffer, m_game_objects);
       m_hallow_renderer.endSwapChainRenderPass(command_buffer);
       m_hallow_renderer.endFrame();
     }
+
+    // Post-update
   }
 
   void HallowApp::onEnd(RenderSystem& render_system) {
@@ -71,11 +88,9 @@ namespace Hallow {
 
   void HallowApp::loadGameObjects() {
     //sierpinskiModel();
-    Cube cube{m_hallow_device,
-              {0.f, 0.f, 0.f},
-              m_renderer_options.using_srgb_color_space};
-    cube.transform().translation = {0.f, 0.f, .5f};
-    cube.transform().scale = {.5f, .5f, .5f};
+    glm::vec3 cube_pos = {0.f, 0.f, .5f};
+    auto cube = std::make_shared<Cube>(m_hallow_device, cube_pos);
+    cube->transform().scale = {.5f, .5f, .5f};
 
     m_game_objects.push_back(std::move(cube));
   }

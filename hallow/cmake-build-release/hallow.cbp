@@ -123,6 +123,9 @@
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/application/sierpinski/Sierpinski.hpp">
 			<Option target="hallow"/>
 		</Unit>
+		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/HallowColor.cpp">
+			<Option target="hallow"/>
+		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/color/HallowColor.hpp">
 			<Option target="hallow"/>
 		</Unit>
@@ -160,9 +163,6 @@
 			<Option target="hallow"/>
 		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/HallowRenderer.hpp">
-			<Option target="hallow"/>
-		</Unit>
-		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/RendererOptions.hpp">
 			<Option target="hallow"/>
 		</Unit>
 		<Unit filename="C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.cpp">

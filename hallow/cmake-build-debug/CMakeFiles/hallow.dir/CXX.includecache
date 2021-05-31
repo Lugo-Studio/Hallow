@@ -15,12 +15,6 @@ engine/game_object/GameObject.hpp
 -
 
 ../src/engine/color/HallowColor.hpp
-engine/color/srgb_transform/SrgbTransform.hpp
--
-glm/glm.hpp
--
-
-../src/engine/color/srgb_transform/SrgbTransform.hpp
 
 ../src/engine/device/HallowDevice.hpp
 engine/window/HallowWindow.hpp
@@ -71,16 +65,12 @@ engine/swap_chain/HallowSwapChain.hpp
 ../src/engine/renderer/engine/swap_chain/HallowSwapChain.hpp
 helpers/RootDir.h
 ../src/engine/renderer/helpers/RootDir.h
-RendererOptions.hpp
-../src/engine/renderer/RendererOptions.hpp
 string
 -
 memory
 -
 vector
 -
-
-../src/engine/renderer/RendererOptions.hpp
 
 ../src/engine/renderer/render_system/RenderSystem.hpp
 helpers/RootDir.h
@@ -99,8 +89,6 @@ vector
 -
 engine/game_object/GameObject.hpp
 -
-engine/renderer/RendererOptions.hpp
--
 
 ../src/engine/renderer/render_system/SimpleRenderSystem.hpp
 RenderSystem.hpp
@@ -116,8 +104,6 @@ memory
 string
 -
 vector
--
-engine/renderer/RendererOptions.hpp
 -
 
 ../src/engine/time/Stopwatch.hpp
@@ -1430,18 +1416,6 @@ C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/setup.hpp
 detail/func_vector_relational.inl
 C:/Dev/git/vcpkg/installed/x64-windows/include/glm/detail/func_vector_relational.inl
 
-C:/Home/Projects/Personal/Hallow/hallow/src/WinMain.cpp
-application/HallowApp.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.hpp
-cstdlib
--
-iostream
--
-stdexcept
--
-windows.h
--
-
 C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.cpp
 HallowApp.hpp
 C:/Home/Projects/Personal/Hallow/hallow/src/application/HallowApp.hpp
@@ -1483,80 +1457,6 @@ memory
 -
 vector
 -
-
-C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/Cube.cpp
-Cube.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/Cube.hpp
-
-C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/Cube.hpp
-engine/game_object/GameObject.hpp
--
-
-C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.cpp
-SimpleTriangle.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.hpp
-
-C:/Home/Projects/Personal/Hallow/hallow/src/application/game_objects/SimpleTriangle.hpp
-engine/game_object/GameObject.hpp
--
-
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/GameObject.cpp
-GameObject.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/GameObject.hpp
-
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/game_object/GameObject.hpp
-engine/model/HallowModel.hpp
--
-glm/gtc/matrix_transform.hpp
--
-memory
--
-
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.cpp
-RenderSystem.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.hpp
-engine/color/HallowColor.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/engine/color/HallowColor.hpp
-glm/glm.hpp
--
-glm/gtc/constants.hpp
--
-iostream
--
-stdexcept
--
-array
--
-application/game_objects/SimpleTriangle.hpp
--
-
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.hpp
-helpers/RootDir.h
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/helpers/RootDir.h
-engine/time/Time.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/engine/time/Time.hpp
-engine/device/HallowDevice.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/engine/device/HallowDevice.hpp
-engine/pipeline/HallowPipeline.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/engine/pipeline/HallowPipeline.hpp
-string
--
-memory
--
-vector
--
-engine/game_object/GameObject.hpp
--
-engine/renderer/RendererOptions.hpp
--
-
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.cpp
-SimpleRenderSystem.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.hpp
-
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/SimpleRenderSystem.hpp
-RenderSystem.hpp
-C:/Home/Projects/Personal/Hallow/hallow/src/engine/renderer/render_system/RenderSystem.hpp
 
 src/helpers/RootDir.h
 

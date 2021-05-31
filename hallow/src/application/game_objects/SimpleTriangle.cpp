@@ -7,7 +7,7 @@
 namespace Hallow {
   SimpleTriangle::SimpleTriangle(Hallow::HallowDevice& hallow_device, bool use_srgb_color_space)
     : GameObject{currentGameObjectId()} {
-    HallowColor triangle_color{0xBF616AFF, use_srgb_color_space};
+    HallowColor triangle_color{0xBF616AFF};
     HallowModel::Triangle triangle{
       {{{-0.5f, 0.5f, 0.f},
         {0.5f, 0.5f, 0.f},

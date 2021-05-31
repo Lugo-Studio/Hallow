@@ -8,74 +8,96 @@
 // lib
 
 // std
+#include <utility>
+#include <iostream>
 
 namespace Hallow {
-  Cube::Cube(HallowDevice& hallow_device, glm::vec3 offset , bool use_srgb_color_space)
+  Cube::Cube(HallowDevice& hallow_device, glm::vec3 offset)
     : GameObject{currentGameObjectId()} {
-    // f,b,l,r,t,b
-    std::array<HallowColor, 6> face_colors{{
-                                             {0xBF616AFF, use_srgb_color_space},
-                                             {0xD08770FF, use_srgb_color_space},
-                                             {0xEBCB8BFF, use_srgb_color_space},
-                                             {0xA3BE8CFF, use_srgb_color_space},
-                                             {0x88C0D0FF, use_srgb_color_space},
-                                             {0xB48EADFF, use_srgb_color_space}
-                                           }};
+    updateModel(hallow_device);
+
+    transform().translation = offset;
+    // set_color(m_face_colors[0].color_rgb<glm::vec3>());
+  }
+
+  void Cube::updateModel(HallowDevice& hallow_device) {
+    generatePointMesh();
+    set_model(std::make_shared<HallowModel>(hallow_device, m_vertices));
+  }
+
+  void Cube::generatePointMesh() {
+    m_vertices.clear();
 
     // f,b,l,r,t,b
     std::array<HallowModel::Quad, 6> faces{
       {
         // quad level
         {{
-          {{m_corners[0]},
-            {m_corners[1]},
-            {m_corners[2]},
-            {m_corners[3]}}
-        }, face_colors[0]},
+           {{m_base_corners[0]},
+             {m_base_corners[1]},
+             {m_base_corners[2]},
+             {m_base_corners[3]}}
+         }, m_face_colors[0]},
         {{
-           {{m_corners[4]},
-             {m_corners[5]},
-             {m_corners[6]},
-             {m_corners[7]}}
-         }, face_colors[1]},
+           {{m_base_corners[4]},
+             {m_base_corners[5]},
+             {m_base_corners[6]},
+             {m_base_corners[7]}}
+         }, m_face_colors[1]},
         {{
-           {{m_corners[5]},
-             {m_corners[0]},
-             {m_corners[3]},
-             {m_corners[6]}}
-         }, face_colors[2]},
+           {{m_base_corners[5]},
+             {m_base_corners[0]},
+             {m_base_corners[3]},
+             {m_base_corners[6]}}
+         }, m_face_colors[2]},
         {{
-           {{m_corners[1]},
-             {m_corners[4]},
-             {m_corners[7]},
-             {m_corners[2]}}
-         }, face_colors[3]},
+           {{m_base_corners[1]},
+             {m_base_corners[4]},
+             {m_base_corners[7]},
+             {m_base_corners[2]}}
+         }, m_face_colors[3]},
         {{
-           {{m_corners[3]},
-             {m_corners[2]},
-             {m_corners[7]},
-             {m_corners[6]}}
-         }, face_colors[4]},
+           {{m_base_corners[3]},
+             {m_base_corners[2]},
+             {m_base_corners[7]},
+             {m_base_corners[6]}}
+         }, m_face_colors[4]},
         {{
-           {{m_corners[5]},
-             {m_corners[4]},
-             {m_corners[1]},
-             {m_corners[0]}}
-         }, face_colors[5]}
+           {{m_base_corners[5]},
+             {m_base_corners[4]},
+             {m_base_corners[1]},
+             {m_base_corners[0]}}
+         }, m_face_colors[5]}
       }
     };
 
-    std::vector<HallowModel::Vertex> vertices{8*6};
     for (auto& quad : faces) {
       for (auto& vertex : quad.vertexVector()) {
-        vertex.position += offset;
-        vertices.push_back(vertex);
+        m_vertices.push_back(vertex);
       }
     }
+  }
 
-    auto m_hallow_model = std::make_shared<HallowModel>(hallow_device, vertices);
+  void Cube::set_pointMesh(HallowDevice& hallow_device, std::array<glm::vec3, 8> base_corners) {
+    m_base_corners = base_corners;
 
-    set_model(m_hallow_model);
-    // set_color(face_colors[0].color_rgb<glm::vec3>());
+    updateModel(hallow_device);
+  }
+
+  void Cube::set_colors(HallowDevice& hallow_device,
+                        std::vector<HallowColor> colors) {
+    m_face_colors.clear();
+    m_face_colors = std::move(colors);
+    while (m_face_colors.size() < 6) {
+      m_face_colors.emplace_back(0x000000FF);
+    }
+
+    updateModel(hallow_device);
+    std::cerr << "set_colors not implemented for base class GameObject!\n";
+  }
+
+  void Cube::set_colors(HallowDevice& hallow_device, HallowColor color) {
+    set_colors(hallow_device,
+               {color, color, color, color, color, color});
   }
 }
