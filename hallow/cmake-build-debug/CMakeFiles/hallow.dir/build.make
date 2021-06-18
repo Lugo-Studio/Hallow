@@ -37,10 +37,10 @@ NULL=nul
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -449,7 +449,7 @@ hallow.exe: C:\Dev\VulkanSDK\1.2.176.1\Lib\vulkan-1.lib
 hallow.exe: C:\Dev\git\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib
 hallow.exe: CMakeFiles\hallow.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable hallow.exe"
-	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\hallow.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\hallow.dir\objects1.rsp @<<
+	C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\hallow.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\hallow.dir\objects1.rsp @<<
  /out:hallow.exe /implib:hallow.lib /pdb:C:\Home\Projects\Personal\Hallow\hallow\cmake-build-debug\hallow.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  C:\Dev\VulkanSDK\1.2.176.1\Lib\vulkan-1.lib C:\Dev\git\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Dev/git/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Home/Projects/Personal/Hallow/hallow/cmake-build-debug/hallow.exe -installedDir C:/Dev/git/vcpkg/installed/x64-windows/debug/bin -OutVariable out

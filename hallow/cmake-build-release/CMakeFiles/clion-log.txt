@@ -1,4 +1,4 @@
-C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=C:/Dev/git/vcpkg/scripts/buildsystems/vcpkg.cmake -G "CodeBlocks - NMake Makefiles" C:\Home\Projects\Personal\Hallow\hallow
+C:\Users\galex\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=C:/Dev/git/vcpkg/scripts/buildsystems/vcpkg.cmake -G "CodeBlocks - NMake Makefiles" C:\Home\Projects\Personal\Hallow\hallow
 Vert shaders found: res/shaders/simple_shader.vert
 Frag shaders found: res/shaders/simple_shader.frag
 -- Compiling vertex shaders...
